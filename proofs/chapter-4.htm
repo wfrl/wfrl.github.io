@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 4</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='../proofs-toc.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h1>Relations</h1>
+<h2>Table of contents</h2>
+<ol>
+<li><a href='#4.1'>Relationhood</a>
+<li><a href='#4.2'>Domains and ranges</a>
+<li><a href='#4.3'>Images and inverse images</a>
+<li><a href='#4.4'>Composition of relations</a>
+<li><a href='#4.5'>Special relations</a>
+</ol>
+<h2 id='4.1'>Relationhood</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='relation_unfold.htm'>relation_unfold</a><br>
+relation R → ∀t. t ∈ R → ∃x. ∃y. t = (x, y)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='relation_fold.htm'>relation_fold</a><br>
+(∀t. t ∈ R → ∃x. ∃y. t = (x, y)) → relation R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='relation_elim.htm'>relation_elim</a><br>
+relation R → t ∈ R → ∃x. ∃y. t = (x, y)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='relation_from_incl.htm'>relation_from_incl</a><br>
+R ⊆ X × Y → relation R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='relation_subclass.htm'>relation_subclass</a><br>
+R ⊆ Q → relation Q → relation R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='relation_union.htm'>relation_union</a><br>
+relation R → relation Q → relation (R ∪ Q)</div></div>
+<h2 id='4.2'>Domains and ranges</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dom_intro.htm'>dom_intro</a><br>
+(x, y) ∈ R → x ∈ dom R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dom_elim.htm'>dom_elim</a><br>
+x ∈ dom R → ∃y. (x, y) ∈ R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dom_incl.htm'>dom_incl</a><br>
+R ⊆ X × Y → dom R ⊆ X</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_intro.htm'>rng_intro</a><br>
+(x, y) ∈ R → y ∈ rng R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_elim.htm'>rng_elim</a><br>
+y ∈ rng R → ∃x. (x, y) ∈ R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_subclass.htm'>rng_subclass</a><br>
+R ⊆ Q → rng R ⊆ rng Q</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dom_of_subclass_prod.htm'>dom_of_subclass_prod</a><br>
+R ⊆ X × Y → dom R ⊆ X</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_of_subclass_prod.htm'>rng_of_subclass_prod</a><br>
+R ⊆ X × Y → rng R ⊆ Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='relation_incl_prod.htm'>relation_incl_prod</a><br>
+relation R →
+  dom R ⊆ X → rng R ⊆ Y → R ⊆ X × Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dom_union.htm'>dom_union</a><br>
+dom (R ∪ Q) = dom R ∪ dom Q</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_union.htm'>rng_union</a><br>
+rng (R ∪ Q) = rng R ∪ rng Q</div></div>
+<h2 id='4.3'>Images and inverse images</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='img_intro.htm'>img_intro</a><br>
+x ∈ A → (x, y) ∈ R → y ∈ img R A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='img_elim.htm'>img_elim</a><br>
+y ∈ img R A → ∃x. x ∈ A ∧ (x, y) ∈ R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_img_intro.htm'>inv_img_intro</a><br>
+y ∈ B → (x, y) ∈ R → x ∈ inv_img R B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_img_elim.htm'>inv_img_elim</a><br>
+x ∈ inv_img R B → ∃y. y ∈ B ∧ (x, y) ∈ R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='img_dist_union.htm'>img_dist_union</a><br>
+img R (A ∪ B) = img R A ∪ img R B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='img_dist_inter.htm'>img_dist_inter</a><br>
+img R (A ∩ B) ⊆ img R A ∩ img R B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='img_incl.htm'>img_incl</a><br>
+A ⊆ B → img R A ⊆ img R B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='img_incl_in_rng.htm'>img_incl_in_rng</a><br>
+img R A ⊆ rng R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='img_of_dom_is_rng.htm'>img_of_dom_is_rng</a><br>
+img R (dom R) = rng R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_img_dist_inter.htm'>inv_img_dist_inter</a><br>
+inv_img R (A ∩ B) ⊆ inv_img R A ∩ inv_img R B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_img_dist_union.htm'>inv_img_dist_union</a><br>
+inv_img R (A ∪ B) = inv_img R A ∪ inv_img R B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_img_incl.htm'>inv_img_incl</a><br>
+A ⊆ B → inv_img R A ⊆ inv_img R B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_img_incl_in_dom.htm'>inv_img_incl_in_dom</a><br>
+inv_img R B ⊆ dom R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='img_union.htm'>img_union</a><br>
+img (R ∪ Q) A = img R A ∪ img Q A</div></div>
+<h2 id='4.4'>Composition of relations</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='composition_is_relation.htm'>composition_is_relation</a><br>
+relation (S ∘ R)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='composition_elimr.htm'>composition_elimr</a><br>
+(a, c) ∈ S ∘ R → ∃y. (a, y) ∈ R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='composition_eliml.htm'>composition_eliml</a><br>
+(a, c) ∈ S ∘ R → ∃y. (y, c) ∈ S</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='composition_elim.htm'>composition_elim</a><br>
+(a, c) ∈ S ∘ R → ∃y. (a, y) ∈ R ∧ (y, c) ∈ S</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='composition_intro.htm'>composition_intro</a><br>
+(a, b) ∈ R → (b, c) ∈ S → (a, c) ∈ S ∘ R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dom_composition.htm'>dom_composition</a><br>
+dom (S ∘ R) ⊆ dom R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_composition.htm'>rng_composition</a><br>
+rng (S ∘ R) ⊆ rng S</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='img_composition.htm'>img_composition</a><br>
+img (S ∘ R) A = img S (img R A)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_img_composition.htm'>inv_img_composition</a><br>
+inv_img (S ∘ R) B = inv_img R (inv_img S B)</div></div>
+<h2 id='4.5'>Special relations</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='empty_relation.htm'>empty_relation</a><br>
+relation ∅</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dom_empty_set.htm'>dom_empty_set</a><br>
+dom ∅ = ∅</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_empty_set.htm'>rng_empty_set</a><br>
+rng ∅ = ∅</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='sg_relation.htm'>sg_relation</a><br>
+set a → set b → relation {(a, b)}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dom_sg.htm'>dom_sg</a><br>
+set a → set b → dom {(a, b)} = {a}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_sg.htm'>rng_sg</a><br>
+set a → set b → rng {(a, b)} = {b}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='img_sg_sg.htm'>img_sg_sg</a><br>
+set a → set b → img {(a, b)} {a} = {b}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='img_sg_sg_neq.htm'>img_sg_sg_neq</a><br>
+set a → set b → set x → ¬a = x →
+  img {(a, b)} {x} = ∅</div></div>
+</body>
+</html>

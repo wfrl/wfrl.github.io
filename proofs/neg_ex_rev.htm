@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>neg_ex_rev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-2.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem neg_ex_rev</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> neg_ex_rev<br>
+(∀x. ¬P x) → (¬∃x. P x)</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ ∃x. P x, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ ∀x. ¬P x, <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ P u, <a href='hypo.htm'>hypo</a>.
+04. 2 ⊢ ¬P u, <a href='uq_elim.htm'>uq_elim</a> 2.
+05. 2, 3 ⊢ ⊥, <a href='neg_elim.htm'>neg_elim</a> 4 3.
+06. 2, 1 ⊢ ⊥, <a href='ex_elim.htm'>ex_elim</a> 1 5.
+07. 2 ⊢ ¬∃x. P x, <a href='neg_intro.htm'>neg_intro</a> 6.
+neg_ex_rev. ⊢ (∀x. ¬P x) → (¬∃x. P x), <a href='subj_intro.htm'>subj_intro</a> 7.
+</pre>
+</body>
+</html>

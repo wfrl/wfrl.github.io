@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>efq_from_dne</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-2.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem efq_from_dne</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> efq_from_dne<br>
+(¬¬A → A) → (⊥ → A)</div></div>
+<p>States that <a href='efq.htm'>ex falso quodlibet</a> can be
+derived from <a href='dne.htm'>double negation elimination</a>.<br>
+<br>
+<b>Proof sketch</b><br>
+Let ¬¬A → A hold. To be shown is ⊥&nbsp;→&nbsp;A, that is, A under the additional
+hypothesis ⊥. Then ⊥ holds even more so under the further hypothesis
+¬A. Since ¬A leads to a contradiction in this respect, ¬¬A must hold.
+Ergo, A follows via the first hypothesis from this finding. q.e.d.</p>
+<pre><b>Proof</b>
+01. 1 ⊢ ¬¬A → A, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ ⊥, <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ ¬A, <a href='hypo.htm'>hypo</a>.
+04. 2, 3 ⊢ ⊥, <a href='wk.htm'>wk</a> 2.
+05. 2 ⊢ ¬¬A, <a href='neg_intro.htm'>neg_intro</a> 4.
+06. 1, 2 ⊢ A, <a href='subj_elim.htm'>subj_elim</a> 1 5.
+efq_from_dne. ⊢ (¬¬A → A) → (⊥ → A), <a href='subj_intro_ii.htm'>subj_intro_ii</a> 6.
+</pre>
+</body>
+</html>

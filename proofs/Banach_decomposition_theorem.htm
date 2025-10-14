@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Banach_decomposition_theorem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-12.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem Banach_decomposition_theorem</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> Banach_decomposition_theorem<br>
+set X → rng g ⊆ X →
+  ∃A. ∃B. img f A = B ∧ X \ A = img g (Y \ B)</div></div>
+<pre><b>Proof</b>
+let h A = X \ img g (Y \ img f A).
+let Gh = {t | ∃A. A ∈ power X ∧ t = (A, h A)}.
+01. 1 ⊢ set X, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ rng g ⊆ X, <a href='hypo.htm'>hypo</a>.
+03. ⊢ Gh = Gh, <a href='eq_refl.htm'>eq_refl</a>.
+
+04. 4 ⊢ A ∈ power X, <a href='hypo.htm'>hypo</a>.
+05. ⊢ h A ⊆ X, <a href='diff_incl.htm'>diff_incl</a>.
+06. 1 ⊢ set (h A), <a href='subset.htm'>subset</a> 5 1.
+07. 1 ⊢ h A ∈ power X, <a href='power_intro.htm'>power_intro</a> 6 5.
+08. 1, 4 ⊢ h A ∈ power X, <a href='wk.htm'>wk</a> 7.
+09. 1 ⊢ A ∈ power X → h A ∈ power X, <a href='subj_intro.htm'>subj_intro</a> 8.
+10. 1 ⊢ ∀A. A ∈ power X → h A ∈ power X, <a href='uq_intro.htm'>uq_intro</a> 9.
+
+11. 11 ⊢ A2 ⊆ X, <a href='hypo.htm'>hypo</a>.
+12. 12 ⊢ A1 ⊆ A2, <a href='hypo.htm'>hypo</a>.
+13. 12 ⊢ img f A1 ⊆ img f A2, <a href='img_incl.htm'>img_incl</a> 12.
+14. 12 ⊢ Y \ (img f A2) ⊆ Y \ (img f A1), <a href='incl_contraposition.htm'>incl_contraposition</a> 13.
+15. 12 ⊢ img g (Y \ (img f A2)) ⊆ img g (Y \ (img f A1)), <a href='img_incl.htm'>img_incl</a> 14.
+16. 12 ⊢ h A1 ⊆ h A2, <a href='incl_contraposition.htm'>incl_contraposition</a> 15.
+
+17. 11, 12 ⊢ A1 ⊆ X, <a href='incl_trans.htm'>incl_trans</a> 12 11.
+18. 1, 11, 12 ⊢ set A1, <a href='subset.htm'>subset</a> 17 1.
+19. 1, 11 ⊢ set A2, <a href='subset.htm'>subset</a> 11 1.
+20. 1, 11, 12 ⊢ A1 ∈ power X, <a href='power_intro.htm'>power_intro</a> 18 17.
+21. 1, 11 ⊢ A2 ∈ power X, <a href='power_intro.htm'>power_intro</a> 19 11.
+22. 1, 11, 12 ⊢ app Gh A1 = h A1, <a href='map_from_term_app.htm'>map_from_term_app</a> 3 10 20.
+23. 1, 11 ⊢ app Gh A2 = h A2, <a href='map_from_term_app.htm'>map_from_term_app</a> 3 10 21.
+
+24. 1, 11, 12 ⊢ app Gh A1 ⊆ h A2,
+  <a href='eq_subst_rev.htm'>eq_subst_rev</a> 22 16, P t ↔ t ⊆ h A2.
+25. 1, 11, 12 ⊢ app Gh A1 ⊆ app Gh A2,
+  <a href='eq_subst_rev.htm'>eq_subst_rev</a> 23 24, P t ↔ app Gh A1 ⊆ t.
+26. 1 ⊢ A2 ⊆ X → A1 ⊆ A2 →
+  app Gh A1 ⊆ app Gh A2, <a href='subj_intro_ii.htm'>subj_intro_ii</a> 25.
+27. 1 ⊢ ∀A2. A2 ⊆ X → A1 ⊆ A2 →
+  app Gh A1 ⊆ app Gh A2, <a href='uq_intro.htm'>uq_intro</a> 26.
+28. 1 ⊢ ∀A1. ∀A2. A2 ⊆ X → A1 ⊆ A2 →
+  app Gh A1 ⊆ app Gh A2, <a href='uq_intro.htm'>uq_intro</a> 27.
+29. 1 ⊢ map Gh (power X) (power X), <a href='map_from_term.htm'>map_from_term</a> 3 10.
+30. 1 ⊢ ∃A. A ⊆ X ∧ app Gh A = A ∧
+  (∀U. U ⊆ X → app Gh U = U → A ⊆ U),
+  <a href='incl_Knaster_Tarski_least.htm'>incl_Knaster_Tarski_least</a> 1 29 28.
+
+31. 31 ⊢ A ⊆ X ∧ app Gh A = A ∧
+  (∀U. U ⊆ X → app Gh U = U → A ⊆ U), <a href='hypo.htm'>hypo</a>.
+32. 31 ⊢ A ⊆ X, <a href='conj_elimll.htm'>conj_elimll</a> 31.
+33. 31 ⊢ app Gh A = A, <a href='conj_elimlr.htm'>conj_elimlr</a> 31.
+34. 1, 31 ⊢ set A, <a href='subset.htm'>subset</a> 32 1.
+35. 1, 31 ⊢ A ∈ power X, <a href='power_intro.htm'>power_intro</a> 34 32.
+36. 1, 31 ⊢ app Gh A = h A, <a href='map_from_term_app.htm'>map_from_term_app</a> 3 10 35.
+37. 1, 31 ⊢ h A = A, <a href='eq_trans_ll.htm'>eq_trans_ll</a> 36 33.
+38. ⊢ img g (Y \ img f A) ⊆ rng g, <a href='img_incl_in_rng.htm'>img_incl_in_rng</a>.
+39. 2 ⊢ img g (Y \ img f A) ⊆ X, <a href='incl_trans.htm'>incl_trans</a> 38 2.
+40. 2 ⊢ X \ h A = img g (Y \ img f A), <a href='diff_is_involution.htm'>diff_is_involution</a> 39.
+41. 1, 2, 31 ⊢ X \ A = img g (Y \ img f A),
+  <a href='eq_subst.htm'>eq_subst</a> 37 40, P t ↔ X \ t = img g (Y \ img f A).
+42. ⊢ img f A = img f A, <a href='eq_refl.htm'>eq_refl</a>.
+43. 1, 2, 31 ⊢ img f A = img f A ∧
+  X \ A = img g (Y \ img f A), <a href='conj_intro.htm'>conj_intro</a> 42 41.
+44. 1, 2, 31 ⊢ ∃B. img f A = B ∧
+  X \ A = img g (Y \ B), <a href='ex_intro.htm'>ex_intro</a> 43.
+45. 1, 2, 31 ⊢ ∃A. ∃B. img f A = B ∧
+  X \ A = img g (Y \ B), <a href='ex_intro.htm'>ex_intro</a> 44.
+46. 1, 2 ⊢ ∃A. ∃B. img f A = B ∧
+  X \ A = img g (Y \ B), <a href='ex_elim.htm'>ex_elim</a> 30 45.
+Banach_decomposition_theorem. ⊢ set X → rng g ⊆ X →
+  ∃A. ∃B. img f A = B ∧ X \ A = img g (Y \ B),
+  <a href='subj_intro_ii.htm'>subj_intro_ii</a> 46.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on nine axioms:<br><a href='comp.htm'>comp</a>, <a href='efq.htm'>efq</a>, <a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='ext.htm'>ext</a>, <a href='lem.htm'>lem</a>, <a href='pairing.htm'>pairing</a>, <a href='subset.htm'>subset</a>, <a href='union.htm'>union</a>.</p>
+</body>
+</html>

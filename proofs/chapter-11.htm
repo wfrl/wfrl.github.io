@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 11</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='../proofs-toc.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h1>Grothendieck universes</h1>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='univ_equi.htm'>univ_equi</a><br>
+univ U ↔ ∅ ∈ U ∧
+  (∀x. x ∈ U → x ⊆ U) ∧
+  (∀x. x ∈ U → power x ∈ U) ∧
+  (∀I. ∀x. I ∈ U → map x I U → ⋃(img x I) ∈ U)</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='least_univ_eq.htm'>least_univ_eq</a><br>
+least_univ A = ⋂{U | univ U ∧ A ∈ U}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='Univ_eq.htm'>Univ_eq</a><br>
+Univ = least_univ onat</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='universes.htm'>universes</a><br>
+set x → ∃U. set U ∧ univ U ∧ x ∈ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='univ_contains_empty_set.htm'>univ_contains_empty_set</a><br>
+univ U → ∅ ∈ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='univ_trans.htm'>univ_trans</a><br>
+univ U → x ∈ U → x ⊆ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='univ_closed_power.htm'>univ_closed_power</a><br>
+univ U → x ∈ U → power x ∈ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='univ_closed_family_union.htm'>univ_closed_family_union</a><br>
+univ U → I ∈ U → map x I U →
+  ⋃(img x I) ∈ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='univ_closed_subset.htm'>univ_closed_subset</a><br>
+univ U → y ⊆ x → x ∈ U → y ∈ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='univ_closed_intersection.htm'>univ_closed_intersection</a><br>
+univ U → x ∈ U → x ∩ y ∈ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='univ_closed_union.htm'>univ_closed_union</a><br>
+univ U → x ∈ U → y ∈ U → x ∪ y ∈ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='univ_closed_sg.htm'>univ_closed_sg</a><br>
+univ U → x ∈ U → {x} ∈ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='univ_closed_pair_set.htm'>univ_closed_pair_set</a><br>
+univ U → x ∈ U → y ∈ U → {x, y} ∈ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='univ_closed_pair.htm'>univ_closed_pair</a><br>
+univ U → x ∈ U → y ∈ U → (x, y) ∈ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='univ_closed_sep.htm'>univ_closed_sep</a><br>
+univ U → A ∈ U → {x | x ∈ A ∧ P x} ∈ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='univ_closed_prod.htm'>univ_closed_prod</a><br>
+univ U → A ∈ U → B ∈ U → A × B ∈ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='univ_closed_Intersection.htm'>univ_closed_Intersection</a><br>
+univ U → M ∈ U → ¬M = ∅ → ⋂M ∈ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='univ_closed_Union.htm'>univ_closed_Union</a><br>
+univ U → M ∈ U → ⋃M ∈ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='least_univ_is_univ.htm'>least_univ_is_univ</a><br>
+set A →
+  set (least_univ A) ∧ univ (least_univ A)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Univ_is_set.htm'>Univ_is_set</a><br>
+set Univ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Univ_is_univ.htm'>Univ_is_univ</a><br>
+univ Univ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='truncated_power_closed.htm'>truncated_power_closed</a><br>
+univ U → x ∈ U → U ∩ power x ∈ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='truncated_power_idem.htm'>truncated_power_idem</a><br>
+univ U → U ∩ power U = U</div></div>
+</body>
+</html>

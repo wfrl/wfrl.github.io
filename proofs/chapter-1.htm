@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='../proofs-toc.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h1>Morse-Kelley set theory</h1>
+<h2>Table of contents</h2>
+<ol>
+<li><a href='#1.1'>Definitions</a>
+<li><a href='#1.2'>Axioms</a>
+</ol>
+<h2 id='1.1'>Definitions</h2>
+<div class='box'><div class='decl'><b class='decl'>Declaration.</b> <a href='element_decl.htm'>element_decl</a><br>
+x ∈ A ↔ _</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='incl_equi.htm'>incl_equi</a><br>
+A ⊆ B ↔ ∀x. x ∈ A → x ∈ B</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='set_equi.htm'>set_equi</a><br>
+set x ↔ ∃C. x ∈ C</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='empty_set_eq.htm'>empty_set_eq</a><br>
+∅ = {x | ⊥}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='union_eq.htm'>union_eq</a><br>
+A ∪ B = {x | x ∈ A ∨ x ∈ B}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='sg_eq.htm'>sg_eq</a><br>
+{a} = {x | set a → x = a}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='pair_eq.htm'>pair_eq</a><br>
+(x, y) = {{x}, {x, y}}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='power_eq.htm'>power_eq</a><br>
+power M = {A | A ⊆ M}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='intersection_eq.htm'>intersection_eq</a><br>
+A ∩ B = {x | x ∈ A ∧ x ∈ B}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='diff_eq.htm'>diff_eq</a><br>
+A \ B = {x | x ∈ A ∧ ¬x ∈ B}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='compl_eq.htm'>compl_eq</a><br>
+compl A = {x | ¬x ∈ A}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='Union_eq.htm'>Union_eq</a><br>
+⋃M = {x | ∃A. A ∈ M ∧ x ∈ A}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='Intersection_eq.htm'>Intersection_eq</a><br>
+⋂M = {x | ∀A. A ∈ M → x ∈ A}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='prod_eq.htm'>prod_eq</a><br>
+A × B =
+  {t | ∃x. ∃y. x ∈ A ∧ y ∈ B ∧ t = (x, y)}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='fst_eq.htm'>fst_eq</a><br>
+fst t = ⋂⋂t</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='scd_eq.htm'>scd_eq</a><br>
+scd t = ⋂⋃t ∪ (⋃⋃t \ ⋂⋂t)</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='UnivCl_eq.htm'>UnivCl_eq</a><br>
+UnivCl = {x | x = x}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='DiagCl_eq.htm'>DiagCl_eq</a><br>
+DiagCl = {x | ¬x ∈ x}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='dom_eq.htm'>dom_eq</a><br>
+dom R = {x | ∃y. (x, y) ∈ R}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='rng_eq.htm'>rng_eq</a><br>
+rng R = {y | ∃x. (x, y) ∈ R}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='img_eq.htm'>img_eq</a><br>
+img R A = {y | ∃x. x ∈ A ∧ (x, y) ∈ R}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='inv_img_eq.htm'>inv_img_eq</a><br>
+inv_img R B = {x | ∃y. y ∈ B ∧ (x, y) ∈ R}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='app_eq.htm'>app_eq</a><br>
+app f x = ⋂{y | (x, y) ∈ f}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='relation_equi.htm'>relation_equi</a><br>
+relation R ↔ ∀t. t ∈ R → ∃x. ∃y. t = (x, y)</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='function_equi.htm'>function_equi</a><br>
+function f ↔ relation f ∧
+  ∀x. ∀y1. ∀y2. (x, y1) ∈ f → (x, y2) ∈ f → y1 = y2</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='map_equi.htm'>map_equi</a><br>
+map f X Y ↔ function f ∧ dom f = X ∧ rng f ⊆ Y</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='inj_equi.htm'>inj_equi</a><br>
+inj f X Y ↔ map f X Y ∧ ∀a. ∀b.
+  a ∈ X → b ∈ X → app f a = app f b → a = b</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='sur_equi.htm'>sur_equi</a><br>
+sur f X Y ↔ map f X Y ∧ rng f = Y</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='bij_equi.htm'>bij_equi</a><br>
+bij f X Y ↔ inj f X Y ∧ sur f X Y</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='inv_eq.htm'>inv_eq</a><br>
+inv f = {t | ∃x. ∃y. t = (y, x) ∧ (x, y) ∈ f}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='restr_eq.htm'>restr_eq</a><br>
+restr f A = f ∩ (A × UnivCl)</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='choice_function_equi.htm'>choice_function_equi</a><br>
+choice_function f ↔
+  function f ∧ ∀x. x ∈ dom f → app f x ∈ x</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='composition_eq.htm'>composition_eq</a><br>
+S ∘ R = {t | ∃x. ∃y. ∃z.
+  t = (x, z) ∧ (x, y) ∈ R ∧ (y, z) ∈ S}</div></div>
+<h2 id='1.2'>Axioms</h2>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='efq.htm'>efq</a><br>
+⊥ → A</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='lem.htm'>lem</a><br>
+A ∨ ¬A</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='equi_subst.htm'>equi_subst</a><br>
+(A ↔ B) → P A → P B</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='eq_refl.htm'>eq_refl</a><br>
+x = x</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='eq_subst.htm'>eq_subst</a><br>
+x = y → P x → P y</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='ext.htm'>ext</a><br>
+(∀x. x ∈ A ↔ x ∈ B) → A = B</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='comp.htm'>comp</a><br>
+u ∈ {x | P x} ↔ set u ∧ P u</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='pairing.htm'>pairing</a><br>
+set x → set y → set {x, y}</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='subset.htm'>subset</a><br>
+A ⊆ B → set B → set A</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='power.htm'>power</a><br>
+set M → set (power M)</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='union.htm'>union</a><br>
+set M → set (⋃M)</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='regularity.htm'>regularity</a><br>
+¬A = ∅ → ∃x. x ∈ A ∧ x ∩ A = ∅</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='infinity.htm'>infinity</a><br>
+∃A. set A ∧ (∅ ∈ A ∧ ∀x. x ∈ A → x ∪ {x} ∈ A)</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='substitution.htm'>substitution</a><br>
+function f → set (dom f) → set (rng f)</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='choice.htm'>choice</a><br>
+∃f. choice_function f ∧ dom f = UnivCl \ {∅}</div></div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 8</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='../proofs-toc.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h1>Well-founded relations</h1>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='wf_equi.htm'>wf_equi</a><br>
+wf R M ↔ ∀A. A ⊆ M → ¬A = ∅ →
+  ∃y. y ∈ A ∧ ¬∃x. x ∈ A ∧ (x, y) ∈ R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='wf_unfold.htm'>wf_unfold</a><br>
+wf R M → ∀A. A ⊆ M → ¬A = ∅ →
+  ∃y. y ∈ A ∧ ¬∃x. x ∈ A ∧ (x, y) ∈ R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='wf_induction_sets.htm'>wf_induction_sets</a><br>
+wf R M → A ⊆ M →
+  (∀x. x ∈ M → (∀y. y ∈ M → (y, x) ∈ R → y ∈ A) → x ∈ A) → A = M</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='wf_induction.htm'>wf_induction</a><br>
+wf R M →
+  (∀x. x ∈ M → (∀y. y ∈ M → (y, x) ∈ R → P y) → P x) →
+  (∀x. x ∈ M → P x)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='wf_rec_unique.htm'>wf_rec_unique</a><br>
+wf R X → dom R ⊆ X → map f X Y → map g X Y →
+  (∀x. x ∈ X → app f x = φ x (restr f (inv_img R {x}))) →
+  (∀x. x ∈ X → app g x = φ x (restr g (inv_img R {x}))) →
+  f = g</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='wf_rec_existence.htm'>wf_rec_existence</a><br>
+set X → set Y → wf R X →
+  dom R ⊆ X → (∀x. ∀g. φ x g ∈ Y) → ∃f. set f ∧ map f X Y ∧
+  ∀x. x ∈ X → app f x = φ x (restr f (inv_img R {x}))</div></div>
+</body>
+</html>

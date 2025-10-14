@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 16</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='../proofs-toc.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h1>The integers</h1>
+<h2>Table of contents</h2>
+<ol>
+<li><a href='#16.1'>Basic results</a>
+<li><a href='#16.2'>Basic inequalities</a>
+<li><a href='#16.3'>Elementary number theory</a>
+</ol>
+<h2 id='16.1'>Basic results</h2>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='int_eq.htm'>int_eq</a><br>
+ℤ = {z | z ∈ ℝ ∧
+  ∃a. ∃b. a ∈ ℕ ∧ b ∈ ℕ ∧ z = a - b}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='int_incl_in_real.htm'>int_incl_in_real</a><br>
+ℤ ⊆ ℝ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_incl_in_int.htm'>nat_incl_in_int</a><br>
+ℕ ⊆ ℤ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ineg_closed.htm'>ineg_closed</a><br>
+a ∈ ℤ → -a ∈ ℤ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='iadd_closed.htm'>iadd_closed</a><br>
+a ∈ ℤ → b ∈ ℤ → a + b ∈ ℤ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='isub_closed.htm'>isub_closed</a><br>
+a ∈ ℤ → b ∈ ℤ → a - b ∈ ℤ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='imul_closed.htm'>imul_closed</a><br>
+a ∈ ℤ → b ∈ ℤ → a⋅b ∈ ℤ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='iadd_neutl.htm'>iadd_neutl</a><br>
+a ∈ ℤ → 0 + a = a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='iadd_neutr.htm'>iadd_neutr</a><br>
+a ∈ ℤ → a + 0 = a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='isub_zero.htm'>isub_zero</a><br>
+a ∈ ℤ → a - 0 = a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='isub_self.htm'>isub_self</a><br>
+a ∈ ℤ → a - a = 0</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='imul_neutl.htm'>imul_neutl</a><br>
+a ∈ ℤ → 1⋅a = a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='imul_neutr.htm'>imul_neutr</a><br>
+a ∈ ℤ → a⋅1 = a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='imul_lzero.htm'>imul_lzero</a><br>
+a ∈ ℤ → 0⋅a = 0</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='imul_rzero.htm'>imul_rzero</a><br>
+a ∈ ℤ → a⋅0 = 0</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='iadd_comm.htm'>iadd_comm</a><br>
+a ∈ ℤ → b ∈ ℤ → a + b = b + a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='imul_comm.htm'>imul_comm</a><br>
+a ∈ ℤ → b ∈ ℤ → a⋅b = b⋅a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='iadd_assoc.htm'>iadd_assoc</a><br>
+a ∈ ℤ → b ∈ ℤ → c ∈ ℤ → (a + b) + c = a + (b + c)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='imul_distl_add.htm'>imul_distl_add</a><br>
+a ∈ ℤ → b ∈ ℤ → c ∈ ℤ → a⋅(b + c) = a⋅b + a⋅c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='imul_distr_add.htm'>imul_distr_add</a><br>
+a ∈ ℤ → b ∈ ℤ → c ∈ ℤ → (a + b)⋅c = a⋅c + b⋅c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='imul_distl_sub.htm'>imul_distl_sub</a><br>
+a ∈ ℤ → b ∈ ℤ → c ∈ ℤ → a⋅(b - c) = a⋅b - a⋅c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='imul_distr_sub.htm'>imul_distr_sub</a><br>
+a ∈ ℤ → b ∈ ℤ → c ∈ ℤ → (a - b)⋅c = a⋅c - b⋅c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='imul_compatl_neg.htm'>imul_compatl_neg</a><br>
+a ∈ ℤ → b ∈ ℤ → -(a⋅b) = (-a)⋅b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='imul_compatr_neg.htm'>imul_compatr_neg</a><br>
+a ∈ ℤ → b ∈ ℤ → -(a⋅b) = a⋅(-b)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='isub_neg.htm'>isub_neg</a><br>
+a ∈ ℤ → b ∈ ℤ → -(a - b) = b - a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='isub_cancel_middle.htm'>isub_cancel_middle</a><br>
+a ∈ ℤ → b ∈ ℤ → c ∈ ℤ →
+  (a - b) + (b - c) = a - c</div></div>
+<h2 id='16.2'>Basic inequalities</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ile_refl.htm'>ile_refl</a><br>
+a ∈ ℤ → a ≤ a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ile_antisym.htm'>ile_antisym</a><br>
+a ∈ ℤ → b ∈ ℤ → a ≤ b → b ≤ a → a = b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ile_trans.htm'>ile_trans</a><br>
+a ∈ ℤ → b ∈ ℤ → c ∈ ℤ → a ≤ b → b ≤ c → a ≤ c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ile_total.htm'>ile_total</a><br>
+a ∈ ℤ → b ∈ ℤ → a ≤ b ∨ b ≤ a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ile_compat_addl.htm'>ile_compat_addl</a><br>
+a ∈ ℤ → b ∈ ℤ → c ∈ ℤ → a ≤ b → c + a ≤ c + b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ile_compat_add.htm'>ile_compat_add</a><br>
+a ∈ ℤ → b ∈ ℤ → c ∈ ℤ → a ≤ b → a + c ≤ b + c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ile_lt_trans.htm'>ile_lt_trans</a><br>
+a ∈ ℤ → b ∈ ℤ → c ∈ ℤ →
+  a ≤ b → b &lt; c → a &lt; c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ilt_lt_trans.htm'>ilt_lt_trans</a><br>
+a ∈ ℤ → b ∈ ℤ → c ∈ ℤ →
+  a &lt; b → b &lt; c → a &lt; c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ilt_add_cancel_rr.htm'>ilt_add_cancel_rr</a><br>
+a ∈ ℤ → b ∈ ℤ → c ∈ ℤ →
+  a + c &lt; b + c → a &lt; b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ile_lt_tricho.htm'>ile_lt_tricho</a><br>
+a ∈ ℤ → b ∈ ℤ → a ≤ b ∨ b &lt; a</div></div>
+<h2 id='16.3'>Elementary number theory</h2>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='divides_equi.htm'>divides_equi</a><br>
+divides m a ↔ ∃k. k ∈ ℤ ∧ a = m⋅k</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='cong_equi.htm'>cong_equi</a><br>
+cong a b m ↔ divides m (a - b)</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='divisors_eq.htm'>divisors_eq</a><br>
+divisors a = {d | d ∈ ℕ ∧ divides d a}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='prime_equi.htm'>prime_equi</a><br>
+prime a ↔ 2 ≤ a ∧ divisors a = {1, a}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='cong_intro.htm'>cong_intro</a><br>
+k ∈ ℤ → a - b = m⋅k → cong a b m</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='cong_elim.htm'>cong_elim</a><br>
+cong a b m → ∃k. k ∈ ℤ ∧ (a - b) = m⋅k</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='cong_refl.htm'>cong_refl</a><br>
+a ∈ ℤ → m ∈ ℤ → cong a a m</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='cong_symm.htm'>cong_symm</a><br>
+a ∈ ℤ → b ∈ ℤ → m ∈ ℤ →
+  cong a b m → cong b a m</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='cong_trans.htm'>cong_trans</a><br>
+a ∈ ℤ → b ∈ ℤ → c ∈ ℤ → m ∈ ℤ →
+  cong a b m → cong b c m → cong a c m</div></div>
+</body>
+</html>

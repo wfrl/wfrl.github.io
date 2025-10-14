@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 15</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='../proofs-toc.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h1>The natural numbers</h1>
+<h2>Table of contents</h2>
+<ol>
+<li><a href='#15.1'>Basic results</a>
+<li><a href='#15.2'>Basic inequalities</a>
+<li><a href='#15.3'>Strong induction</a>
+</ol>
+<h2 id='15.1'>Basic results</h2>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='nat_eq.htm'>nat_eq</a><br>
+ℕ = ⋂{A | A ⊆ ℝ ∧ 0 ∈ A ∧ ∀n. n ∈ A → n + 1 ∈ A}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_incl_in_real.htm'>nat_incl_in_real</a><br>
+ℕ ⊆ ℝ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_is_set.htm'>nat_is_set</a><br>
+set ℕ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='zero_in_nat.htm'>zero_in_nat</a><br>
+0 ∈ ℕ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='succ_in_nat.htm'>succ_in_nat</a><br>
+n ∈ ℕ → n + 1 ∈ ℕ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_induction_sets.htm'>nat_induction_sets</a><br>
+A ⊆ ℕ → 0 ∈ A →
+  (∀n. n ∈ A → n + 1 ∈ A) → A = ℕ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_induction.htm'>nat_induction</a><br>
+P 0 → (∀n. n ∈ ℕ → P n → P (n + 1)) →
+  (∀n. n ∈ ℕ → P n)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_non_negative.htm'>nat_non_negative</a><br>
+n ∈ ℕ → 0 ≤ n</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_succ_non_zero.htm'>nat_succ_non_zero</a><br>
+n ∈ ℕ → ¬(n + 1 = 0)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_succ_inj.htm'>nat_succ_inj</a><br>
+a ∈ ℕ → b ∈ ℕ → a + 1 = b + 1 → a = b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_rec_uniqueness.htm'>nat_rec_uniqueness</a><br>
+
+  app f 0 = x0 ∧ (∀n. n ∈ ℕ → app f (n + 1) = φ n (app f n)) →
+  app g 0 = x0 ∧ (∀n. n ∈ ℕ → app g (n + 1) = φ n (app g n)) →
+  ∀n. n ∈ ℕ → app f n = app g n</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_rec_existence.htm'>nat_rec_existence</a><br>
+set X → x0 ∈ X →
+  (∀n. n ∈ ℕ → ∀x. x ∈ X → φ n x ∈ X) → ∃f. set f ∧ (map f ℕ X ∧
+  (app f 0 = x0 ∧ ∀n. n ∈ ℕ → app f (n + 1) = φ n (app f n)))</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_recursion.htm'>nat_recursion</a><br>
+set X → x0 ∈ X →
+  (∀n. n ∈ ℕ → ∀x. x ∈ X → φ n x ∈ X) → ∃g. set g ∧ ∀f. g = f ↔ map f ℕ X ∧
+  (app f 0 = x0 ∧ ∀n. n ∈ ℕ → app f (n + 1) = φ n (app f n))</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nadd_neutl.htm'>nadd_neutl</a><br>
+a ∈ ℕ → 0 + a = a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nadd_neutr.htm'>nadd_neutr</a><br>
+a ∈ ℕ → a + 0 = a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nsub_zero.htm'>nsub_zero</a><br>
+a ∈ ℕ → a - 0 = a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nmul_neutl.htm'>nmul_neutl</a><br>
+a ∈ ℕ → 1⋅a = a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nmul_neutr.htm'>nmul_neutr</a><br>
+a ∈ ℕ → a⋅1 = a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nmul_lzero.htm'>nmul_lzero</a><br>
+a ∈ ℕ → 0⋅a = 0</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nmul_rzero.htm'>nmul_rzero</a><br>
+a ∈ ℕ → a⋅0 = 0</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nadd_comm.htm'>nadd_comm</a><br>
+a ∈ ℕ → b ∈ ℕ → a + b = b + a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nmul_comm.htm'>nmul_comm</a><br>
+a ∈ ℕ → b ∈ ℕ → a⋅b = b⋅a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nadd_assoc.htm'>nadd_assoc</a><br>
+a ∈ ℕ → b ∈ ℕ → c ∈ ℕ → (a + b) + c = a + (b + c)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nmul_distl_add.htm'>nmul_distl_add</a><br>
+a ∈ ℕ → b ∈ ℕ → c ∈ ℕ → a⋅(b + c) = a⋅b + a⋅c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nmul_distr_add.htm'>nmul_distr_add</a><br>
+a ∈ ℕ → b ∈ ℕ → c ∈ ℕ → (a + b)⋅c = a⋅c + b⋅c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nmul_distl_sub.htm'>nmul_distl_sub</a><br>
+a ∈ ℕ → b ∈ ℕ → c ∈ ℕ → a⋅(b - c) = a⋅b - a⋅c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nmul_distr_sub.htm'>nmul_distr_sub</a><br>
+a ∈ ℕ → b ∈ ℕ → c ∈ ℕ → (a - b)⋅c = a⋅c - b⋅c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nmul_compatl_neg.htm'>nmul_compatl_neg</a><br>
+a ∈ ℕ → b ∈ ℕ → -(a⋅b) = (-a)⋅b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nmul_compatr_neg.htm'>nmul_compatr_neg</a><br>
+a ∈ ℕ → b ∈ ℕ → -(a⋅b) = a⋅(-b)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nadd_cancel_rr.htm'>nadd_cancel_rr</a><br>
+a ∈ ℕ → b ∈ ℕ → c ∈ ℕ →
+  a + c = b + c → a = b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nadd_closed.htm'>nadd_closed</a><br>
+a ∈ ℕ → b ∈ ℕ → a + b ∈ ℕ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nmul_closed.htm'>nmul_closed</a><br>
+a ∈ ℕ → b ∈ ℕ → a⋅b ∈ ℕ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_zero_or_succ.htm'>nat_zero_or_succ</a><br>
+n ∈ ℕ → n = 0 ∨ ∃m. m ∈ ℕ ∧ n = m + 1</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_non_zero_is_succ.htm'>nat_non_zero_is_succ</a><br>
+n ∈ ℕ → ¬n = 0 → ∃m. m ∈ ℕ ∧ n = m + 1</div></div>
+<h2 id='15.2'>Basic inequalities</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nle_refl.htm'>nle_refl</a><br>
+a ∈ ℕ → a ≤ a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nle_antisym.htm'>nle_antisym</a><br>
+a ∈ ℕ → b ∈ ℕ → a ≤ b → b ≤ a → a = b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nle_trans.htm'>nle_trans</a><br>
+a ∈ ℕ → b ∈ ℕ → c ∈ ℕ → a ≤ b → b ≤ c → a ≤ c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nle_total.htm'>nle_total</a><br>
+a ∈ ℕ → b ∈ ℕ → a ≤ b ∨ b ≤ a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nle_compat_addl.htm'>nle_compat_addl</a><br>
+a ∈ ℕ → b ∈ ℕ → c ∈ ℕ → a ≤ b → c + a ≤ c + b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nle_compat_add.htm'>nle_compat_add</a><br>
+a ∈ ℕ → b ∈ ℕ → c ∈ ℕ → a ≤ b → a + c ≤ b + c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nle_lt_trans.htm'>nle_lt_trans</a><br>
+a ∈ ℕ → b ∈ ℕ → c ∈ ℕ →
+  a ≤ b → b &lt; c → a &lt; c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nlt_lt_trans.htm'>nlt_lt_trans</a><br>
+a ∈ ℕ → b ∈ ℕ → c ∈ ℕ →
+  a &lt; b → b &lt; c → a &lt; c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nlt_add_cancel_rr.htm'>nlt_add_cancel_rr</a><br>
+a ∈ ℕ → b ∈ ℕ → c ∈ ℕ →
+  a + c &lt; b + c → a &lt; b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nle_lt_tricho.htm'>nle_lt_tricho</a><br>
+a ∈ ℕ → b ∈ ℕ → a ≤ b ∨ b &lt; a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nlt_succ.htm'>nlt_succ</a><br>
+a ∈ ℕ → a &lt; a + 1</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nlt_le_trans.htm'>nlt_le_trans</a><br>
+a ∈ ℕ → b ∈ ℕ → c ∈ ℕ →
+  a &lt; b → b ≤ c → a &lt; c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_lt_from_succ_le.htm'>nat_lt_from_succ_le</a><br>
+n ∈ ℕ → k ∈ ℕ → n + 1 ≤ k → n &lt; k</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_succ_le_from_lt.htm'>nat_succ_le_from_lt</a><br>
+n ∈ ℕ → k ∈ ℕ → n &lt; k → n + 1 ≤ k</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nle_succ_split.htm'>nle_succ_split</a><br>
+k ∈ ℕ → n ∈ ℕ → k ≤ n + 1 → k ≤ n ∨ k = n + 1</div></div>
+<h2 id='15.3'>Strong induction</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_strong_induction.htm'>nat_strong_induction</a><br>
+P 0 →
+  (∀n. n ∈ ℕ → (∀k. k ∈ ℕ → k ≤ n → P k) → P (n + 1)) →
+  (∀n. n ∈ ℕ → P n)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_strong_induction_terse.htm'>nat_strong_induction_terse</a><br>
+
+  (∀n. n ∈ ℕ → (∀k. k ∈ ℕ → k &lt; n → P k) → P n) →
+  (∀n. n ∈ ℕ → P n)</div></div>
+</body>
+</html>

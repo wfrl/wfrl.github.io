@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 12</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='../proofs-toc.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h1>Cardinal numbers</h1>
+<h2>Table of contents</h2>
+<ol>
+<li><a href='#12.1'>Numerousities</a>
+</ol>
+<h2 id='12.1'>Numerousities</h2>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='num_eq_equi.htm'>num_eq_equi</a><br>
+num_eq X Y ↔ ∃f. bij f X Y</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='num_le_equi.htm'>num_le_equi</a><br>
+num_le X Y ↔ ∃f. inj f X Y</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='num_lt_equi.htm'>num_lt_equi</a><br>
+num_lt X Y ↔ num_le X Y ∧ ¬∃f. sur f X Y</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='Map_eq.htm'>Map_eq</a><br>
+Map X Y = {f | map f X Y}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='indicator_eq.htm'>indicator_eq</a><br>
+χ A X =
+  {t | ∃x. x ∈ X \ A ∧ t = (x, ∅)} ∪
+  {t | ∃x. x ∈ A ∧ t = (x, {∅})}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_eq_intro.htm'>num_eq_intro</a><br>
+(∃f. bij f X Y) → num_eq X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_le_intro.htm'>num_le_intro</a><br>
+(∃f. inj f X Y) → num_le X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_lt_intro.htm'>num_lt_intro</a><br>
+num_le X Y → (¬∃f. sur f X Y) → num_lt X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Map_intro.htm'>Map_intro</a><br>
+map f X Y → set X → f ∈ Map X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Map_elim.htm'>Map_elim</a><br>
+f ∈ Map X Y → map f X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='indicator_is_map.htm'>indicator_is_map</a><br>
+A ⊆ X → map (χ A X) X {∅, {∅}}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='indicator_app_is_zero.htm'>indicator_app_is_zero</a><br>
+A ⊆ X → x ∈ X \ A → app (χ A X) x = ∅</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='indicator_app_is_one.htm'>indicator_app_is_one</a><br>
+A ⊆ X → x ∈ A → app (χ A X) x = {∅}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='from_indicator_app_is_one.htm'>from_indicator_app_is_one</a><br>
+A ⊆ X → x ∈ X →
+  app (χ A X) x = {∅} → x ∈ A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='power_equinum_indicators.htm'>power_equinum_indicators</a><br>
+set X →
+  num_eq (power X) (Map X {∅, {∅}})</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Cantor%27s_theorem.htm'>Cantor's_theorem</a><br>
+set X → num_lt X (power X)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Banach_decomposition_theorem.htm'>Banach_decomposition_theorem</a><br>
+set X → rng g ⊆ X →
+  ∃A. ∃B. img f A = B ∧ X \ A = img g (Y \ B)</div></div>
+</body>
+</html>

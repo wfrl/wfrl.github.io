@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>map_rng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-5.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem map_rng</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> map_rng<br>
+map f X Y → rng f ⊆ Y</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ map f X Y, <a href='hypo.htm'>hypo</a>.
+02. 1 ⊢ function f ∧ dom f = X ∧ rng f ⊆ Y, <a href='map_unfold.htm'>map_unfold</a> 1.
+03. 1 ⊢ rng f ⊆ Y, <a href='conj_elimr.htm'>conj_elimr</a> 2.
+map_rng. ⊢ map f X Y → rng f ⊆ Y, <a href='subj_intro.htm'>subj_intro</a> 3.
+</pre>
+</body>
+</html>

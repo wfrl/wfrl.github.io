@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 9</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='../proofs-toc.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h1>The natural numbers as ordinals</h1>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='onat_eq.htm'>onat_eq</a><br>
+onat = ⋂{A | ∅ ∈ A ∧ ∀n. n ∈ A → n ∪ {n} ∈ A}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='succ_eq.htm'>succ_eq</a><br>
+succ n = n ∪ {n}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='onat_is_set.htm'>onat_is_set</a><br>
+set onat</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='succ_is_set.htm'>succ_is_set</a><br>
+set n → set (succ n)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='zero_in_onat.htm'>zero_in_onat</a><br>
+∅ ∈ onat</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='succ_in_onat.htm'>succ_in_onat</a><br>
+n ∈ onat → succ n ∈ onat</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='onat_induction_sets.htm'>onat_induction_sets</a><br>
+A ⊆ onat → ∅ ∈ A →
+  (∀n. n ∈ A → succ n ∈ A) → A = onat</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='onat_induction.htm'>onat_induction</a><br>
+P ∅ → (∀n. n ∈ onat → P n → P (succ n)) →
+  (∀n. n ∈ onat → P n)</div></div>
+</body>
+</html>

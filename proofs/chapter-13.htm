@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 13</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='../proofs-toc.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h1>Ordinal numbers</h1>
+<h2>Table of contents</h2>
+<ol>
+<li><a href='#13.1'>Transitive sets</a>
+<li><a href='#13.2'>Ordinal numbers</a>
+</ol>
+<h2 id='13.1'>Transitive sets</h2>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='transitive_equi.htm'>transitive_equi</a><br>
+transitive x ↔ ∀u. u ∈ x → u ⊆ x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='transitive_elim.htm'>transitive_elim</a><br>
+transitive x → u ∈ x → u ⊆ x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='transitive_intro.htm'>transitive_intro</a><br>
+(∀u. u ∈ x → u ⊆ x) → transitive x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='transitive_closed_succ.htm'>transitive_closed_succ</a><br>
+set x → transitive x →
+  transitive (x ∪ {x})</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='transitive_closed_Intersection.htm'>transitive_closed_Intersection</a><br>
+
+  (∀x. x ∈ M → transitive x) → transitive (⋂M)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='transitive_closed_Union.htm'>transitive_closed_Union</a><br>
+(∀x. x ∈ M → transitive x) →
+  transitive (⋃M)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='transitive_closed_power.htm'>transitive_closed_power</a><br>
+transitive x →
+  transitive (power x)</div></div>
+<h2 id='13.2'>Ordinal numbers</h2>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='well_order_equi.htm'>well_order_equi</a><br>
+well_order R M ↔ wf R M ∧
+  (∀x. ∀y. ∀z. (x, y) ∈ R → (y, z) ∈ R → (x, z) ∈ R) ∧
+  (∀x. ∀y. ¬(¬((x, y) ∈ R ↔ x = y) ↔ (y, x) ∈ R))</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='diag_rl_eq.htm'>diag_rl_eq</a><br>
+diag_rl = {t | ∃x. ∃y. t = (x, y) ∧ x ∈ y}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='On_eq.htm'>On_eq</a><br>
+On = Univ ∩ {α | transitive α ∧ ∀x. x ∈ α → transitive x}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='on_lt_equi.htm'>on_lt_equi</a><br>
+on_lt = {t | ∃α. ∃β.
+  α ∈ On ∧ β ∈ On ∧ α ∈ β ∧ t = (α, β)}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='On_is_transitive.htm'>On_is_transitive</a><br>
+β ∈ On → β ⊆ On</div></div>
+</body>
+</html>

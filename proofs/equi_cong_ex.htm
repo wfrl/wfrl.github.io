@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>equi_cong_ex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-2.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem equi_cong_ex</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> equi_cong_ex<br>
+(∀x. P x ↔ Q x) →
+  ((∃x. P x) ↔ (∃x. Q x))</div></div>
+<p>Congruence rule of logical equivalence with
+respect to existential quantification.</p>
+<pre><b>Proof</b>
+01. 1 ⊢ ∀x. P x ↔ Q x, <a href='hypo.htm'>hypo</a>.
+02. 1 ⊢ P u ↔ Q u, <a href='uq_elim.htm'>uq_elim</a> 1.
+03. 3 ⊢ ∃x. P x, <a href='hypo.htm'>hypo</a>.
+04. 4 ⊢ P u, <a href='hypo.htm'>hypo</a>.
+05. 1, 4 ⊢ Q u, <a href='lsubj_elim.htm'>lsubj_elim</a> 2 4.
+06. 1, 4 ⊢ ∃x. Q x, <a href='ex_intro.htm'>ex_intro</a> 5.
+07. 1, 3 ⊢ ∃x. Q x, <a href='ex_elim.htm'>ex_elim</a> 3 6.
+08. 1 ⊢ (∃x. P x) → (∃x. Q x), <a href='subj_intro.htm'>subj_intro</a> 7.
+09. 9 ⊢ ∃x. Q x, <a href='hypo.htm'>hypo</a>.
+10. 10 ⊢ Q u, <a href='hypo.htm'>hypo</a>.
+11. 1, 10 ⊢ P u, <a href='rsubj_elim.htm'>rsubj_elim</a> 2 10.
+12. 1, 10 ⊢ ∃x. P x, <a href='ex_intro.htm'>ex_intro</a> 11.
+13. 1, 9 ⊢ ∃x. P x, <a href='ex_elim.htm'>ex_elim</a> 9 12.
+14. 1 ⊢ (∃x. Q x) → (∃x. P x), <a href='subj_intro.htm'>subj_intro</a> 13.
+15. 1 ⊢ (∃x. P x) ↔ (∃x. Q x), <a href='bij_intro.htm'>bij_intro</a> 8 14.
+equi_cong_ex. ⊢ (∀x. P x ↔ Q x) →
+  ((∃x. P x) ↔ (∃x. Q x)), <a href='subj_intro.htm'>subj_intro</a> 15.
+</pre>
+</body>
+</html>

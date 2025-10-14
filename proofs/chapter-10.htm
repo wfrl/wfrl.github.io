@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 10</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='../proofs-toc.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h1>Closure operators</h1>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='clop_equi.htm'>clop_equi</a><br>
+closure_operator H U ↔
+  set U ∧ map H (power U) (power U) ∧
+  (∀X. X ⊆ U → X ⊆ app H X) ∧
+  (∀X. ∀Y. X ⊆ Y → Y ⊆ U → app H X ⊆ app H Y) ∧
+  (∀X. X ⊆ U → app H (app H X) ⊆ app H X)</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='closure_system_equi.htm'>closure_system_equi</a><br>
+closure_system M U ↔
+  M ⊆ power U ∧ U ∈ M ∧ ∀T. T ⊆ M → ¬T=∅ → ⋂T ∈ M</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='clop_app_in_cod.htm'>clop_app_in_cod</a><br>
+closure_operator H U → X ⊆ U →
+  app H X ⊆ U</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='clop_extensivity.htm'>clop_extensivity</a><br>
+closure_operator H U →
+  X ⊆ U → X ⊆ app H X</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='clop_monotony.htm'>clop_monotony</a><br>
+closure_operator H U →
+  X ⊆ Y → Y ⊆ U → app H X ⊆ app H Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='clop_idem.htm'>clop_idem</a><br>
+closure_operator H U →
+  X ⊆ U → app H (app H X) = app H X</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='clop_from_closure_system.htm'>clop_from_closure_system</a><br>
+closure_system M U →
+  H = {t | ∃X. X ∈ power U ∧ t = (X, ⋂{A | A ∈ M ∧ X ⊆ A})} →
+  closure_operator H U</div></div>
+</body>
+</html>

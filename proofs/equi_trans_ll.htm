@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>equi_trans_ll</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-2.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem equi_trans_ll</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> equi_trans_ll<br>
+(C ↔ A) → (C ↔ B) → (A ↔ B)</div></div>
+<p>Transitive law of logical equivalence with left
+hand sides bridging. This variant of <a href='equi_trans.htm'>equi_trans</a> allows the omission
+of <a href='equi_symm.htm'>equi_symm</a>, which improves ergonomics.</p>
+<pre><b>Proof</b>
+01. 1 ⊢ C ↔ A, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ C ↔ B, <a href='hypo.htm'>hypo</a>.
+03. 1 ⊢ A ↔ C, <a href='equi_symm.htm'>equi_symm</a> 1.
+04. 1, 2 ⊢ A ↔ B, <a href='equi_trans.htm'>equi_trans</a> 3 2.
+equi_trans_ll. ⊢ (C ↔ A) → (C ↔ B) → (A ↔ B),
+  <a href='subj_intro_ii.htm'>subj_intro_ii</a> 4.
+</pre>
+</body>
+</html>

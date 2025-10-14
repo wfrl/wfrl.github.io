@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>neg_subj_rev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-2.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem neg_subj_rev</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> neg_subj_rev<br>
+A ∧ ¬B → ¬(A → B)</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ A ∧ ¬B, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ A → B, <a href='hypo.htm'>hypo</a>.
+03. 1 ⊢ A, <a href='conj_eliml.htm'>conj_eliml</a> 1.
+04. 1, 2 ⊢ B, <a href='subj_elim.htm'>subj_elim</a> 2 3.
+05. 1 ⊢ ¬B, <a href='conj_elimr.htm'>conj_elimr</a> 1.
+06. 1, 2 ⊢ ⊥, <a href='neg_elim.htm'>neg_elim</a> 5 4.
+07. 1 ⊢ ¬(A → B), <a href='neg_intro.htm'>neg_intro</a> 6.
+neg_subj_rev. ⊢ A ∧ ¬B → ¬(A → B),
+  <a href='subj_intro.htm'>subj_intro</a> 7.
+</pre>
+</body>
+</html>

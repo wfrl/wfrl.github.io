@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='../proofs-toc.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h1>Classical logic</h1>
+<h2>Table of contents</h2>
+<ol>
+<li><a href='#2.1'>Inference rules</a>
+<li><a href='#2.2'>Propositional logic</a><ol>
+<li><a href='#2.2.1'>The relationship of EFQ, LEM, DNE</a>
+<li><a href='#2.2.2'>Projection lemmata</a>
+<li><a href='#2.2.3'>Useful theorems</a>
+<li><a href='#2.2.4'>De Morgan's laws</a>
+<li><a href='#2.2.5'>Congruence laws of equivalence</a>
+</ol>
+<li><a href='#2.3'>First order logic</a><ol>
+<li><a href='#2.3.1'>Bounded quantification</a>
+<li><a href='#2.3.2'>De Morgan's laws</a>
+<li><a href='#2.3.3'>Congruence laws of equivalence</a>
+</ol>
+<li><a href='#2.4'>First order logic with equality</a><ol>
+<li><a href='#2.4.1'>Useful theorems</a>
+<li><a href='#2.4.2'>Unique existence</a>
+</ol>
+</ol>
+<h2 id='2.1'>Inference rules</h2>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='hypo.htm'>hypo</a><br>
+(⊤ ∧ A ⊢ A)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='conj_intro.htm'>conj_intro</a><br>
+(H1 ⊢ A) → (H2 ⊢ B) → (H1 ∧ H2 ⊢ A ∧ B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='conj_eliml.htm'>conj_eliml</a><br>
+(H ⊢ A ∧ B) → (H ⊢ A)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='conj_elimr.htm'>conj_elimr</a><br>
+(H ⊢ A ∧ B) → (H ⊢ B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='disj_introl.htm'>disj_introl</a><br>
+(H ⊢ A) → (H ⊢ A ∨ B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='disj_intror.htm'>disj_intror</a><br>
+(H ⊢ B) → (H ⊢ A ∨ B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='disj_elim.htm'>disj_elim</a><br>
+(H1 ⊢ A ∨ B) → (H2 ∧ A ⊢ C) → (H3 ∧ B ⊢ C) →
+  (H1 ∧ H2 ∧ H3 ⊢ C)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='subj_intro.htm'>subj_intro</a><br>
+(H ∧ A ⊢ B) → (H ⊢ A → B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='subj_elim.htm'>subj_elim</a><br>
+(H1 ⊢ A → B) → (H2 ⊢ A) → (H1 ∧ H2 ⊢ B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='neg_intro.htm'>neg_intro</a><br>
+(H ∧ A ⊢ ⊥) → (H ⊢ ¬A)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='neg_elim.htm'>neg_elim</a><br>
+(H1 ⊢ ¬A) → (H2 ⊢ A) → (H1 ∧ H2 ⊢ ⊥)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='bij_intro.htm'>bij_intro</a><br>
+(H1 ⊢ A → B) → (H2 ⊢ B → A) → (H1 ∧ H2 ⊢ A ↔ B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='bij_eliml.htm'>bij_eliml</a><br>
+(H ⊢ A ↔ B) → (H ⊢ A → B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='bij_elimr.htm'>bij_elimr</a><br>
+(H ⊢ A ↔ B) → (H ⊢ B → A)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='wk.htm'>wk</a><br>
+(H ⊢ B) → (H ∧ A ⊢ B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='exch.htm'>exch</a><br>
+(H ⊢ A) → (H ⊢ A)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='uq_intro.htm'>uq_intro</a><br>
+(nf u (H ∧ ∀x. P x)) → (H ⊢ P u) → (H ⊢ ∀x. P x)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='uq_elim.htm'>uq_elim</a><br>
+(H ⊢ ∀x. P x) → (H ⊢ P t)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='ex_intro.htm'>ex_intro</a><br>
+(H ⊢ P t) → (H ⊢ ∃x. P x)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='ex_elim.htm'>ex_elim</a><br>
+(nf u (H1 ∧ H2 ∧ B ∧ ∃x. P x)) →
+  (H1 ⊢ ∃x. P x) → (H2 ∧ P u ⊢ B) → (H1 ∧ H2 ⊢ B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='subj_intro_ii.htm'>subj_intro_ii</a><br>
+(H ∧ A ∧ B ⊢ C) → (H ⊢ A → B → C)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='subj_intro_iii.htm'>subj_intro_iii</a><br>
+(H ∧ A ∧ B ∧ C ⊢ D) → (H ⊢ A → B → C → D)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='subj_intro_iv.htm'>subj_intro_iv</a><br>
+(H ∧ A ∧ B ∧ C ∧ D ⊢ E) → (H ⊢ A → B → C → D → E)</div></div>
+<h2 id='2.2'>Propositional logic</h2>
+<h3 id='2.2.1'>The relationship of EFQ, LEM, DNE</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dne.htm'>dne</a><br>
+¬¬A → A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='efq_from_dne.htm'>efq_from_dne</a><br>
+(¬¬A → A) → (⊥ → A)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lem_from_dne.htm'>lem_from_dne</a><br>
+A ∨ ¬A</div></div>
+<h3 id='2.2.2'>Projection lemmata</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='conj_elimll.htm'>conj_elimll</a><br>
+A ∧ B ∧ C → A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='conj_elimlr.htm'>conj_elimlr</a><br>
+A ∧ B ∧ C → B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='conj_elimrl.htm'>conj_elimrl</a><br>
+A ∧ (B ∧ C) → B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='conj_elimrr.htm'>conj_elimrr</a><br>
+A ∧ (B ∧ C) → C</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='conj_elimlll.htm'>conj_elimlll</a><br>
+A ∧ B ∧ C ∧ D → A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='conj_elimllr.htm'>conj_elimllr</a><br>
+A ∧ B ∧ C ∧ D → B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lsubj_elim.htm'>lsubj_elim</a><br>
+(A ↔ B) → A → B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rsubj_elim.htm'>rsubj_elim</a><br>
+(A ↔ B) → B → A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lsubj_conj_eliml.htm'>lsubj_conj_eliml</a><br>
+(E ↔ A ∧ B) → E → A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lsubj_conj_elimr.htm'>lsubj_conj_elimr</a><br>
+(E ↔ A ∧ B) → E → B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lsubj_conj_elimll.htm'>lsubj_conj_elimll</a><br>
+(E ↔ A ∧ B ∧ C) → E → A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lsubj_conj_elimlr.htm'>lsubj_conj_elimlr</a><br>
+(E ↔ A ∧ B ∧ C) → E → B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lsubj_conj_elimlll.htm'>lsubj_conj_elimlll</a><br>
+(E ↔ A ∧ B ∧ C ∧ D) → E → A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lsubj_conj_elimllr.htm'>lsubj_conj_elimllr</a><br>
+(E ↔ A ∧ B ∧ C ∧ D) → E → B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rsubj_tollens.htm'>rsubj_tollens</a><br>
+(A ↔ B) → ¬A → ¬B</div></div>
+<h3 id='2.2.3'>Useful theorems</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='diag_contra.htm'>diag_contra</a><br>
+(A ↔ ¬A) → ⊥</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dn_intro.htm'>dn_intro</a><br>
+A → ¬¬A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='contraposition.htm'>contraposition</a><br>
+(A → B) → ¬B → ¬A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='contraposition_rev.htm'>contraposition_rev</a><br>
+(¬A → ¬B) → (B → A)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='subj_from_disj.htm'>subj_from_disj</a><br>
+(¬A ∨ B) → (A → B)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='disj_from_subj.htm'>disj_from_subj</a><br>
+(A → B) → ¬A ∨ B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='tollendo_ponens_left.htm'>tollendo_ponens_left</a><br>
+A ∨ B → ¬B → A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='tollendo_ponens_right.htm'>tollendo_ponens_right</a><br>
+A ∨ B → ¬A → B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='hypothetical_syllogism.htm'>hypothetical_syllogism</a><br>
+(A → B) → (B → C) → (A → C)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='equi_refl.htm'>equi_refl</a><br>
+A ↔ A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='equi_symm.htm'>equi_symm</a><br>
+(A ↔ B) → (B ↔ A)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='equi_trans.htm'>equi_trans</a><br>
+(A ↔ B) → (B ↔ C) → (A ↔ C)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='equi_trans_ll.htm'>equi_trans_ll</a><br>
+(C ↔ A) → (C ↔ B) → (A ↔ B)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='equi_trans_rr.htm'>equi_trans_rr</a><br>
+(A ↔ C) → (B ↔ C) → (A ↔ B)</div></div>
+<h3 id='2.2.4'>De Morgan's laws</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_conj.htm'>neg_conj</a><br>
+¬(A ∧ B) → ¬A ∨ ¬B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_conj_rev.htm'>neg_conj_rev</a><br>
+¬A ∨ ¬B → ¬(A ∧ B)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_conj_equi.htm'>neg_conj_equi</a><br>
+¬(A ∧ B) ↔ ¬A ∨ ¬B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_disj.htm'>neg_disj</a><br>
+¬(A ∨ B) → ¬A ∧ ¬B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_disj_rev.htm'>neg_disj_rev</a><br>
+¬A ∧ ¬B → ¬(A ∨ B)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_disj_equi.htm'>neg_disj_equi</a><br>
+¬(A ∨ B) ↔ ¬A ∧ ¬B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_subj.htm'>neg_subj</a><br>
+¬(A → B) → A ∧ ¬B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_subj_rev.htm'>neg_subj_rev</a><br>
+A ∧ ¬B → ¬(A → B)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_subj_equi.htm'>neg_subj_equi</a><br>
+¬(A → B) ↔ A ∧ ¬B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='contraposition_rev_ii.htm'>contraposition_rev_ii</a><br>
+(¬A → ¬B → ¬C) → C → A ∨ B</div></div>
+<h3 id='2.2.5'>Congruence laws of equivalence</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='equi_cong_neg.htm'>equi_cong_neg</a><br>
+(A ↔ A') → (¬A ↔ ¬A')</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='equi_cong_conj.htm'>equi_cong_conj</a><br>
+(A ↔ A') → (B ↔ B') →
+  (A ∧ B ↔ A' ∧ B')</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='equi_cong_disj.htm'>equi_cong_disj</a><br>
+(A ↔ A') → (B ↔ B') →
+  (A ∨ B ↔ A' ∨ B')</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='equi_cong_subj.htm'>equi_cong_subj</a><br>
+(A ↔ A') → (B ↔ B') →
+  ((A → B) ↔ (A' → B'))</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='equi_cong_bij.htm'>equi_cong_bij</a><br>
+(A ↔ A') → (B ↔ B') →
+  ((A ↔ B) ↔ (A' ↔ B'))</div></div>
+<h2 id='2.3'>First order logic</h2>
+<h3 id='2.3.1'>Bounded quantification</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='uq_bounded_elim.htm'>uq_bounded_elim</a><br>
+(∀x. E x → P x) → E u → P u</div></div>
+<h3 id='2.3.2'>De Morgan's laws</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_ex.htm'>neg_ex</a><br>
+(¬∃x. P x) → (∀x. ¬P x)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_ex_rev.htm'>neg_ex_rev</a><br>
+(∀x. ¬P x) → (¬∃x. P x)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_ex_equi.htm'>neg_ex_equi</a><br>
+(¬∃x. P x) ↔ (∀x. ¬P x)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_uq.htm'>neg_uq</a><br>
+(¬∀x. P x) → (∃x. ¬P x)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_uq_rev.htm'>neg_uq_rev</a><br>
+(∃x. ¬P x) → (¬∀x. P x)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_uq_equi.htm'>neg_uq_equi</a><br>
+(¬∀x. P x) ↔ (∃x. ¬P x)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_uq_bounded.htm'>neg_uq_bounded</a><br>
+(¬∀x. P x → Q x) → (∃x. P x ∧ ¬Q x)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_ex_bounded.htm'>neg_ex_bounded</a><br>
+(¬∃x. P x ∧ Q x) → (∀x. P x → ¬Q x)</div></div>
+<h3 id='2.3.3'>Congruence laws of equivalence</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='equi_cong_uq.htm'>equi_cong_uq</a><br>
+(∀x. P x ↔ Q x) →
+  ((∀x. P x) ↔ (∀x. Q x))</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='equi_cong_ex.htm'>equi_cong_ex</a><br>
+(∀x. P x ↔ Q x) →
+  ((∃x. P x) ↔ (∃x. Q x))</div></div>
+<h2 id='2.4'>First order logic with equality</h2>
+<h3 id='2.4.1'>Useful theorems</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='eq_symm.htm'>eq_symm</a><br>
+x = y → y = x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='eq_subst_rev.htm'>eq_subst_rev</a><br>
+y = x → P x → P y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='eq_cong.htm'>eq_cong</a><br>
+x = y → f x = f y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='eq_cong_ii.htm'>eq_cong_ii</a><br>
+x = a → y = b → f x y = f a b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='eq_trans.htm'>eq_trans</a><br>
+x = y → y = z → x = z</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='eq_trans_ll.htm'>eq_trans_ll</a><br>
+y = x → y = z → x = z</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='eq_trans_rr.htm'>eq_trans_rr</a><br>
+x = y → z = y → x = z</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neq_symm.htm'>neq_symm</a><br>
+¬x = y → ¬y = x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='disused_eq.htm'>disused_eq</a><br>
+(∀x. x = y → A) → A</div></div>
+<h3 id='2.4.2'>Unique existence</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ex_uniq_intro.htm'>ex_uniq_intro</a><br>
+(∃x. P x) → (∀x. ∀y. P x → P y → x = y) →
+  (∃x. ∀y. x = y ↔ P y)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ex_uniq_eliml.htm'>ex_uniq_eliml</a><br>
+(∃x. ∀y. x = y ↔ P y) → (∃x. P x)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ex_uniq_elimr.htm'>ex_uniq_elimr</a><br>
+(∃x. ∀y. x = y ↔ P y) → P x → P y → x = y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ex_uniq_set_intro.htm'>ex_uniq_set_intro</a><br>
+(∃x. S x ∧ P x) → (∀x. ∀y. P x → P y → x = y) →
+  (∃x. S x ∧ ∀y. x = y ↔ P y)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ex_uniq_set_elimr.htm'>ex_uniq_set_elimr</a><br>
+(∃x. S x ∧ ∀y. x = y ↔ P y) → P x → P y → x = y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ex_uniq_from_mixed_form.htm'>ex_uniq_from_mixed_form</a><br>
+(∃x. P x ∧ ∀y. P y → x = y) →
+  (∃x. ∀y. x = y ↔ P y)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ex_uniq_set_from_mixed_form.htm'>ex_uniq_set_from_mixed_form</a><br>
+(∃x. S x ∧ P x ∧ ∀y. P y → x = y) →
+  (∃x. S x ∧ ∀y. x = y ↔ P y)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ex_weaken_conj.htm'>ex_weaken_conj</a><br>
+(∀x. P x → Q x) → (∃x. P x ∧ R x) →
+  (∃x. Q x ∧ R x)</div></div>
+</body>
+</html>

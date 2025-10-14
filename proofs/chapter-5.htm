@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 5</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='../proofs-toc.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h1>Functions</h1>
+<h2>Table of contents</h2>
+<ol>
+<li><a href='#5.1'>Functionhood</a>
+<li><a href='#5.2'>Function application</a>
+<li><a href='#5.3'>Function composition</a>
+<li><a href='#5.4'>Restricted functions</a>
+<li><a href='#5.5'>Images and inverse images</a>
+<li><a href='#5.6'>Special functions</a>
+<li><a href='#5.7'>Partly functional relations</a>
+<li><a href='#5.8'>Injections, surjections, bijections</a>
+<li><a href='#5.9'>Choice functions</a>
+</ol>
+<h2 id='5.1'>Functionhood</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='function_unfold.htm'>function_unfold</a><br>
+function f → relation f ∧
+  (∀x. ∀y1. ∀y2. (x, y1) ∈ f → (x, y2) ∈ f → y1 = y2)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_unfold.htm'>map_unfold</a><br>
+map f X Y → function f ∧ dom f = X ∧ rng f ⊆ Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='function_intro.htm'>function_intro</a><br>
+relation f →
+  (∀x. ∀y1. ∀y2. (x, y1) ∈ f → (x, y2) ∈ f → y1 = y2) →
+  function f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_is_rel.htm'>fn_is_rel</a><br>
+function f → relation f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_unique_value.htm'>fn_unique_value</a><br>
+function f → (x, y1) ∈ f → (x, y2) ∈ f → y1 = y2</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_is_function.htm'>map_is_function</a><br>
+map f X Y → function f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_is_relation.htm'>map_is_relation</a><br>
+map f X Y → relation f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_intro.htm'>map_intro</a><br>
+function f → dom f = X → rng f ⊆ Y → map f X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_is_map.htm'>fn_is_map</a><br>
+function f → dom f = X → map f X UnivCl</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_dom.htm'>map_dom</a><br>
+map f X Y → dom f = X</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_rng.htm'>map_rng</a><br>
+map f X Y → rng f ⊆ Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='function_subclass.htm'>function_subclass</a><br>
+f ⊆ g → function g → function f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='function_union.htm'>function_union</a><br>
+function f → function g → dom f ∩ dom g = ∅ →
+  function (f ∪ g)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_union.htm'>map_union</a><br>
+map f X1 Y1 → map g X2 Y2 → X1 ∩ X2 = ∅ →
+  map (f ∪ g) (X1 ∪ X2) (Y1 ∪ Y2)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_union_eq_rngs.htm'>map_union_eq_rngs</a><br>
+map f X1 Y → map g X2 Y → X1 ∩ X2 = ∅ →
+  map (f ∪ g) (X1 ∪ X2) Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='subclass_dom_from_ex_uniq.htm'>subclass_dom_from_ex_uniq</a><br>
+
+  (∀x. x ∈ X → ∃z. ∀y. z = y ↔ (x, y) ∈ f) →
+  X ⊆ dom f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='subclass_dom_from_ex_uniq_in_cod.htm'>subclass_dom_from_ex_uniq_in_cod</a><br>
+
+  (∀x. x ∈ X → ∃z. z ∈ Y ∧ ∀y. z = y ↔ (x, y) ∈ f) →
+  X ⊆ dom f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_from_ex_uniq.htm'>map_from_ex_uniq</a><br>
+f ⊆ X × Y →
+  (∀x. x ∈ X → ∃b. ∀y. b = y ↔ (x, y) ∈ f) → map f X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_rng_weaken.htm'>map_rng_weaken</a><br>
+map f X Y → Y ⊆ Z → map f X Z</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_incl_in_prod.htm'>map_incl_in_prod</a><br>
+map f X Y → f ⊆ X × Y</div></div>
+<h2 id='5.2'>Function application</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='sg_eq_from_uniq.htm'>sg_eq_from_uniq</a><br>
+set x → (∀y. x = y ↔ P y) → {x} = {y | P y}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='sg_eq_from_ex_uniq.htm'>sg_eq_from_ex_uniq</a><br>
+(∃b. set b ∧ ∀y. b = y ↔ P y) →
+  (∃b. set b ∧ {b} = {y | P y})</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='iota_intro.htm'>iota_intro</a><br>
+ P u → (∃a. set a ∧ ∀x. a = x ↔ P x) →
+  u = ⋂{x | P x}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='iota_elim.htm'>iota_elim</a><br>
+u = ⋂{x |P x} → (∃a. set a ∧ ∀x. a = x ↔ P x) → P u</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_img_lemma.htm'>fn_img_lemma</a><br>
+function f → x ∈ dom f →
+  ∃y. set y ∧ {y} = {y | (x, y) ∈ f}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='app_intro_lemma.htm'>app_intro_lemma</a><br>
+(∃y. set y ∧ {y} = {y | (x, y) ∈ f}) →
+  (x, y) ∈ f → y = app f x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='app_elim_lemma.htm'>app_elim_lemma</a><br>
+(∃y. set y ∧ {y} = {y | (x, y) ∈ f}) →
+  y = app f x → (x, y) ∈ f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='app_intro.htm'>app_intro</a><br>
+function f → (x, y) ∈ f → y = app f x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='app_elim.htm'>app_elim</a><br>
+function f → x ∈ dom f → y = app f x → (x, y) ∈ f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_app_intro.htm'>map_app_intro</a><br>
+map f X Y → (x, y) ∈ f → y = app f x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_app_elim.htm'>map_app_elim</a><br>
+map f X Y → x ∈ X → y = app f x → (x, y) ∈ f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_extensionality_lemma.htm'>map_extensionality_lemma</a><br>
+map f X Y → map g X Y →
+  (∀x. x ∈ X → app f x = app g x) → f ⊆ g</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_extensionality.htm'>map_extensionality</a><br>
+map f X Y → map g X Y →
+  (∀x. x ∈ X → app f x = app g x) → f = g</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_app_exists.htm'>fn_app_exists</a><br>
+function f → x ∈ dom f → ∃y. y ∈ rng f ∧ y = app f x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_app_exists.htm'>map_app_exists</a><br>
+map f X Y → x ∈ X → ∃y. y ∈ Y ∧ y = app f x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='app_is_set.htm'>app_is_set</a><br>
+function f → x ∈ dom f → set (app f x)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_app_in_cod.htm'>map_app_in_cod</a><br>
+map f X Y → x ∈ X → app f x ∈ Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_app_is_set.htm'>map_app_is_set</a><br>
+map f X Y → x ∈ X → set (app f x)</div></div>
+<h2 id='5.3'>Function composition</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_from_term_plain.htm'>fn_from_term_plain</a><br>
+f = {t | ∃x. t = (x, y x)} → function f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_from_term.htm'>fn_from_term</a><br>
+f = {t | ∃x. P x ∧ t = (x, y x)} → function f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dom_from_term.htm'>dom_from_term</a><br>
+f = {t | ∃x. x ∈ X ∧ t = (x, y x)} →
+  (∀x. x ∈ X → set (y x)) → dom f = X</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_from_term.htm'>rng_from_term</a><br>
+f = {t | ∃x. x ∈ X ∧ t = (x, y x)} →
+  (∀x. x ∈ X → y x ∈ Y) → rng f ⊆ Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_from_term.htm'>map_from_term</a><br>
+f = {t | ∃x. x ∈ X ∧ t = (x, y x)} →
+  (∀x. x ∈ X → y x ∈ Y) → map f X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_from_term_app.htm'>map_from_term_app</a><br>
+f = {t | ∃x. x ∈ X ∧ t = (x, y x)} →
+  (∀x. x ∈ X → y x ∈ Y) → x ∈ X → app f x = y x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='composition_is_map.htm'>composition_is_map</a><br>
+map f X Y → map g Y Z → map (g ∘ f) X Z</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_app_composition.htm'>map_app_composition</a><br>
+map f X Y → map g Y Z → x ∈ X →
+  app (g ∘ f) x = app g (app f x)</div></div>
+<h2 id='5.4'>Restricted functions</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='restr_is_subclass.htm'>restr_is_subclass</a><br>
+restr f A ⊆ f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='restr_intro.htm'>restr_intro</a><br>
+(x, y) ∈ f → x ∈ A → (x, y) ∈ restr f A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='restr_is_function.htm'>restr_is_function</a><br>
+function f → function (restr f A)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dom_restr.htm'>dom_restr</a><br>
+dom (restr f A) = dom f ∩ A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dom_restr_subclass.htm'>dom_restr_subclass</a><br>
+map f X Y → A ⊆ X →
+  dom (restr f A) = A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_restr.htm'>map_restr</a><br>
+map f X Y → A ⊆ X → map (restr f A) A Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='app_restr.htm'>app_restr</a><br>
+map f X Y → A ⊆ X → x ∈ A → app f x = app (restr f A) x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_app_restr.htm'>fn_app_restr</a><br>
+function f → x ∈ dom f → x ∈ A → app f x = app (restr f A) x</div></div>
+<h2 id='5.5'>Images and inverse images</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_img_of_dom_is_rng.htm'>map_img_of_dom_is_rng</a><br>
+map f X Y → img f X = rng f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_rng_elim.htm'>map_rng_elim</a><br>
+map f X Y → y ∈ rng f →
+  ∃x. x ∈ X ∧ y = app f x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_inv_img_dist_inter.htm'>fn_inv_img_dist_inter</a><br>
+function f →
+  inv_img f (A ∩ B) = inv_img f A ∩ inv_img f B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='restr_img_self.htm'>restr_img_self</a><br>
+img f A ⊆ img (restr f A) A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='replacement.htm'>replacement</a><br>
+function f → A ⊆ dom f → set A → set (img f A)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='replacement_strong.htm'>replacement_strong</a><br>
+function f → set A → set (img f A)</div></div>
+<h2 id='5.6'>Special functions</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='empty_function.htm'>empty_function</a><br>
+function ∅</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='empty_map.htm'>empty_map</a><br>
+map ∅ ∅ Y</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='id_eq.htm'>id_eq</a><br>
+id X = {t | ∃x. x ∈ X ∧ t = (x, x)}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='id_is_map.htm'>id_is_map</a><br>
+map (id X) X X</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='id_app.htm'>id_app</a><br>
+x ∈ X → app (id X) x = x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='id_img.htm'>id_img</a><br>
+A ⊆ X → img (id X) A = A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='id_neutl.htm'>id_neutl</a><br>
+map f X Y → id Y ∘ f = f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='id_neutr.htm'>id_neutr</a><br>
+map f X Y → f ∘ id X = f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='sg_function.htm'>sg_function</a><br>
+set a → set b → function {(a, b)}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='sg_map.htm'>sg_map</a><br>
+set a → b ∈ Y → map {(a, b)} {a} Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='img_graph2.htm'>img_graph2</a><br>
+set x → set y → img {(∅, x), ({∅}, y)} {∅, {∅}} = {x, y}</div></div>
+<h2 id='5.7'>Partly functional relations</h2>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='fn_on_equi.htm'>fn_on_equi</a><br>
+fn_on f A ↔ relation f ∧ ∀x. x ∈ A →
+  ∃z. set z ∧ ∀y. z = y ↔ (x, y) ∈ f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_on_intro.htm'>fn_on_intro</a><br>
+relation f →
+  (∀x. x ∈ A → ∃z. set z ∧ ∀y. z = y ↔ (x, y) ∈ f) →
+  fn_on f A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_on_intro_cod.htm'>fn_on_intro_cod</a><br>
+relation f →
+  (∀x. x ∈ A → ∃z. z ∈ Y ∧ ∀y. z = y ↔ (x, y) ∈ f) →
+  fn_on f A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='relation_from_fn_on.htm'>relation_from_fn_on</a><br>
+fn_on f A → relation f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ex_uniq_from_fn_on.htm'>ex_uniq_from_fn_on</a><br>
+fn_on f A → ∀x. x ∈ A →
+  ∃z. set z ∧ ∀y. z = y ↔ (x, y) ∈ f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_on_from_function.htm'>fn_on_from_function</a><br>
+function f → A ⊆ dom f → fn_on f A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_on_from_map.htm'>fn_on_from_map</a><br>
+map f X Y → A ⊆ X → fn_on f A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='function_from_fn_on.htm'>function_from_fn_on</a><br>
+fn_on f X → dom f ⊆ X → function f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_on_app_intro.htm'>fn_on_app_intro</a><br>
+fn_on f A → x ∈ A → (x, y) ∈ f →
+  y = app f x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_on_app_elim.htm'>fn_on_app_elim</a><br>
+fn_on f A → x ∈ A → y = app f x →
+  (x, y) ∈ f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_on_extensionality.htm'>fn_on_extensionality</a><br>
+fn_on f A → fn_on g A →
+  (∀x. x ∈ A → app f x = app g x) →
+  restr f A = restr g A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_on_char.htm'>fn_on_char</a><br>
+A ⊆ dom f →
+  (fn_on f A ↔ relation f ∧ function (restr f A))</div></div>
+<h2 id='5.8'>Injections, surjections, bijections</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inj_is_map.htm'>inj_is_map</a><br>
+inj f X Y → map f X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inj_elim.htm'>inj_elim</a><br>
+inj f X Y →
+  a ∈ X → b ∈ X → app f a = app f b → a = b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inj_intro.htm'>inj_intro</a><br>
+map f X Y →
+  (∀a. ∀b. a ∈ X → b ∈ X → app f a = app f b → a = b) →
+  inj f X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='sur_is_map.htm'>sur_is_map</a><br>
+sur f X Y → map f X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='sur_elim.htm'>sur_elim</a><br>
+sur f X Y → rng f = Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='sur_intro.htm'>sur_intro</a><br>
+map f X Y → Y ⊆ rng f → sur f X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='bij_is_map.htm'>bij_is_map</a><br>
+bij f X Y → map f X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='bij_is_inj.htm'>bij_is_inj</a><br>
+bij f X Y → inj f X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='bij_is_sur.htm'>bij_is_sur</a><br>
+bij f X Y → sur f X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='bij_from_inj_sur.htm'>bij_from_inj_sur</a><br>
+inj f X Y → sur f X Y → bij f X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='composition_inj_inj_is_inj.htm'>composition_inj_inj_is_inj</a><br>
+inj f X Y → inj g Y Z → inj (g ∘ f) X Z</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='composition_sur_sur_is_sur.htm'>composition_sur_sur_is_sur</a><br>
+sur f X Y → sur g Y Z →
+  sur (g ∘ f) X Z</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='composition_bij_bij_is_bij.htm'>composition_bij_bij_is_bij</a><br>
+bij f X Y → bij g Y Z →
+  bij (g ∘ f) X Z</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inj_from_left_inv.htm'>inj_from_left_inv</a><br>
+map f X Y → (∃g. map g Y X ∧ g ∘ f = id X) →
+  inj f X Y</div></div>
+<h2 id='5.9'>Choice functions</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='choice_fn_unfold.htm'>choice_fn_unfold</a><br>
+choice_function f →
+  function f ∧ ∀x. x ∈ dom f → app f x ∈ x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='choice_function_intro.htm'>choice_function_intro</a><br>
+function f →
+  (∀x. x ∈ dom f → app f x ∈ x) →
+  choice_function f</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='restr_is_choice_fn.htm'>restr_is_choice_fn</a><br>
+choice_function f →
+  choice_function (restr f A)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='choice_on_class.htm'>choice_on_class</a><br>
+∃f. choice_function f ∧ dom f = A \ {∅}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Diaconescu_Goodman_Myhill_theorem.htm'>Diaconescu_Goodman_Myhill_theorem</a><br>
+
+  (∀M. ∃f. choice_function f ∧ dom f = M \ {∅}) →
+  A ∨ ¬A</div></div>
+</body>
+</html>

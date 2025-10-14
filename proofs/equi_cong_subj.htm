@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>equi_cong_subj</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-2.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem equi_cong_subj</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> equi_cong_subj<br>
+(A ↔ A') → (B ↔ B') →
+  ((A → B) ↔ (A' → B'))</div></div>
+<p>Congruence rule of logical equivalence with
+respect to subjunction.</p>
+<pre><b>Proof</b>
+01. 1 ⊢ A ↔ A', <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ B ↔ B', <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ A → B, <a href='hypo.htm'>hypo</a>.
+04. 4 ⊢ A', <a href='hypo.htm'>hypo</a>.
+05. 1, 4 ⊢ A, <a href='rsubj_elim.htm'>rsubj_elim</a> 1 4.
+06. 1, 3, 4 ⊢ B, <a href='subj_elim.htm'>subj_elim</a> 3 5.
+07. 1, 2, 3, 4 ⊢ B', <a href='lsubj_elim.htm'>lsubj_elim</a> 2 6.
+08. 1, 2 ⊢ (A → B) → (A' → B'), <a href='subj_intro_ii.htm'>subj_intro_ii</a> 7.
+09. 9 ⊢ A' → B', <a href='hypo.htm'>hypo</a>.
+10. 10 ⊢ A, <a href='hypo.htm'>hypo</a>.
+11. 1, 10 ⊢ A', <a href='lsubj_elim.htm'>lsubj_elim</a> 1 10.
+12. 1, 9, 10 ⊢ B', <a href='subj_elim.htm'>subj_elim</a> 9 11.
+13. 1, 2, 9, 10 ⊢ B, <a href='rsubj_elim.htm'>rsubj_elim</a> 2 12.
+14. 1, 2 ⊢ (A' → B') → (A → B), <a href='subj_intro_ii.htm'>subj_intro_ii</a> 13.
+15. 1, 2 ⊢ (A → B) ↔ (A' → B'), <a href='bij_intro.htm'>bij_intro</a> 8 14.
+equi_cong_subj. ⊢ (A ↔ A') → (B ↔ B') →
+  ((A → B) ↔ (A' → B')), <a href='subj_intro_ii.htm'>subj_intro_ii</a> 15.
+</pre>
+</body>
+</html>

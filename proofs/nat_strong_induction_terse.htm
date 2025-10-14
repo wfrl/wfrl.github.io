@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>nat_strong_induction_terse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-15.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem nat_strong_induction_terse</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> nat_strong_induction_terse<br>
+
+  (∀n. n ∈ ℕ → (∀k. k ∈ ℕ → k &lt; n → P k) → P n) →
+  (∀n. n ∈ ℕ → P n)</div></div>
+<pre><b>Proof</b>
+let Q n ↔ (∀k. k ∈ ℕ → k &lt; n → P k).
+01. 1 ⊢ ∀n. n ∈ ℕ → Q n → P n, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ k ∈ ℕ, <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ k &lt; 0, <a href='hypo.htm'>hypo</a>.
+04. 2 ⊢ 0 ≤ k, <a href='nat_non_negative.htm'>nat_non_negative</a> 2.
+05. 2 ⊢ k ∈ ℝ, <a href='incl_elim.htm'>incl_elim</a> <a href='nat_incl_in_real.htm'>nat_incl_in_real</a> 2.
+06. 2, 3 ⊢ ⊥, <a href='rlt_le_contra.htm'>rlt_le_contra</a> 5 3 4.
+07. 2, 3 ⊢ P k, <a href='efq.htm'>efq</a> 6.
+08. ⊢ k ∈ ℕ → k &lt; 0 → P k, <a href='subj_intro_ii.htm'>subj_intro_ii</a> 7.
+09. ⊢ Q 0, <a href='uq_intro.htm'>uq_intro</a> 8.
+
+10. 10 ⊢ n ∈ ℕ, <a href='hypo.htm'>hypo</a>.
+11. 11 ⊢ Q n, <a href='hypo.htm'>hypo</a>.
+12. 1, 10 ⊢ Q n → P n, <a href='uq_bounded_elim.htm'>uq_bounded_elim</a> 1 10.
+13. 1, 10, 11 ⊢ P n, <a href='subj_elim.htm'>subj_elim</a> 12 11.
+14. 14 ⊢ k ∈ ℕ, <a href='hypo.htm'>hypo</a>.
+15. 15 ⊢ k &lt; n + 1, <a href='hypo.htm'>hypo</a>.
+16. 10 ⊢ n + 1 ∈ ℕ, <a href='succ_in_nat.htm'>succ_in_nat</a> 10.
+17. 10, 14, 15 ⊢ k + 1 ≤ n + 1,
+  <a href='nat_succ_le_from_lt.htm'>nat_succ_le_from_lt</a> 14 16 15.
+18. 14 ⊢ k + 1 ∈ ℕ, <a href='succ_in_nat.htm'>succ_in_nat</a> 14.
+19. 10, 14, 15 ⊢ k + 1 ≤ n ∨ k + 1 = n + 1,
+  <a href='nle_succ_split.htm'>nle_succ_split</a> 18 10 17.
+20. 20 ⊢ k + 1 ≤ n, <a href='hypo.htm'>hypo</a>.
+21. 10, 14, 20 ⊢ k &lt; n, <a href='nat_lt_from_succ_le.htm'>nat_lt_from_succ_le</a> 14 10 20.
+22. 11, 14 ⊢ k &lt; n → P k, <a href='uq_bounded_elim.htm'>uq_bounded_elim</a> 11 14.
+23. 10, 11, 14, 20 ⊢ P k, <a href='subj_elim.htm'>subj_elim</a> 22 21.
+24. 24 ⊢ k + 1 = n + 1, <a href='hypo.htm'>hypo</a>.
+25. ⊢ 1 ∈ ℕ, calc.
+26. 10, 14, 24 ⊢ k = n, <a href='nadd_cancel_rr.htm'>nadd_cancel_rr</a> 14 10 25 24.
+27. 1, 10, 11, 14, 24 ⊢ P k, <a href='eq_subst_rev.htm'>eq_subst_rev</a> 26 13.
+28. 1, 10, 11, 14, 15 ⊢ P k, <a href='disj_elim.htm'>disj_elim</a> 19 23 27.
+29. 1, 10, 11 ⊢ k ∈ ℕ → k &lt; n + 1 → P k, <a href='subj_intro_ii.htm'>subj_intro_ii</a> 28.
+30. 1, 10, 11 ⊢ Q (n + 1), <a href='uq_intro.htm'>uq_intro</a> 29.
+31. 1 ⊢ n ∈ ℕ → Q n → Q (n + 1), <a href='subj_intro_ii.htm'>subj_intro_ii</a> 30.
+32. 1 ⊢ ∀n. n ∈ ℕ → Q n → Q (n + 1), <a href='uq_intro.htm'>uq_intro</a> 31.
+
+33. ⊢ A 0 → (∀n. n ∈ ℕ → A n → A (n + 1)) → (∀n. n ∈ ℕ → A n),
+  <a href='nat_induction.htm'>nat_induction</a>, P n ↔ A n.
+34. 1 ⊢ ∀n. n ∈ ℕ → Q n, 33 9 32, A n ↔ Q n.
+35. 35 ⊢ n ∈ ℕ, <a href='hypo.htm'>hypo</a>.
+36. 35 ⊢ n + 1 ∈ ℕ, <a href='succ_in_nat.htm'>succ_in_nat</a> 35.
+37. 1, 35 ⊢ Q (n + 1), <a href='uq_bounded_elim.htm'>uq_bounded_elim</a> 34 36.
+38. 1, 35 ⊢ n &lt; n + 1 → P n, <a href='uq_bounded_elim.htm'>uq_bounded_elim</a> 37 35.
+39. 35 ⊢ n &lt; n + 1, <a href='nlt_succ.htm'>nlt_succ</a> 35.
+40. 1, 35 ⊢ P n, <a href='subj_elim.htm'>subj_elim</a> 38 39.
+41. 1 ⊢ n ∈ ℕ → P n, <a href='subj_intro.htm'>subj_intro</a> 40.
+42. 1 ⊢ ∀n. n ∈ ℕ → P n, <a href='uq_intro.htm'>uq_intro</a> 41.
+nat_strong_induction_terse. ⊢
+  (∀n. n ∈ ℕ → (∀k. k ∈ ℕ → k &lt; n → P k) → P n) →
+  (∀n. n ∈ ℕ → P n), <a href='subj_intro.htm'>subj_intro</a> 42.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on 19 axioms:<br><a href='comp.htm'>comp</a>, <a href='efq.htm'>efq</a>, <a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='ext.htm'>ext</a>, <a href='lem.htm'>lem</a>, <a href='radd_assoc.htm'>radd_assoc</a>, <a href='radd_closed.htm'>radd_closed</a>, <a href='radd_comm.htm'>radd_comm</a>, <a href='radd_inv.htm'>radd_inv</a>, <a href='radd_neutr.htm'>radd_neutr</a>, <a href='real_is_set.htm'>real_is_set</a>, <a href='rle_antisym.htm'>rle_antisym</a>, <a href='rle_compat_add.htm'>rle_compat_add</a>, <a href='rle_refl.htm'>rle_refl</a>, <a href='rle_total.htm'>rle_total</a>, <a href='rle_trans.htm'>rle_trans</a>, <a href='rneg_closed.htm'>rneg_closed</a>, <a href='subset.htm'>subset</a>.</p>
+</body>
+</html>

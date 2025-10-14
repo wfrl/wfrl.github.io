@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 7</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='../proofs-toc.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h1>Orders</h1>
+<h2>Table of contents</h2>
+<ol>
+<li><a href='#7.1'>General concepts</a>
+<li><a href='#7.2'>Partial orders</a>
+<li><a href='#7.3'>Power set lattice</a>
+</ol>
+<h2 id='7.1'>General concepts</h2>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='is_max_equi.htm'>is_max_equi</a><br>
+is_max R y A ↔ y ∈ A ∧ ∀x. x ∈ A → R x y</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='is_min_equi.htm'>is_min_equi</a><br>
+is_min R y A ↔ y ∈ A ∧ ∀x. x ∈ A → R y x</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='is_supremum_equi.htm'>is_supremum_equi</a><br>
+is_supremum R M y A ↔
+  (∀x. x ∈ A → R x y) ∧
+  (∀b. b ∈ M → (∀x. x ∈ A → R x b) → R y b)</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='is_infimum_equi.htm'>is_infimum_equi</a><br>
+is_infimum R M y A ↔
+  (∀x. x ∈ A → R y x) ∧
+  (∀b. b ∈ M → (∀x. x ∈ A → R b x) → R b y)</div></div>
+<h2 id='7.2'>Partial orders</h2>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='po_equi.htm'>po_equi</a><br>
+partial_order R M ↔
+  (∀x. x ∈ M → R x x) ∧
+  (∀x. ∀y. x ∈ M → y ∈ M → R x y → R y x → x = y) ∧
+  (∀x. ∀y. ∀z. x ∈ M → y ∈ M → z ∈ M → R x y → R y z → R x z)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='po_refl.htm'>po_refl</a><br>
+partial_order R M → x ∈ M → R x x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='po_antisym.htm'>po_antisym</a><br>
+partial_order R M → x ∈ M → y ∈ M →
+  R x y → R y x → x = y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='po_trans.htm'>po_trans</a><br>
+partial_order R M → x ∈ M → y ∈ M → z ∈ M →
+  R x y → R y z → R x z</div></div>
+<h2 id='7.3'>Power set lattice</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='incl_Knaster_Tarski_least.htm'>incl_Knaster_Tarski_least</a><br>
+set a → map f (power a) (power a) →
+  (∀x. ∀y. y ⊆ a → x ⊆ y → app f x ⊆ app f y) →
+  ∃u. u ⊆ a ∧ app f u = u ∧ (∀x. x ⊆ a → app f x = x → u ⊆ x)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='incl_Knaster_Tarski_greatest.htm'>incl_Knaster_Tarski_greatest</a><br>
+set a →
+  map f (power a) (power a) →
+  (∀x. ∀y. y ⊆ a → x ⊆ y → app f x ⊆ app f y) →
+  ∃u. u ⊆ a ∧ app f u = u ∧ (∀x. x ⊆ a → app f x = x → x ⊆ u)</div></div>
+</body>
+</html>

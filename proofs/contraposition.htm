@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>contraposition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-2.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem contraposition</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> contraposition<br>
+(A → B) → ¬B → ¬A</div></div>
+<p>Two rules are automatically derived from this
+theorem. When applied to one argument, the contraposition rule<br>
+&nbsp;&nbsp;(H ⊢ A → B) → (H ⊢ ¬B → ¬A),<br>
+and when applied to two arguments, the modus tollens<br>
+&nbsp;&nbsp;(H1 ⊢ A → B) → (H2 ⊢ ¬B) → (H1 ∧ H2 ⊢ ¬A).<br>
+<br>
+<b>Proof sketch</b><br>
+From the premises A → B and ¬B we need to derive the conclusion ¬A.
+This means, from the additional premise A we need to derive a
+contradiction. First, B follows from A&nbsp;→&nbsp;B and A. But then we have
+both ¬B and B, which is already a contradiction. q.e.d.</p>
+<pre><b>Proof</b>
+01. 1 ⊢ ¬B, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ A → B, <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ A, <a href='hypo.htm'>hypo</a>.
+04. 2, 3 ⊢ B, <a href='subj_elim.htm'>subj_elim</a> 2 3.
+05. 1, 2, 3 ⊢ ⊥, <a href='neg_elim.htm'>neg_elim</a> 1 4.
+06. 2, 1 ⊢ ¬A, <a href='neg_intro.htm'>neg_intro</a> 5.
+07. 2 ⊢ ¬B → ¬A, <a href='subj_intro.htm'>subj_intro</a> 6.
+contraposition. ⊢ (A → B) → ¬B → ¬A, <a href='subj_intro.htm'>subj_intro</a> 7.
+</pre>
+</body>
+</html>

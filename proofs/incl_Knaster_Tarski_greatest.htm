@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>incl_Knaster_Tarski_greatest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-7.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem incl_Knaster_Tarski_greatest</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> incl_Knaster_Tarski_greatest<br>
+set a →
+  map f (power a) (power a) →
+  (∀x. ∀y. y ⊆ a → x ⊆ y → app f x ⊆ app f y) →
+  ∃u. u ⊆ a ∧ app f u = u ∧ (∀x. x ⊆ a → app f x = x → x ⊆ u)</div></div>
+<pre><b>Proof</b>
+let M = {x | x ⊆ a ∧ x ⊆ app f x}.
+let w = ⋃M.
+01. 1 ⊢ set a, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ map f (power a) (power a), <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ ∀x. ∀y. y ⊆ a → x ⊆ y → app f x ⊆ app f y, <a href='hypo.htm'>hypo</a>.
+
+04. 4 ⊢ x ∈ M, <a href='hypo.htm'>hypo</a>.
+05. 4 ⊢ x ⊆ a ∧ x ⊆ app f x, <a href='comp_elim.htm'>comp_elim</a> 4.
+06. 4 ⊢ x ⊆ a, <a href='conj_eliml.htm'>conj_eliml</a> 5.
+07. ⊢ x ∈ M → x ⊆ a, <a href='subj_intro.htm'>subj_intro</a> 6.
+08. ⊢ ∀x. x ∈ M → x ⊆ a, <a href='uq_intro.htm'>uq_intro</a> 7.
+10. ⊢ w ⊆ a, <a href='Union_is_supremum.htm'>Union_is_supremum</a> 8.
+
+11. 11 ⊢ x ∈ M, <a href='hypo.htm'>hypo</a>.
+12. ⊢ w = w, <a href='eq_refl.htm'>eq_refl</a>.
+13. 11 ⊢ x ⊆ w, <a href='Union_is_upper_bound.htm'>Union_is_upper_bound</a> 12 11.
+14. 3 ⊢ ∀y. y ⊆ a → x ⊆ y → app f x ⊆ app f y, <a href='uq_elim.htm'>uq_elim</a> 3.
+15. 3 ⊢ x ⊆ w → app f x ⊆ app f w, <a href='uq_bounded_elim.htm'>uq_bounded_elim</a> 14 10.
+16. 3, 11 ⊢ app f x ⊆ app f w, <a href='subj_elim.htm'>subj_elim</a> 15 13.
+17. 11 ⊢ x ⊆ a ∧ x ⊆ app f x, <a href='comp_elim.htm'>comp_elim</a> 11.
+18. 11 ⊢ x ⊆ app f x, <a href='conj_elimr.htm'>conj_elimr</a> 17.
+19. 3, 11 ⊢ x ⊆ app f w, <a href='incl_trans.htm'>incl_trans</a> 18 16.
+20. 3 ⊢ x ∈ M → x ⊆ app f w, <a href='subj_intro.htm'>subj_intro</a> 19.
+21. 3 ⊢ ∀x. x ∈ M → x ⊆ app f w, <a href='uq_intro.htm'>uq_intro</a> 20.
+22. 3 ⊢ w ⊆ app f w, <a href='Union_is_supremum.htm'>Union_is_supremum</a> 21.
+
+24. 1 ⊢ set w, <a href='subset.htm'>subset</a> 10 1.
+25. 1 ⊢ w ∈ power a, <a href='power_intro.htm'>power_intro</a> 24 10.
+26. 1, 2 ⊢ app f w ∈ power a, <a href='map_app_in_cod.htm'>map_app_in_cod</a> 2 25.
+27. 1, 2 ⊢ app f w ⊆ a, <a href='power_elim.htm'>power_elim</a> 26.
+28. 3 ⊢ ∀y. y ⊆ a → w ⊆ y → app f w ⊆ app f y, <a href='uq_elim.htm'>uq_elim</a> 3.
+29. 1, 2, 3 ⊢ w ⊆ app f w → app f w ⊆ app f (app f w),
+  <a href='uq_bounded_elim.htm'>uq_bounded_elim</a> 28 27.
+30. 1, 2, 3 ⊢ app f w ⊆ app f (app f w), <a href='subj_elim.htm'>subj_elim</a> 29 22.
+31. 1, 2, 3 ⊢ app f w ⊆ a ∧ app f w ⊆ app f (app f w),
+  <a href='conj_intro.htm'>conj_intro</a> 27 30.
+32. 1, 2 ⊢ set (app f w), <a href='subset.htm'>subset</a> 27 1.
+33. 1, 2, 3 ⊢ app f w ∈ M,
+  <a href='comp_intro.htm'>comp_intro</a> 32 31, P x ↔ x ⊆ a ∧ x ⊆ app f x.
+34. 1, 2, 3 ⊢ app f w ⊆ w, <a href='Union_is_upper_bound.htm'>Union_is_upper_bound</a> 12 33.
+
+35. 1, 2, 3 ⊢ app f w = w, <a href='incl_antisym.htm'>incl_antisym</a> 34 22.
+36. 36 ⊢ x ⊆ a, <a href='hypo.htm'>hypo</a>.
+37. 37 ⊢ app f x = x, <a href='hypo.htm'>hypo</a>.
+38. 37 ⊢ x ⊆ app f x, <a href='incl_from_eq_rev.htm'>incl_from_eq_rev</a> 37.
+39. 36, 37 ⊢ x ⊆ a ∧ x ⊆ app f x, <a href='conj_intro.htm'>conj_intro</a> 36 38.
+40. 1, 36 ⊢ set x, <a href='subset.htm'>subset</a> 36 1.
+41. 1, 36, 37 ⊢ x ∈ M, <a href='comp_intro.htm'>comp_intro</a> 40 39.
+42. 1, 36, 37 ⊢ x ⊆ w, <a href='Union_is_upper_bound.htm'>Union_is_upper_bound</a> 12 41.
+43. 1 ⊢ x ⊆ a → app f x = x → x ⊆ w, <a href='subj_intro_ii.htm'>subj_intro_ii</a> 42.
+44. 1 ⊢ ∀x. x ⊆ a → app f x = x → x ⊆ w, <a href='uq_intro.htm'>uq_intro</a> 43.
+45. 1, 2, 3 ⊢ w ⊆ a ∧ app f w = w, <a href='conj_intro.htm'>conj_intro</a> 10 35.
+46. 1, 2, 3 ⊢ w ⊆ a ∧ app f w = w ∧
+  (∀x. x ⊆ a → app f x = x → x ⊆ w), <a href='conj_intro.htm'>conj_intro</a> 45 44.
+47. 1, 2, 3 ⊢ ∃u. u ⊆ a ∧ app f u = u ∧
+  (∀x. x ⊆ a → app f x = x → x ⊆ u), <a href='ex_intro.htm'>ex_intro</a> 46.
+incl_Knaster_Tarski_greatest. ⊢ set a →
+  map f (power a) (power a) →
+  (∀x. ∀y. y ⊆ a → x ⊆ y → app f x ⊆ app f y) →
+  ∃u. u ⊆ a ∧ app f u = u ∧ (∀x. x ⊆ a → app f x = x → x ⊆ u),
+  <a href='subj_intro_iii.htm'>subj_intro_iii</a> 47.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on seven axioms:<br><a href='comp.htm'>comp</a>, <a href='efq.htm'>efq</a>, <a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='ext.htm'>ext</a>, <a href='lem.htm'>lem</a>, <a href='subset.htm'>subset</a>.</p>
+</body>
+</html>
