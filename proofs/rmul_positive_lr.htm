@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>rmul_positive_lr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-14.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem rmul_positive_lr</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> rmul_positive_lr<br>
+a ∈ ℝ → b ∈ ℝ →
+  0 &lt; a → 0 &lt; a⋅b → 0 &lt; b</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ a ∈ ℝ, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ b ∈ ℝ, <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ 0 &lt; a, <a href='hypo.htm'>hypo</a>.
+04. 4 ⊢ 0 &lt; a⋅b, <a href='hypo.htm'>hypo</a>.
+05. 1, 2 ⊢ a⋅b = b⋅a, <a href='rmul_comm.htm'>rmul_comm</a> 1 2.
+06. 1, 2, 4 ⊢ 0 &lt; b⋅a, <a href='lt_eq_trans.htm'>lt_eq_trans</a> 4 5.
+07. 1, 3 ⊢ 0 &lt; /a, <a href='rinv_positive.htm'>rinv_positive</a> 1 3.
+08. 3 ⊢ ¬(0 = a), <a href='neq_from_lt.htm'>neq_from_lt</a> 3.
+09. 3 ⊢ ¬(a = 0), <a href='neq_symm.htm'>neq_symm</a> 8.
+10. 1, 3 ⊢ /a ∈ ℝ, <a href='rinv_closed.htm'>rinv_closed</a> 1 9.
+11. ⊢ 0 ∈ ℝ, calc.
+12. 1, 2 ⊢ b⋅a ∈ ℝ, <a href='rmul_closed.htm'>rmul_closed</a> 2 1.
+13. 1, 2, 3, 4 ⊢ 0⋅/a &lt; b⋅a⋅/a, <a href='rlt_compat_mulr.htm'>rlt_compat_mulr</a> 11 12 10 6 7.
+14. 1, 2, 3 ⊢ b⋅a⋅/a = b, <a href='rmul_cancel_inv.htm'>rmul_cancel_inv</a> 2 1 9.
+15. 1, 3 ⊢ 0⋅/a = 0, <a href='rmul_lzero.htm'>rmul_lzero</a> 10.
+16. 1, 3 ⊢ 0 = 0⋅/a, <a href='eq_symm.htm'>eq_symm</a> 15.
+17. 1, 2, 3, 4 ⊢ 0⋅/a &lt; b, <a href='lt_eq_trans.htm'>lt_eq_trans</a> 13 14.
+18. 1, 2, 3, 4 ⊢ 0 &lt; b, <a href='eq_lt_trans.htm'>eq_lt_trans</a> 16 17.
+rmul_positive_lr. ⊢ a ∈ ℝ → b ∈ ℝ →
+  0 &lt; a → 0 &lt; a⋅b → 0 &lt; b, <a href='subj_intro_iv.htm'>subj_intro_iv</a> 18.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on 20 axioms:<br><a href='efq.htm'>efq</a>, <a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='radd_assoc.htm'>radd_assoc</a>, <a href='radd_closed.htm'>radd_closed</a>, <a href='radd_comm.htm'>radd_comm</a>, <a href='radd_inv.htm'>radd_inv</a>, <a href='radd_neutr.htm'>radd_neutr</a>, <a href='rinv_closed.htm'>rinv_closed</a>, <a href='rle_compat_add.htm'>rle_compat_add</a>, <a href='rle_compat_mul.htm'>rle_compat_mul</a>, <a href='rle_refl.htm'>rle_refl</a>, <a href='rle_total.htm'>rle_total</a>, <a href='rmul_assoc.htm'>rmul_assoc</a>, <a href='rmul_closed.htm'>rmul_closed</a>, <a href='rmul_comm.htm'>rmul_comm</a>, <a href='rmul_distl_add.htm'>rmul_distl_add</a>, <a href='rmul_inv.htm'>rmul_inv</a>, <a href='rmul_neutr.htm'>rmul_neutr</a>, <a href='rneg_closed.htm'>rneg_closed</a>.</p>
+</body>
+</html>

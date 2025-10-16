@@ -32,7 +32,7 @@ x ∈ ℝ → y ∈ ℝ →
 14. 14 ⊢ ¬0 ≤ y, <a href='hypo.htm'>hypo</a>.
 15. 2, 14 ⊢ abs y = -y, <a href='rabs_eqr.htm'>rabs_eqr</a> 2 14.
 16. ⊢ 0 ∈ ℝ, calc.
-17. 2, 14 ⊢ y ≤ 0, <a href='rle_neg.htm'>rle_neg</a> 16 2 14.
+17. 2, 14 ⊢ y ≤ 0, <a href='rle_neg_le.htm'>rle_neg_le</a> 16 2 14.
 18. 1, 2, 4, 14 ⊢ x⋅y ≤ 0, <a href='rmul_nn_np.htm'>rmul_nn_np</a> 1 2 4 17.
 19. 1, 2, 4, 14 ⊢ abs (x⋅y) = -(x⋅y), <a href='rabs_non_positive.htm'>rabs_non_positive</a> 10 18.
 20. 1, 2 ⊢ -(x⋅y) = x⋅(-y), <a href='rmul_compatr_neg.htm'>rmul_compatr_neg</a> 1 2.
@@ -44,7 +44,7 @@ x ∈ ℝ → y ∈ ℝ →
 24. 1, 2, 4 ⊢ abs (x⋅y) = (abs x)⋅(abs y), <a href='disj_elim.htm'>disj_elim</a> 6 13 23.
 
 25. 25 ⊢ ¬0 ≤ x, <a href='hypo.htm'>hypo</a>.
-26. 1, 25 ⊢ x ≤ 0, <a href='rle_neg.htm'>rle_neg</a> 16 1 25.
+26. 1, 25 ⊢ x ≤ 0, <a href='rle_neg_le.htm'>rle_neg_le</a> 16 1 25.
 27. 1, 25 ⊢ abs x = -x, <a href='rabs_non_positive.htm'>rabs_non_positive</a> 1 26.
 28. ⊢ 0 ≤ y ∨ ¬0 ≤ y, <a href='lem.htm'>lem</a>.
 29. 29 ⊢ 0 ≤ y, <a href='hypo.htm'>hypo</a>.
@@ -59,7 +59,7 @@ x ∈ ℝ → y ∈ ℝ →
   <a href='eq_subst_rev.htm'>eq_subst_rev</a> 30 35, P t ↔ abs (x⋅y) = (abs x)⋅t.
 37. 37 ⊢ ¬0 ≤ y, <a href='hypo.htm'>hypo</a>.
 38. 2, 37 ⊢ abs y = -y, <a href='rabs_eqr.htm'>rabs_eqr</a> 2 37.
-39. 2, 37 ⊢ y ≤ 0, <a href='rle_neg.htm'>rle_neg</a> 16 2 37.
+39. 2, 37 ⊢ y ≤ 0, <a href='rle_neg_le.htm'>rle_neg_le</a> 16 2 37.
 40. 1, 2, 25, 37 ⊢ 0 ≤ x⋅y, <a href='rmul_np_np.htm'>rmul_np_np</a> 1 2 26 39.
 41. 1, 2, 25, 37 ⊢ abs (x⋅y) = x⋅y, <a href='rabs_eql.htm'>rabs_eql</a> 10 40.
 42. 1, 2 ⊢ (-x)⋅(-y) = x⋅y, <a href='rmul_cancel_neg.htm'>rmul_cancel_neg</a> 1 2.

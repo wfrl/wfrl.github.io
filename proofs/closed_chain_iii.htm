@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>closed_chain_iii</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-2.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem closed_chain_iii</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> closed_chain_iii<br>
+(A → B) → (B → C) → (C → A) →
+  (A ↔ B) ∧ (A ↔ C) ∧ (B ↔ C)</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ A → B, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ B → C, <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ C → A, <a href='hypo.htm'>hypo</a>.
+04. 1, 2 ⊢ A → C, <a href='hypothetical_syllogism.htm'>hypothetical_syllogism</a> 1 2.
+05. 2, 3 ⊢ B → A, <a href='hypothetical_syllogism.htm'>hypothetical_syllogism</a> 2 3.
+06. 1, 3 ⊢ C → B, <a href='hypothetical_syllogism.htm'>hypothetical_syllogism</a> 3 1.
+07. 1, 2, 3 ⊢ A ↔ B, <a href='bij_intro.htm'>bij_intro</a> 1 5.
+08. 1, 2, 3 ⊢ A ↔ C, <a href='bij_intro.htm'>bij_intro</a> 4 3.
+09. 1, 2, 3 ⊢ B ↔ C, <a href='bij_intro.htm'>bij_intro</a> 2 6.
+10. 1, 2, 3 ⊢ (A ↔ B) ∧ (A ↔ C), <a href='conj_intro.htm'>conj_intro</a> 7 8.
+11. 1, 2, 3 ⊢ (A ↔ B) ∧ (A ↔ C) ∧ (B ↔ C), <a href='conj_intro.htm'>conj_intro</a> 10 9.
+closed_chain_iii. ⊢ (A → B) → (B → C) → (C → A) →
+  (A ↔ B) ∧ (A ↔ C) ∧ (B ↔ C), <a href='subj_intro_iii.htm'>subj_intro_iii</a> 11.
+</pre>
+</body>
+</html>

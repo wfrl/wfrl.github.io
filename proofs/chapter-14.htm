@@ -152,10 +152,6 @@ a ∈ ℝ → b ∈ ℝ →
 a ∈ ℝ → b ∈ ℝ → -(a + b) = -a + -b</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rsub_neg.htm'>rsub_neg</a><br>
 a ∈ ℝ → b ∈ ℝ → -(a - b) = b - a</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rdiv_closed.htm'>rdiv_closed</a><br>
-a ∈ ℝ → b ∈ ℝ → ¬b = 0 → a/b ∈ ℝ</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rreci_closed.htm'>rreci_closed</a><br>
-a ∈ ℝ → ¬a = 0 → 1/a ∈ ℝ</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rdiv_reci.htm'>rdiv_reci</a><br>
 a ∈ ℝ → ¬a = 0 → 1/a = /a</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rdiv_self.htm'>rdiv_self</a><br>
@@ -174,6 +170,18 @@ a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rdiv_dist_sub.htm'>rdiv_dist_sub</a><br>
 a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
   ¬c = 0 → (a - b)/c = a/c - b/c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rmul_cancel_inv.htm'>rmul_cancel_inv</a><br>
+a ∈ ℝ → b ∈ ℝ →
+  ¬(b = 0) → a⋅b⋅/b = a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rmul_cancel.htm'>rmul_cancel</a><br>
+a ∈ ℝ → b ∈ ℝ →
+  ¬(b = 0) → a⋅b/b = a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rmul_cancel_rr.htm'>rmul_cancel_rr</a><br>
+a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
+   ¬(c = 0) → a⋅c = b⋅c → a = b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rdiv_cancel.htm'>rdiv_cancel</a><br>
+a ∈ ℝ → b ∈ ℝ →
+  ¬(b = 0) → (a/b)⋅b = a</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rsq_non_zero.htm'>rsq_non_zero</a><br>
 a ∈ ℝ → ¬a = 0 → ¬a⋅a = 0</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rsq_is_zero_impl.htm'>rsq_is_zero_impl</a><br>
@@ -235,8 +243,14 @@ a &lt; b → ¬a = b</div></div>
 a &lt; b → a ≤ b</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lt_intro.htm'>lt_intro</a><br>
 a ≤ b → ¬a = b → a &lt; b</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rle_neg.htm'>rle_neg</a><br>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rle_neg_le.htm'>rle_neg_le</a><br>
 a ∈ ℝ → b ∈ ℝ → ¬a ≤ b → b ≤ a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rle_neg.htm'>rle_neg</a><br>
+a ∈ ℝ → b ∈ ℝ →
+  ¬(a ≤ b) → b &lt; a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_neg.htm'>rlt_neg</a><br>
+a ∈ ℝ → b ∈ ℝ →
+  ¬(a &lt; b) → b ≤ a</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rle_compat_addl.htm'>rle_compat_addl</a><br>
 a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
   a ≤ b → c + a ≤ c + b</div></div>
@@ -262,7 +276,7 @@ a ∈ ℝ → b ∈ ℝ →
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rle_lt_trans.htm'>rle_lt_trans</a><br>
 a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
   a ≤ b → b &lt; c → a &lt; c</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_lt_trans.htm'>rlt_lt_trans</a><br>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_trans.htm'>rlt_trans</a><br>
 a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
   a &lt; b → b &lt; c → a &lt; c</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_compat_add.htm'>rlt_compat_add</a><br>
@@ -293,8 +307,14 @@ a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rle_compat_mull.htm'>rle_compat_mull</a><br>
 a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
   a ≤ b → 0 ≤ c → c⋅a ≤ c⋅b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_compat_mulr.htm'>rlt_compat_mulr</a><br>
+a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
+  a &lt; b → 0 &lt; c → a⋅c &lt; b⋅c</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rreci_positive.htm'>rreci_positive</a><br>
 a ∈ ℝ → 0 &lt; a → 0 &lt; 1/a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rinv_positive.htm'>rinv_positive</a><br>
+a ∈ ℝ →
+  0 &lt; a → 0 &lt; /a</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_le_contra.htm'>rlt_le_contra</a><br>
 a ∈ ℝ → a &lt; 0 → 0 ≤ a → ⊥</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_succ.htm'>rlt_succ</a><br>
@@ -302,6 +322,19 @@ a ∈ ℝ → a &lt; a + 1</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_le_trans.htm'>rlt_le_trans</a><br>
 a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
   a &lt; b → b ≤ c → a &lt; c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lt_irrefl.htm'>lt_irrefl</a><br>
+¬(x &lt; x)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_sub_one.htm'>rlt_sub_one</a><br>
+x ∈ ℝ → x - 1 &lt; x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rmul_positive_lr.htm'>rmul_positive_lr</a><br>
+a ∈ ℝ → b ∈ ℝ →
+  0 &lt; a → 0 &lt; a⋅b → 0 &lt; b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rmul_positive_rl.htm'>rmul_positive_rl</a><br>
+a ∈ ℝ → b ∈ ℝ →
+  0 &lt; b → 0 &lt; a⋅b → 0 &lt; a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_compat_div.htm'>rlt_compat_div</a><br>
+a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
+  a &lt; b → 0 &lt; c → a/c &lt; b/c</div></div>
 <h2 id='14.5'>Absolute value</h2>
 <div class='box'><div class='def'><b class='def'>Definition.</b> <a href='abs_eq.htm'>abs_eq</a><br>
 abs x = if (0 ≤ x) x (-x)</div></div>

@@ -42,7 +42,7 @@ let A n ↔ (∀k. k ∈ ℕ → n &lt; k → n + 1 ≤ k).
 26. 18 ⊢ n + 1 ∈ ℕ, <a href='succ_in_nat.htm'>succ_in_nat</a> 18.
 27. 18, 20, 21 ⊢ 1 &lt; k, <a href='nle_lt_trans.htm'>nle_lt_trans</a> 11 26 20 25 21.
 28. ⊢ 0 &lt; 1, calc.
-29. 18, 20, 21 ⊢ 0 &lt; k, <a href='nlt_lt_trans.htm'>nlt_lt_trans</a> 10 11 20 28 27.
+29. 18, 20, 21 ⊢ 0 &lt; k, <a href='nlt_trans.htm'>nlt_trans</a> 10 11 20 28 27.
 30. 18, 20, 21 ⊢ ¬0 = k, <a href='neq_from_lt.htm'>neq_from_lt</a> 29.
 31. 18, 20, 21 ⊢ ¬k = 0, <a href='neq_symm.htm'>neq_symm</a> 30.
 32. 18, 20, 21 ⊢ ∃m. m ∈ ℕ ∧ k = m + 1, <a href='nat_non_zero_is_succ.htm'>nat_non_zero_is_succ</a> 20 31.

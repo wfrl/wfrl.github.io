@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>is_sup_unfold</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-17.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem is_sup_unfold</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> is_sup_unfold<br>
+is_sup s A → upper_bound s A ∧
+  (∀b. b ∈ ℝ → upper_bound b A → s ≤ b)</div></div>
+<pre><b>Proof</b>
+is_sup_unfold. ⊢ is_sup s A → upper_bound s A ∧
+  (∀b. b ∈ ℝ → upper_bound b A → s ≤ b), <a href='bij_eliml.htm'>bij_eliml</a> <a href='is_sup_equi.htm'>is_sup_equi</a>.
+</pre>
+</body>
+</html>

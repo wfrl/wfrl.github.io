@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>archimedean_property_corollary_ii</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-17.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem archimedean_property_corollary_ii</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> archimedean_property_corollary_ii<br>
+ε ∈ ℝ → 0 &lt; ε →
+  ∃n. n ∈ ℕ ∧ 0 &lt; n ∧ 1/n &lt; ε</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ ε ∈ ℝ, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ 0 &lt; ε, <a href='hypo.htm'>hypo</a>.
+03. ⊢ 1 ∈ ℝ, calc.
+04. 1, 2 ⊢ ∃n. n ∈ ℕ ∧ 1 &lt; n⋅ε,
+  <a href='archimedean_property_corollary.htm'>archimedean_property_corollary</a> 1 3 2.
+05. 5 ⊢ n ∈ ℕ ∧ 1 &lt; n⋅ε, <a href='hypo.htm'>hypo</a>.
+06. 5 ⊢ n ∈ ℕ, <a href='conj_eliml.htm'>conj_eliml</a> 5.
+07. 5 ⊢ 1 &lt; n⋅ε, <a href='conj_elimr.htm'>conj_elimr</a> 5.
+08. 5 ⊢ n ∈ ℝ, <a href='incl_elim.htm'>incl_elim</a> <a href='nat_incl_in_real.htm'>nat_incl_in_real</a> 6.
+09. 1, 5 ⊢ n⋅ε = ε⋅n, <a href='rmul_comm.htm'>rmul_comm</a> 8 1.
+10. 1, 5 ⊢ 1 &lt; ε⋅n, <a href='lt_eq_trans.htm'>lt_eq_trans</a> 7 9.
+11. 1, 5 ⊢ ε⋅n ∈ ℝ, <a href='rmul_closed.htm'>rmul_closed</a> 1 8.
+12. ⊢ 0 ∈ ℝ, calc.
+13. ⊢ 0 &lt; 1, calc.
+14. 1, 5 ⊢ 0 &lt; ε⋅n, <a href='rlt_trans.htm'>rlt_trans</a> 12 3 11 13 10.
+15. 1, 2, 5 ⊢ 0 &lt; n, <a href='rmul_positive_lr.htm'>rmul_positive_lr</a> 1 8 2 14.
+16. 1, 2, 5 ⊢ 1/n &lt; ε⋅n/n, <a href='rlt_compat_div.htm'>rlt_compat_div</a> 3 11 8 10 15.
+17. 1, 2, 5 ⊢ ¬(0 = n), <a href='neq_from_lt.htm'>neq_from_lt</a> 15.
+18. 1, 2, 5 ⊢ ¬(n = 0), <a href='neq_symm.htm'>neq_symm</a> 17.
+19. 1, 2, 5 ⊢ ε⋅n/n = ε, <a href='rmul_cancel.htm'>rmul_cancel</a> 1 8 18.
+20. 1, 2, 5 ⊢ 1/n &lt; ε, <a href='lt_eq_trans.htm'>lt_eq_trans</a> 16 19.
+21. 1, 2, 5 ⊢ n ∈ ℕ ∧ 0 &lt; n, <a href='conj_intro.htm'>conj_intro</a> 6 15.
+22. 1, 2, 5 ⊢ n ∈ ℕ ∧ 0 &lt; n ∧ 1/n &lt; ε, <a href='conj_intro.htm'>conj_intro</a> 21 20.
+23. 1, 2, 5 ⊢ ∃n. n ∈ ℕ ∧ 0 &lt; n ∧ 1/n &lt; ε, <a href='ex_intro.htm'>ex_intro</a> 22.
+24. 1, 2 ⊢ ∃n. n ∈ ℕ ∧ 0 &lt; n ∧ 1/n &lt; ε, <a href='ex_elim.htm'>ex_elim</a> 4 23.
+archimedean_property_corollary_ii. ⊢ ε ∈ ℝ → 0 &lt; ε →
+  ∃n. n ∈ ℕ ∧ 0 &lt; n ∧ 1/n &lt; ε, <a href='subj_intro_ii.htm'>subj_intro_ii</a> 24.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on 26 axioms:<br><a href='comp.htm'>comp</a>, <a href='efq.htm'>efq</a>, <a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='lem.htm'>lem</a>, <a href='lub_property.htm'>lub_property</a>, <a href='radd_assoc.htm'>radd_assoc</a>, <a href='radd_closed.htm'>radd_closed</a>, <a href='radd_comm.htm'>radd_comm</a>, <a href='radd_inv.htm'>radd_inv</a>, <a href='radd_neutr.htm'>radd_neutr</a>, <a href='real_is_set.htm'>real_is_set</a>, <a href='rinv_closed.htm'>rinv_closed</a>, <a href='rle_antisym.htm'>rle_antisym</a>, <a href='rle_compat_add.htm'>rle_compat_add</a>, <a href='rle_compat_mul.htm'>rle_compat_mul</a>, <a href='rle_refl.htm'>rle_refl</a>, <a href='rle_total.htm'>rle_total</a>, <a href='rle_trans.htm'>rle_trans</a>, <a href='rmul_assoc.htm'>rmul_assoc</a>, <a href='rmul_closed.htm'>rmul_closed</a>, <a href='rmul_comm.htm'>rmul_comm</a>, <a href='rmul_distl_add.htm'>rmul_distl_add</a>, <a href='rmul_inv.htm'>rmul_inv</a>, <a href='rmul_neutr.htm'>rmul_neutr</a>, <a href='rneg_closed.htm'>rneg_closed</a>.</p>
+</body>
+</html>

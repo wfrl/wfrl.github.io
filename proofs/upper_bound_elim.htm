@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>upper_bound_elim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-17.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem upper_bound_elim</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> upper_bound_elim<br>
+upper_bound b A → x ∈ A → x ≤ b</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ upper_bound b A, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ x ∈ A, <a href='hypo.htm'>hypo</a>.
+03. 1 ⊢ ∀x. x ∈ A → x ≤ b, <a href='lsubj_elim.htm'>lsubj_elim</a> <a href='upper_bound_equi.htm'>upper_bound_equi</a> 1.
+04. 1, 2 ⊢ x ≤ b, <a href='uq_bounded_elim.htm'>uq_bounded_elim</a> 3 2.
+upper_bound_elim. ⊢ upper_bound b A → x ∈ A → x ≤ b,
+  <a href='subj_intro_ii.htm'>subj_intro_ii</a> 4.
+</pre>
+</body>
+</html>
