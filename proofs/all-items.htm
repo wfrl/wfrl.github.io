@@ -99,6 +99,7 @@
 </ol>
 <li><a href='#17'>Real analysis</a><ol>
 <li><a href='#17.1'>Archimedean property</a>
+<li><a href='#17.2'>Convergent sequences</a>
 </ol>
 </ol>
 <h2 id='1'>Morse-Kelley set theory</h2>
@@ -381,8 +382,12 @@ A ∧ ¬B → ¬(A → B)</div></div>
 (¬∀x. P x) ↔ (∃x. ¬P x)</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_uq_bounded.htm'>neg_uq_bounded</a><br>
 (¬∀x. P x → Q x) → (∃x. P x ∧ ¬Q x)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_uq_bounded_rev.htm'>neg_uq_bounded_rev</a><br>
+(∃x. P x ∧ ¬Q x) → (¬∀x. P x → Q x)</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_ex_bounded.htm'>neg_ex_bounded</a><br>
 (¬∃x. P x ∧ Q x) → (∀x. P x → ¬Q x)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_ex_bounded_rev.htm'>neg_ex_bounded_rev</a><br>
+(∀x. P x → ¬Q x) → (¬∃x. P x ∧ Q x)</div></div>
 <h4 id='2.3.3'>Congruence laws of equivalence</h4>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='equi_cong_uq.htm'>equi_cong_uq</a><br>
 (∀x. P x ↔ Q x) →
@@ -1646,9 +1651,15 @@ a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rle_compat_mull.htm'>rle_compat_mull</a><br>
 a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
   a ≤ b → 0 ≤ c → c⋅a ≤ c⋅b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_compat_mul.htm'>rlt_compat_mul</a><br>
+a ∈ ℝ → b ∈ ℝ →
+  0 &lt; a → 0 &lt; b → 0 &lt; a⋅b</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_compat_mulr.htm'>rlt_compat_mulr</a><br>
 a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
   a &lt; b → 0 &lt; c → a⋅c &lt; b⋅c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_compat_mull.htm'>rlt_compat_mull</a><br>
+a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
+  a &lt; b → 0 &lt; c → c⋅a &lt; c⋅b</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rreci_positive.htm'>rreci_positive</a><br>
 a ∈ ℝ → 0 &lt; a → 0 &lt; 1/a</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rinv_positive.htm'>rinv_positive</a><br>
@@ -1674,6 +1685,14 @@ a ∈ ℝ → b ∈ ℝ →
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_compat_div.htm'>rlt_compat_div</a><br>
 a ∈ ℝ → b ∈ ℝ → c ∈ ℝ →
   a &lt; b → 0 &lt; c → a/c &lt; b/c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rinv_closed_positive.htm'>rinv_closed_positive</a><br>
+a ∈ ℝ → 0 &lt; a → /a ∈ ℝ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rdiv_positive.htm'>rdiv_positive</a><br>
+a ∈ ℝ → b ∈ ℝ →
+  0 &lt; a → 0 &lt; b → 0 &lt; a/b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rdiv_closed_positive.htm'>rdiv_closed_positive</a><br>
+a ∈ ℝ → b ∈ ℝ →
+  0 &lt; b → a/b ∈ ℝ</div></div>
 <h3 id='14.5'>Absolute value</h3>
 <div class='box'><div class='def'><b class='def'>Definition.</b> <a href='abs_eq.htm'>abs_eq</a><br>
 abs x = if (0 ≤ x) x (-x)</div></div>
@@ -1692,6 +1711,10 @@ a ∈ ℝ → x ∈ ℝ → -a ≤ x → x ≤ a →
 x ∈ ℝ → x ≤ abs x</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rabs_ge_neg_arg.htm'>rabs_ge_neg_arg</a><br>
 x ∈ ℝ → -x ≤ abs x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rabs_is_non_negative.htm'>rabs_is_non_negative</a><br>
+x ∈ ℝ → 0 ≤ abs x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rabs_definiteness.htm'>rabs_definiteness</a><br>
+x ∈ ℝ → abs x = 0 → x = 0</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rabs_symm.htm'>rabs_symm</a><br>
 x ∈ ℝ → abs (-x) = abs x</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rabs_triangle_ineq.htm'>rabs_triangle_ineq</a><br>
@@ -1934,21 +1957,42 @@ is_sup s A → upper_bound s A ∧
 upper_bound b A → x ∈ A → x ≤ b</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_unbounded.htm'>nat_unbounded</a><br>
 ¬(∃b. b ∈ ℝ ∧ upper_bound b ℕ)</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='archimedean_property.htm'>archimedean_property</a><br>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Archimedean_property.htm'>Archimedean_property</a><br>
 x ∈ ℝ → ∃n. n ∈ ℕ ∧ x &lt; n</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='archimedean_property_corollary.htm'>archimedean_property_corollary</a><br>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Archimedean_property_corollary.htm'>Archimedean_property_corollary</a><br>
 x ∈ ℝ → y ∈ ℝ →
   0 &lt; x → ∃n. n ∈ ℕ ∧ y &lt; n⋅x</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='archimedean_property_corollary_ii.htm'>archimedean_property_corollary_ii</a><br>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Archimedean_property_corollary_ii.htm'>Archimedean_property_corollary_ii</a><br>
 ε ∈ ℝ → 0 &lt; ε →
   ∃n. n ∈ ℕ ∧ 0 &lt; n ∧ 1/n &lt; ε</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Archimedean_property_corollary_iii.htm'>Archimedean_property_corollary_iii</a><br>
+a ∈ ℝ → 0 ≤ a →
+  (∀n. n ∈ ℕ ∧ 0 &lt; n → a ≤ 1/n) → a = 0</div></div>
+<h3 id='17.2'>Convergent sequences</h3>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='converges_equi.htm'>converges_equi</a><br>
+converges a L ↔ ∀ε. ε ∈ ℝ → 0 &lt; ε →
+  ∃n0. n0 ∈ ℕ ∧ ∀n. n ∈ ℕ → n0 ≤ n → abs(app a n - L) &lt; ε</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='converges_fold.htm'>converges_fold</a><br>
+(∀ε. ε ∈ ℝ → 0 &lt; ε →
+  ∃n0. n0 ∈ ℕ ∧ ∀n. n ∈ ℕ → n0 ≤ n → abs(app a n - L) &lt; ε) →
+  converges a L</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='converges_elim.htm'>converges_elim</a><br>
+converges a L → ε ∈ ℝ → 0 &lt; ε →
+  ∃n0. n0 ∈ ℕ ∧ ∀n. n ∈ ℕ → n0 ≤ n → abs(app a n - L) &lt; ε</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='const_converges.htm'>const_converges</a><br>
+c ∈ ℝ → (∀n. n ∈ ℕ → app a n = c) →
+  converges a c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='converges_mul_const.htm'>converges_mul_const</a><br>
+r ∈ ℝ → L ∈ ℝ → map a ℕ ℝ →
+  converges a L → (∀n. n ∈ ℕ → app b n = r⋅(app a n)) →
+  converges b (r⋅L)</div></div>
 <p><b>Statistics</b>
 <pre>
-  70 definitions
+  71 definitions
   37 axioms
- 636 theorems
+ 650 theorems
 ────────────────
- 743 items total
+ 758 items total
 </pre>
 </body>
 </html>

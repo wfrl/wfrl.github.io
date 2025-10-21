@@ -11,7 +11,23 @@
 <h3>Theorem incl_refl</h3>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> incl_refl<br>
 A ⊆ A</div></div>
-<p>Reflexivity law of <a href='incl_equi.htm'>inclusion</a>.</p>
+<p>Reflexivity law of <a href='incl_equi.htm'>inclusion</a>. Each
+class is a subclass of itself.<br>
+<br>
+<b>Proof idea</b><br>
+By definition, the statement A&nbsp;⊆&nbsp;A means that every element of A must
+also be an element of A, which is trivially a factual
+state of affairs.<br>
+<br>
+<b>Proof sketch</b><br>
+If we unfold the definition of inclusion, the statement A&nbsp;⊆&nbsp;A
+takes the form<br>
+&nbsp;&nbsp;∀x. x ∈ A → x ∈ A.<br>
+To confirm this, we consider x as a parameter that stands for a fixed
+but arbitrary set. With regard to this, we now have to show x&nbsp;∈&nbsp;A&nbsp;→
+x&nbsp;∈&nbsp;A. This means that, assuming x&nbsp;∈&nbsp;A, we have to derive x&nbsp;∈&nbsp;A,
+which is the assumption itself, so we have already reached our goal.
+q.e.d.</p>
 <pre><b>Proof</b>
 01. 1 ⊢ x ∈ A, <a href='hypo.htm'>hypo</a>.
 02. ⊢ x ∈ A → x ∈ A, <a href='subj_intro.htm'>subj_intro</a> 1.

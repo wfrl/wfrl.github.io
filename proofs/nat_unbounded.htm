@@ -11,6 +11,28 @@
 <h3>Theorem nat_unbounded</h3>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> nat_unbounded<br>
 ¬(∃b. b ∈ ℝ ∧ upper_bound b ℕ)</div></div>
+<p>This theorem states that the set of natural numbers is unbounded
+in the real numbers.<br>
+<br>
+<b>Proof idea</b><br>
+Suppose ℕ is bounded. Then, according to <a href='lub_property.htm'>lub_property</a>, ℕ would have
+a <a href='is_sup_equi.htm'>supremum</a>&nbsp;s. A number just before s is no longer an
+upper bound, which means that there must occur a natural number m after
+this number. Starting from m, we shift by adding a natural number, to
+point beyond s, but this brings us back to ℕ, since ℕ is closed under
+addition. Thus, the bound has been exceeded, which is absurd.<br>
+<br>
+<b>Proof sketch</b><br>
+Suppose ℕ is bounded. Then, according to <a href='lub_property.htm'>lub_property</a>, ℕ would have
+a <a href='is_sup_equi.htm'>supremum</a> s in ℝ. We play off against each other that
+s is both an upper bound and the least upper bound. First, s&nbsp;−&nbsp;1
+cannot be an upper bound, since it is smaller than the least upper
+bound. Unfolding the definition of <a href='upper_bound_equi.htm'>upper_bound</a>,
+this means ¬∀m&nbsp;∈&nbsp;ℕ. m&nbsp;≤&nbsp;s&nbsp;−&nbsp;1, which can be transformed to ∃m&nbsp;∈&nbsp;ℕ.
+s&nbsp;−&nbsp;1&nbsp;&lt;&nbsp;m. So there is an m&nbsp;∈&nbsp;ℕ with s&nbsp;−&nbsp;1&nbsp;&lt;&nbsp;m, which can be
+transformed to s&nbsp;&lt;&nbsp;m&nbsp;+&nbsp;1. However, because m&nbsp;+&nbsp;1 ∈ ℕ, m&nbsp;+&nbsp;1 ≤ s
+must hold, since s is an upper bound of ℕ. This leads to s&nbsp;&lt;&nbsp;s, which
+is absurd. Therefore, the assumption is false. q.e.d.</p>
 <pre><b>Proof</b>
 01. 1 ⊢ ∃b. b ∈ ℝ ∧ upper_bound b ℕ, <a href='hypo.htm'>hypo</a>.
 02. ⊢ ℕ ⊆ ℝ, <a href='nat_incl_in_real.htm'>nat_incl_in_real</a>.

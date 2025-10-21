@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>converges_elim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-17.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem converges_elim</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> converges_elim<br>
+converges a L → ε ∈ ℝ → 0 &lt; ε →
+  ∃n0. n0 ∈ ℕ ∧ ∀n. n ∈ ℕ → n0 ≤ n → abs(app a n - L) &lt; ε</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ converges a L, <a href='hypo.htm'>hypo</a>.
+02. 1 ⊢ ∀ε. ε ∈ ℝ → 0 &lt; ε → ∃n0. n0 ∈ ℕ ∧
+  ∀n. n ∈ ℕ → n0 ≤ n → abs(app a n - L) &lt; ε,
+  <a href='lsubj_elim.htm'>lsubj_elim</a> <a href='converges_equi.htm'>converges_equi</a> 1.
+03. 1 ⊢ ε ∈ ℝ → 0 &lt; ε → ∃n0. n0 ∈ ℕ ∧
+  ∀n. n ∈ ℕ → n0 ≤ n → abs(app a n - L) &lt; ε, <a href='uq_elim.htm'>uq_elim</a> 2.
+converges_elim. ⊢ converges a L → ε ∈ ℝ → 0 &lt; ε →
+  ∃n0. n0 ∈ ℕ ∧ ∀n. n ∈ ℕ → n0 ≤ n → abs(app a n - L) &lt; ε,
+  <a href='subj_intro.htm'>subj_intro</a> 3.
+</pre>
+</body>
+</html>

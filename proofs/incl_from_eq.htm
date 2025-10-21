@@ -11,6 +11,16 @@
 <h3>Theorem incl_from_eq</h3>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> incl_from_eq<br>
 A = B → A ⊆ B</div></div>
+<p>This theorem states that <a href='incl_equi.htm'>inclusion</a> follows from
+equality.<br>
+<br>
+<b>Proof idea</b><br>
+This is essentially just a convoluted form of <a href='incl_refl.htm'>incl_refl</a>.<br>
+<br>
+<b>Proof sketch</b><br>
+According to <a href='incl_refl.htm'>incl_refl</a>, A&nbsp;⊆&nbsp;A holds. Because A&nbsp;=&nbsp;B, we may
+now substitute B for the A on the right-hand side, which leads to
+A&nbsp;⊆&nbsp;B. q.e.d</p>
 <pre><b>Proof</b>
 01. 1 ⊢ A = B, <a href='hypo.htm'>hypo</a>.
 02. ⊢ A ⊆ A, <a href='incl_refl.htm'>incl_refl</a>.

@@ -11,7 +11,22 @@
 <h3>Theorem incl_antisym</h3>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> incl_antisym<br>
 A ⊆ B → B ⊆ A → A = B</div></div>
-<p>Antisymmetry law of <a href='incl_equi.htm'>inclusion</a>.</p>
+<p>Antisymmetry law of <a href='incl_equi.htm'>inclusion</a>. Two
+classes that are mutually subclasses of each other must be equal. <br>
+<br>
+<b>Proof idea</b><br>
+The equality A = B can be derived by applying the <a href='ext.htm'>extensionality
+axiom</a>, whose premise is an equivalence that decomposes into two
+implications. However, these implications are nothing other than the
+unfolding of A&nbsp;⊆&nbsp;B and B&nbsp;⊆&nbsp;A.<br>
+<br>
+<b>Proof sketch</b><br>
+Let x be fixed, but arbitrary. With A&nbsp;⊆&nbsp;B, x&nbsp;∈&nbsp;B follows from
+x&nbsp;∈&nbsp;A. With B&nbsp;⊆&nbsp;A, x&nbsp;∈&nbsp;A follows from x&nbsp;∈&nbsp;B. Thus, x&nbsp;∈&nbsp;A is
+equivalent to x&nbsp;∈&nbsp;B. Because x was arbitrary,<br>
+&nbsp;&nbsp;∀x. x ∈ A ↔ x ∈ B<br>
+must hold. By the extensionality axiom, we thus arrive at
+A&nbsp;=&nbsp;B. q.e.d.</p>
 <pre><b>Proof</b>
 01. 1 ⊢ A ⊆ B, <a href='hypo.htm'>hypo</a>.
 02. 2 ⊢ x ∈ A, <a href='hypo.htm'>hypo</a>.

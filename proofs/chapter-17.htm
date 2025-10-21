@@ -12,6 +12,7 @@
 <h2>Table of contents</h2>
 <ol>
 <li><a href='#17.1'>Archimedean property</a>
+<li><a href='#17.2'>Convergent sequences</a>
 </ol>
 <h2 id='17.1'>Archimedean property</h2>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='is_sup_unfold.htm'>is_sup_unfold</a><br>
@@ -21,13 +22,34 @@ is_sup s A → upper_bound s A ∧
 upper_bound b A → x ∈ A → x ≤ b</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_unbounded.htm'>nat_unbounded</a><br>
 ¬(∃b. b ∈ ℝ ∧ upper_bound b ℕ)</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='archimedean_property.htm'>archimedean_property</a><br>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Archimedean_property.htm'>Archimedean_property</a><br>
 x ∈ ℝ → ∃n. n ∈ ℕ ∧ x &lt; n</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='archimedean_property_corollary.htm'>archimedean_property_corollary</a><br>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Archimedean_property_corollary.htm'>Archimedean_property_corollary</a><br>
 x ∈ ℝ → y ∈ ℝ →
   0 &lt; x → ∃n. n ∈ ℕ ∧ y &lt; n⋅x</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='archimedean_property_corollary_ii.htm'>archimedean_property_corollary_ii</a><br>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Archimedean_property_corollary_ii.htm'>Archimedean_property_corollary_ii</a><br>
 ε ∈ ℝ → 0 &lt; ε →
   ∃n. n ∈ ℕ ∧ 0 &lt; n ∧ 1/n &lt; ε</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Archimedean_property_corollary_iii.htm'>Archimedean_property_corollary_iii</a><br>
+a ∈ ℝ → 0 ≤ a →
+  (∀n. n ∈ ℕ ∧ 0 &lt; n → a ≤ 1/n) → a = 0</div></div>
+<h2 id='17.2'>Convergent sequences</h2>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='converges_equi.htm'>converges_equi</a><br>
+converges a L ↔ ∀ε. ε ∈ ℝ → 0 &lt; ε →
+  ∃n0. n0 ∈ ℕ ∧ ∀n. n ∈ ℕ → n0 ≤ n → abs(app a n - L) &lt; ε</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='converges_fold.htm'>converges_fold</a><br>
+(∀ε. ε ∈ ℝ → 0 &lt; ε →
+  ∃n0. n0 ∈ ℕ ∧ ∀n. n ∈ ℕ → n0 ≤ n → abs(app a n - L) &lt; ε) →
+  converges a L</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='converges_elim.htm'>converges_elim</a><br>
+converges a L → ε ∈ ℝ → 0 &lt; ε →
+  ∃n0. n0 ∈ ℕ ∧ ∀n. n ∈ ℕ → n0 ≤ n → abs(app a n - L) &lt; ε</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='const_converges.htm'>const_converges</a><br>
+c ∈ ℝ → (∀n. n ∈ ℕ → app a n = c) →
+  converges a c</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='converges_mul_const.htm'>converges_mul_const</a><br>
+r ∈ ℝ → L ∈ ℝ → map a ℕ ℝ →
+  converges a L → (∀n. n ∈ ℕ → app b n = r⋅(app a n)) →
+  converges b (r⋅L)</div></div>
 </body>
 </html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>neg_uq_bounded_rev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-2.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem neg_uq_bounded_rev</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> neg_uq_bounded_rev<br>
+(∃x. P x ∧ ¬Q x) → (¬∀x. P x → Q x)</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ ∃x. P x ∧ ¬Q x, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ ∀x. P x → Q x, <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ P x ∧ ¬Q x, <a href='hypo.htm'>hypo</a>.
+04. 3 ⊢ P x, <a href='conj_eliml.htm'>conj_eliml</a> 3.
+05. 3 ⊢ ¬Q x, <a href='conj_elimr.htm'>conj_elimr</a> 3.
+06. 2, 3 ⊢ Q x, <a href='uq_bounded_elim.htm'>uq_bounded_elim</a> 2 4.
+07. 2, 3 ⊢ ⊥, <a href='neg_elim.htm'>neg_elim</a> 5 6.
+08. 1, 2 ⊢ ⊥, <a href='ex_elim.htm'>ex_elim</a> 1 7.
+09. 1 ⊢ ¬∀x. P x → Q x, <a href='neg_intro.htm'>neg_intro</a> 8.
+neg_uq_bounded_rev. ⊢ (∃x. P x ∧ ¬Q x) → (¬∀x. P x → Q x),
+  <a href='subj_intro.htm'>subj_intro</a> 9.
+</pre>
+</body>
+</html>

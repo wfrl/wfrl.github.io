@@ -11,7 +11,24 @@
 <h3>Theorem incl_trans</h3>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> incl_trans<br>
 A ⊆ B → B ⊆ C → A ⊆ C</div></div>
-<p>Transitivity law of <a href='incl_equi.htm'>inclusion</a>.</p>
+<p>Transitivity law of <a href='incl_equi.htm'>inclusion</a>.
+A subclass of a subclass of some class&nbsp;C is also a subclass of&nbsp;C.<br>
+<br>
+<b>Proof idea</b><br>
+By definition, the statement A&nbsp;⊆&nbsp;C means that every element of A must
+also be an element of C. To show this, we consider an arbitrary element
+of A. Since A&nbsp;⊆&nbsp;B, it is also an element of B. Thus, since
+B&nbsp;⊆&nbsp;C, it is also an element of C, as claimed.<br>
+<br>
+<b>Proof sketch</b><br>
+Let A ⊆ B and B ⊆ C. We need to show that A ⊆ C, which according to the
+definition unfolds as<br>
+&nbsp;&nbsp;∀x. x ∈ A → x ∈ C.<br>
+To do this, we consider x as a parameter that stands for a fixed but
+arbitrary set. We now need to show that x&nbsp;∈&nbsp;C under the additional
+assumption that x&nbsp;∈&nbsp;A. From A&nbsp;⊆&nbsp;B and x&nbsp;∈&nbsp;A, we first obtain
+x&nbsp;∈&nbsp;B. From B&nbsp;⊆&nbsp;C and x&nbsp;∈&nbsp;B, we then obtain x&nbsp;∈&nbsp;C, which which
+completes the proof. q.e.d.</p>
 <pre><b>Proof</b>
 01. 1 ⊢ A ⊆ B, <a href='hypo.htm'>hypo</a>.
 02. 2 ⊢ B ⊆ C, <a href='hypo.htm'>hypo</a>.

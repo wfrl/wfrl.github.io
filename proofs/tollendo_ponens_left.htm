@@ -11,7 +11,21 @@
 <h3>Theorem tollendo_ponens_left</h3>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> tollendo_ponens_left<br>
 A ∨ B → ¬B → A</div></div>
-<p>Modus tollendo ponens.</p>
+<p>Modus tollendo ponens.<br>
+<br>
+<b>Proof idea</b><br>
+The statement is so elementary that it should be expedient to blindly
+follow the formalism. We need to derive A from A&nbsp;∨&nbsp;B and ¬B. With ¬B,
+we don't get anywhere for the time being. So all that remains is to
+resolve A&nbsp;∨&nbsp;B via case distinction. In case&nbsp;A, we are already done.
+Case&nbsp;B immediately leads to a contradiction, which, by means of
+<a href='efq.htm'>efq</a>, gives us every proposition at hand, including&nbsp;A.<br>
+<br>
+<b>Proof sketch</b><br>
+Let A ∨ B and ¬B hold. To be shown is A. Case distinction with regard
+to A&nbsp;∨&nbsp;B. In case A, we are already done. Case B contradicts ¬B. From
+this contradiction, A is obtained via <a href='efq.htm'>efq</a>. Thus, A is shown in
+each of the two cases. q.e.d.</p>
 <pre><b>Proof</b>
 01. 1 ⊢ A ∨ B, <a href='hypo.htm'>hypo</a>.
 02. 2 ⊢ ¬B, <a href='hypo.htm'>hypo</a>.

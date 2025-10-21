@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>converges_mul_const</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-17.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem converges_mul_const</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> converges_mul_const<br>
+r ∈ ℝ → L ∈ ℝ → map a ℕ ℝ →
+  converges a L → (∀n. n ∈ ℕ → app b n = r⋅(app a n)) →
+  converges b (r⋅L)</div></div>
+<p>This theorem states that a sequence scaled by a constant factor&nbsp;r
+<a href='converges_equi.htm'>converges</a> to r⋅L if the original one converges
+to&nbsp;L.<br>
+<br>
+<b>Proof idea</b><br>
+Scaling the sequence values by the constant factor&nbsp;r can be interpreted
+as a benign coordinate transformation of the value space, which of course
+should not change the convergence behavior of the sequence. Accordingly,
+an ε-neighborhood of the scaled sequence corresponds exactly to the
+neighborhood with scaled radius ε/|r| in the original sequence. Since
+we know that it dives in and remains there, this must also be the case
+for the scaled sequence. This line of thought should be reflected in
+the fact that the inequality remains valid under changed perspective,
+even though it takes on a different form.<br>
+<br>
+<b>Proof sketch</b><br>
+Let (a<sub>n</sub>) <a href='converges_equi.htm'>converge</a> to L. We need to show
+that (r⋅a<sub>n</sub>) converges to r⋅L.  Case distinction between
+r&nbsp;=&nbsp;0 and r&nbsp;≠&nbsp;0. In the case r&nbsp;=&nbsp;0, (r⋅a<sub>n</sub>) is a constant
+sequence that converges to zero according to <a href='const_converges.htm'>const_converges</a>. Since
+r⋅L&nbsp;=&nbsp;0, the limit coincides with r⋅L as claimed. We may now assume
+r&nbsp;≠&nbsp;0. Let ε&nbsp;&gt;&nbsp;0 be fixed, but arbitrary. Let ε'&nbsp;:=&nbsp;ε/|r|. Since
+(a<sub>n</sub>) converges, there must exist an n<sub>0</sub> such that
+|a<sub>n</sub>&nbsp;−&nbsp;L| &lt; ε' for every n&nbsp;≥&nbsp;n<sub>0</sub>. Since
+|r| &gt;&nbsp;0, this inequality can be equivalently transformed to<br>
+&nbsp;&nbsp;|r⋅a<sub>n</sub> − r⋅L| = |r|⋅|a<sub>n</sub> − L| &lt; ε.<br>
+Thus, for every ε, there exists an index n<sub>0</sub> from which on
+this inequality is satisfied, meaning that (r⋅a<sub>n</sub>) must
+converge to r⋅L. q.e.d.</p>
+<pre><b>Proof</b>
+01. 1 ⊢ r ∈ ℝ, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ L ∈ ℝ, <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ map a ℕ ℝ, <a href='hypo.htm'>hypo</a>.
+04. 4 ⊢ converges a L, <a href='hypo.htm'>hypo</a>.
+05. 5 ⊢ ∀n. n ∈ ℕ → app b n = r⋅(app a n), <a href='hypo.htm'>hypo</a>.
+06. 6 ⊢ ε ∈ ℝ, <a href='hypo.htm'>hypo</a>.
+07. 7 ⊢ 0 &lt; ε, <a href='hypo.htm'>hypo</a>.
+08. 8 ⊢ n ∈ ℕ, <a href='hypo.htm'>hypo</a>.
+09. 9 ⊢ n0 ≤ n, <a href='hypo.htm'>hypo</a>.
+10. ⊢ r = 0 ∨ ¬(r = 0), <a href='lem.htm'>lem</a>.
+
+11. 11 ⊢ r = 0, <a href='hypo.htm'>hypo</a>.
+12. 3, 8 ⊢ app a n ∈ ℝ, <a href='map_app_in_cod.htm'>map_app_in_cod</a> 3 8.
+13. 3, 8 ⊢ 0⋅(app a n) = 0, <a href='rmul_lzero.htm'>rmul_lzero</a> 12.
+14. 3, 11, 8 ⊢ r⋅(app a n) = 0,
+  <a href='eq_subst_rev.htm'>eq_subst_rev</a> 11 13, P t ↔ t⋅(app a n) = 0.
+15. 5, 8 ⊢ app b n = r⋅(app a n), <a href='uq_bounded_elim.htm'>uq_bounded_elim</a> 5 8.
+16. 3, 5, 11, 8 ⊢ app b n = 0, <a href='eq_trans.htm'>eq_trans</a> 15 14.
+17. 3, 5, 11 ⊢ n ∈ ℕ → app b n = 0, <a href='subj_intro.htm'>subj_intro</a> 16.
+18. 3, 5, 11 ⊢ ∀n. n ∈ ℕ → app b n = 0, <a href='uq_intro.htm'>uq_intro</a> 17.
+19. ⊢ 0 ∈ ℝ, calc.
+20. 3, 5, 11 ⊢ converges b 0, <a href='const_converges.htm'>const_converges</a> 19 18.
+21. 2 ⊢ 0⋅L = 0, <a href='rmul_lzero.htm'>rmul_lzero</a> 2.
+22. 2, 11 ⊢ r⋅L = 0, <a href='eq_subst_rev.htm'>eq_subst_rev</a> 11 21, P t ↔ t⋅L = 0.
+23. 2, 3, 5, 11 ⊢ converges b (r⋅L),
+  <a href='eq_subst_rev.htm'>eq_subst_rev</a> 22 20, P t ↔ converges b t.
+
+24. 24 ⊢ ¬(r = 0), <a href='hypo.htm'>hypo</a>.
+25. 25 ⊢ abs r = 0, <a href='hypo.htm'>hypo</a>.
+26. 1, 25 ⊢ r = 0, <a href='rabs_definiteness.htm'>rabs_definiteness</a> 1 25.
+27. 1, 24, 25 ⊢ ⊥, <a href='neg_elim.htm'>neg_elim</a> 24 26.
+28. 1, 24 ⊢ ¬(abs r = 0), <a href='neg_intro.htm'>neg_intro</a> 27.
+29. 1, 24 ⊢ ¬(0 = abs r), <a href='neq_symm.htm'>neq_symm</a> 28.
+30. 1 ⊢ 0 ≤ abs r, <a href='rabs_is_non_negative.htm'>rabs_is_non_negative</a> 1.
+31. 1, 24 ⊢ 0 &lt; abs r, <a href='lt_intro.htm'>lt_intro</a> 30 29.
+32. 1 ⊢ abs r ∈ ℝ, <a href='rabs_closed.htm'>rabs_closed</a> 1.
+33. 1, 6, 24 ⊢ ε/(abs r) ∈ ℝ, <a href='rdiv_closed_positive.htm'>rdiv_closed_positive</a> 6 32 31.
+34. 1, 6, 7, 24 ⊢ 0 &lt; ε/(abs r), <a href='rdiv_positive.htm'>rdiv_positive</a> 6 32 7 31.
+35. 1, 4, 6, 7, 24 ⊢ ∃n0. n0 ∈ ℕ ∧ ∀n. n ∈ ℕ → n0 ≤ n →
+  abs(app a n - L) &lt; ε/(abs r), <a href='converges_elim.htm'>converges_elim</a> 4 33 34.
+36. 36 ⊢ n0 ∈ ℕ ∧ ∀n. n ∈ ℕ → n0 ≤ n →
+  abs(app a n - L) &lt; ε/(abs r), <a href='hypo.htm'>hypo</a>.
+37. 36 ⊢ n0 ∈ ℕ, <a href='conj_eliml.htm'>conj_eliml</a> 36.
+38. 36 ⊢ ∀n. n ∈ ℕ → n0 ≤ n →
+  abs(app a n - L) &lt; ε/(abs r), <a href='conj_elimr.htm'>conj_elimr</a> 36.
+39. 8, 36 ⊢ n0 ≤ n → abs(app a n - L) &lt; ε/(abs r),
+  <a href='uq_bounded_elim.htm'>uq_bounded_elim</a> 38 8.
+40. 8, 9, 36 ⊢ abs(app a n - L) &lt; ε/(abs r), <a href='subj_elim.htm'>subj_elim</a> 39 9.
+41. 2, 3, 8 ⊢ app a n - L ∈ ℝ, <a href='rsub_closed.htm'>rsub_closed</a> 12 2.
+42. 2, 3, 8 ⊢ abs(app a n - L) ∈ ℝ, <a href='rabs_closed.htm'>rabs_closed</a> 41.
+43. 1, 2, 3, 6, 8, 9, 24, 36 ⊢
+  (abs r)⋅abs(app a n - L) &lt; (abs r)⋅(ε/(abs r)),
+  <a href='rlt_compat_mull.htm'>rlt_compat_mull</a> 42 33 32 40 31.
+44. 1, 2, 3, 8 ⊢ abs(r⋅(app a n - L)) = (abs r)⋅abs(app a n - L),
+  <a href='rabs_dist_mul.htm'>rabs_dist_mul</a> 1 41.
+45. 1, 2, 3, 8 ⊢ r⋅(app a n - L) = r⋅app a n - r⋅L,
+  <a href='rmul_distl_sub.htm'>rmul_distl_sub</a> 1 12 2.
+46. 1, 2, 3, 8 ⊢ abs(r⋅(app a n - L)) = abs(r⋅app a n - r⋅L),
+  <a href='eq_cong.htm'>eq_cong</a> 45, f t = abs t.
+47. 1, 2, 3, 8 ⊢ abs(r⋅app a n - r⋅L) = (abs r)⋅abs(app a n - L),
+  <a href='eq_trans_ll.htm'>eq_trans_ll</a> 46 44.
+48. 1, 2, 3, 5, 8 ⊢ abs(app b n - r⋅L) = (abs r)⋅abs(app a n - L),
+  <a href='eq_subst_rev.htm'>eq_subst_rev</a> 15 47, P t ↔ abs(t - r⋅L) = (abs r)⋅abs(app a n - L).
+49. 1, 2, 3, 5, 6, 8, 9, 24, 36 ⊢
+  abs(app b n - r⋅L) &lt; (abs r)⋅(ε/(abs r)),
+  <a href='eq_lt_trans.htm'>eq_lt_trans</a> 48 43.
+50. 1, 6, 24 ⊢ (abs r)⋅(ε/(abs r)) = ε/(abs r)⋅(abs r),
+  <a href='rmul_comm.htm'>rmul_comm</a> 32 33.
+51. 1, 6, 24 ⊢ ε/(abs r)⋅(abs r) = ε, <a href='rdiv_cancel.htm'>rdiv_cancel</a> 6 32 28.
+52. 1, 6, 24 ⊢ (abs r)⋅(ε/(abs r)) = ε, <a href='eq_trans.htm'>eq_trans</a> 50 51.
+53. 1, 2, 3, 5, 24, 36, 6, 8, 9 ⊢
+  abs(app b n - r⋅L) &lt; ε, <a href='lt_eq_trans.htm'>lt_eq_trans</a> 49 52.
+54. 1, 2, 3, 5, 24, 36, 6 ⊢ n ∈ ℕ → n0 ≤ n →
+  abs(app b n - r⋅L) &lt; ε, <a href='subj_intro_ii.htm'>subj_intro_ii</a> 53.
+55. 1, 2, 3, 5, 24, 36, 6 ⊢ ∀n. n ∈ ℕ →
+  n0 ≤ n → abs(app b n - r⋅L) &lt; ε, <a href='uq_intro.htm'>uq_intro</a> 54.
+56. 1, 2, 3, 5, 24, 36, 6 ⊢ n0 ∈ ℕ ∧ ∀n. n ∈ ℕ →
+  n0 ≤ n → abs(app b n - r⋅L) &lt; ε, <a href='conj_intro.htm'>conj_intro</a> 37 55.
+57. 1, 2, 3, 5, 24, 6, 36 ⊢ ∃n0. n0 ∈ ℕ ∧
+  ∀n. n ∈ ℕ → n0 ≤ n → abs(app b n - r⋅L) &lt; ε, <a href='ex_intro.htm'>ex_intro</a> 56.
+58. 1, 2, 3, 4, 5, 24, 6, 7 ⊢ ∃n0. n0 ∈ ℕ ∧
+  ∀n. n ∈ ℕ → n0 ≤ n → abs(app b n - r⋅L) &lt; ε, <a href='ex_elim.htm'>ex_elim</a> 35 57.
+59. 1, 2, 3, 4, 5, 24 ⊢ ε ∈ ℝ → 0 &lt; ε → ∃n0. n0 ∈ ℕ ∧
+  ∀n. n ∈ ℕ → n0 ≤ n → abs(app b n - r⋅L) &lt; ε, <a href='subj_intro_ii.htm'>subj_intro_ii</a> 58.
+60. 1, 2, 3, 4, 5, 24 ⊢ ∀ε. ε ∈ ℝ → 0 &lt; ε → ∃n0. n0 ∈ ℕ ∧
+  ∀n. n ∈ ℕ → n0 ≤ n → abs(app b n - r⋅L) &lt; ε, <a href='uq_intro.htm'>uq_intro</a> 59.
+61. 1, 2, 3, 4, 5, 24 ⊢ converges b (r⋅L), <a href='converges_fold.htm'>converges_fold</a> 60.
+
+62. 1, 2, 3, 4, 5 ⊢ converges b (r⋅L), <a href='disj_elim.htm'>disj_elim</a> 10 23 61.
+63. 1, 2, 3, 4 ⊢ (∀n. n ∈ ℕ → app b n = r⋅(app a n)) →
+  converges b (r⋅L), <a href='subj_intro.htm'>subj_intro</a> 62.
+converges_mul_const. ⊢ r ∈ ℝ → L ∈ ℝ → map a ℕ ℝ →
+  converges a L → (∀n. n ∈ ℕ → app b n = r⋅(app a n)) →
+  converges b (r⋅L), <a href='subj_intro_iv.htm'>subj_intro_iv</a> 63.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on 26 axioms:<br><a href='comp.htm'>comp</a>, <a href='efq.htm'>efq</a>, <a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='ext.htm'>ext</a>, <a href='lem.htm'>lem</a>, <a href='radd_assoc.htm'>radd_assoc</a>, <a href='radd_closed.htm'>radd_closed</a>, <a href='radd_comm.htm'>radd_comm</a>, <a href='radd_inv.htm'>radd_inv</a>, <a href='radd_neutr.htm'>radd_neutr</a>, <a href='rinv_closed.htm'>rinv_closed</a>, <a href='rle_antisym.htm'>rle_antisym</a>, <a href='rle_compat_add.htm'>rle_compat_add</a>, <a href='rle_compat_mul.htm'>rle_compat_mul</a>, <a href='rle_refl.htm'>rle_refl</a>, <a href='rle_total.htm'>rle_total</a>, <a href='rle_trans.htm'>rle_trans</a>, <a href='rmul_assoc.htm'>rmul_assoc</a>, <a href='rmul_closed.htm'>rmul_closed</a>, <a href='rmul_comm.htm'>rmul_comm</a>, <a href='rmul_distl_add.htm'>rmul_distl_add</a>, <a href='rmul_inv.htm'>rmul_inv</a>, <a href='rmul_neutr.htm'>rmul_neutr</a>, <a href='rneg_closed.htm'>rneg_closed</a>, <a href='subset.htm'>subset</a>.</p>
+</body>
+</html>

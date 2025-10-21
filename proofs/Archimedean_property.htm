@@ -2,15 +2,29 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>archimedean_property</title>
+  <title>Archimedean_property</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="main.css" rel="stylesheet">
 </head>
 <body>
 <div class='navi'><a href='chapter-17.htm'>Up</a> | <a href='search.htm'>Search</a></div>
-<h3>Theorem archimedean_property</h3>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> archimedean_property<br>
+<h3>Theorem Archimedean_property</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> Archimedean_property<br>
 x ∈ ℝ → ∃n. n ∈ ℕ ∧ x &lt; n</div></div>
+<p>The Archimedean property states that every real number is exceeded by a
+natural number. See also corollaries <a href='Archimedean_property_corollary.htm'>i</a>,
+<a href='Archimedean_property_corollary_ii.htm'>ii</a>,
+<a href='Archimedean_property_corollary_iii.htm'>iii</a>.<br>
+<br>
+<b>Proof idea</b><br>
+An equivalent transformation of <a href='nat_unbounded.htm'>nat_unbounded</a>.<br>
+<br>
+<b>Proof sketch</b><br>
+Let x ∈ ℝ be arbitrary. According to <a href='nat_unbounded.htm'>nat_unbounded</a>, ℕ is
+unbounded, which means that ¬upper_bound&nbsp;x&nbsp;ℕ must hold. Unfolding the
+definition of <a href='upper_bound_equi.htm'>upper_bound</a>, this means
+¬∀n&nbsp;∈&nbsp;ℕ. n&nbsp;≤&nbsp;x, which can be transformed to ∃n&nbsp;∈&nbsp;ℕ. x&nbsp;&lt;&nbsp;n.
+q.e.d.</p>
 <pre><b>Proof</b>
 01. ⊢ ¬(∃x. x ∈ ℝ ∧ upper_bound x ℕ), <a href='nat_unbounded.htm'>nat_unbounded</a>.
 02. ⊢ ∀x. x ∈ ℝ → ¬upper_bound x ℕ, <a href='neg_ex_bounded.htm'>neg_ex_bounded</a> 1.
@@ -28,7 +42,7 @@ x ∈ ℝ → ∃n. n ∈ ℕ ∧ x &lt; n</div></div>
 14. 3, 9 ⊢ n ∈ ℕ ∧ x &lt; n, <a href='conj_intro.htm'>conj_intro</a> 10 13.
 15. 3, 9 ⊢ ∃n. n ∈ ℕ ∧ x &lt; n, <a href='ex_intro.htm'>ex_intro</a> 14.
 16. 3 ⊢ ∃n. n ∈ ℕ ∧ x &lt; n, <a href='ex_elim.htm'>ex_elim</a> 8 15.
-archimedean_property. ⊢ x ∈ ℝ → ∃n. n ∈ ℕ ∧ x &lt; n,
+Archimedean_property. ⊢ x ∈ ℝ → ∃n. n ∈ ℕ ∧ x &lt; n,
   <a href='subj_intro.htm'>subj_intro</a> 16.
 </pre>
 <p><b>Dependencies</b><br>The given proof depends on 18 axioms:<br><a href='comp.htm'>comp</a>, <a href='efq.htm'>efq</a>, <a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='lem.htm'>lem</a>, <a href='lub_property.htm'>lub_property</a>, <a href='radd_assoc.htm'>radd_assoc</a>, <a href='radd_closed.htm'>radd_closed</a>, <a href='radd_comm.htm'>radd_comm</a>, <a href='radd_inv.htm'>radd_inv</a>, <a href='radd_neutr.htm'>radd_neutr</a>, <a href='real_is_set.htm'>real_is_set</a>, <a href='rle_antisym.htm'>rle_antisym</a>, <a href='rle_compat_add.htm'>rle_compat_add</a>, <a href='rle_refl.htm'>rle_refl</a>, <a href='rle_total.htm'>rle_total</a>, <a href='rle_trans.htm'>rle_trans</a>, <a href='rneg_closed.htm'>rneg_closed</a>.</p>
