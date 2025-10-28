@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cantor_Bernstein_theorem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-12.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem Cantor_Bernstein_theorem</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> Cantor_Bernstein_theorem<br>
+set X → num_le X Y →
+  num_le Y X → num_eq X Y</div></div>
+<p>This theorem states that <a href='num_le_equi.htm'>not greater than</a> behaves
+antisymmetric, that is, |X|&nbsp;=&nbsp;|Y| follows from |X|&nbsp;≤&nbsp;|Y| and
+|Y|&nbsp;≤&nbsp;|X|. In words, X and Y are <a href='num_eq_equi.htm'>equinumerous</a>
+if, on the one hand, X is not greater than Y and, on the other hand, Y
+is not greater than X. This means that a <a href='bij_equi.htm'>bijection</a> from
+X to Y exists if there is an <a href='inj_equi.htm'>injection</a> from X to Y on the
+one hand and an injection from Y to X on the other.<br>
+<br>
+<b>Proof idea</b><br>
+According to the premises, there is an injection from X to Y and an
+injection from Y to X. Using the <a href='Banach_decomposition_theorem.htm'>Banach
+decomposition theorem</a>, X and Y can now be decomposed into disjoint
+subsets such that the injections take the form of bijections when
+restricted to these subsets. For the latter, we consider the inverse
+mapping so that both go in the same direction. These two bijections
+can now be joined together to form a bijection from X to&nbsp;Y.<br>
+<br>
+<b>Proof sketch</b><br>
+According to the premises, we have an injection f:&nbsp;X →&nbsp;Y and an
+injection g:&nbsp;Y&nbsp;→&nbsp;X. Furthermore, according to the
+<a href='Banach_decomposition_theorem.htm'>Banach decomposition theorem</a>, there
+exist A&nbsp;⊆&nbsp;X and B&nbsp;⊆&nbsp;Y such that f[A] = B and g[Y\B] = X\A.
+Therefore, the <a href='restr_eq.htm'>restrictions</a> f|<sub>A</sub>: A → B and
+g|<sub>Y\B</sub>: Y\B → X\A are bijective. Consequently, the inverse of
+g|<sub>Y\B</sub> is also bijective. The two can now be combined via
+<a href='bij_union.htm'>bij_union</a> to form a bijection X&nbsp;→&nbsp;Y, since both X&nbsp;= A&nbsp;∪&nbsp;(X\A)
+and Y&nbsp;= B&nbsp;∪&nbsp;(Y\B) are unions of disjoint sets. q.e.d.</p>
+<pre><b>Proof</b>
+01. 1 ⊢ set X, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ num_le X Y, <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ num_le Y X, <a href='hypo.htm'>hypo</a>.
+04. 2 ⊢ ∃f. inj f X Y, <a href='num_le_unfold.htm'>num_le_unfold</a> 2.
+05. 3 ⊢ ∃g. inj g Y X, <a href='num_le_unfold.htm'>num_le_unfold</a> 3.
+06. 6 ⊢ inj f X Y, <a href='hypo.htm'>hypo</a>.
+07. 7 ⊢ inj g Y X, <a href='hypo.htm'>hypo</a>.
+08. 6 ⊢ map f X Y, <a href='inj_is_map.htm'>inj_is_map</a> 6.
+09. 7 ⊢ map g Y X, <a href='inj_is_map.htm'>inj_is_map</a> 7.
+10. 7 ⊢ rng g ⊆ X, <a href='map_rng.htm'>map_rng</a> 9.
+11. 1, 7 ⊢ ∃A. ∃B. A ⊆ X ∧ img f A = B ∧ img g (Y \ B) = X \ A,
+  <a href='Banach_decomposition_theorem.htm'>Banach_decomposition_theorem</a> 1 10.
+12. 12 ⊢ ∃B. A ⊆ X ∧ img f A = B ∧ img g (Y \ B) = X \ A, <a href='hypo.htm'>hypo</a>.
+13. 13 ⊢ A ⊆ X ∧ img f A = B ∧ img g (Y \ B) = X \ A, <a href='hypo.htm'>hypo</a>.
+14. 13 ⊢ A ⊆ X, <a href='conj_elimll.htm'>conj_elimll</a> 13.
+15. 13 ⊢ img f A = B, <a href='conj_elimlr.htm'>conj_elimlr</a> 13.
+16. 13 ⊢ img g (Y \ B) = X \ A, <a href='conj_elimr.htm'>conj_elimr</a> 13.
+17. 6, 13 ⊢ inj (restr f A) A Y, <a href='restr_is_inj.htm'>restr_is_inj</a> 6 14.
+18. 6, 13 ⊢ map (restr f A) A Y, <a href='map_restr.htm'>map_restr</a> 8 14.
+19. ⊢ img f A = img (restr f A) A, <a href='restr_img_self.htm'>restr_img_self</a>.
+20. 6, 13 ⊢ img (restr f A) A = rng (restr f A),
+  <a href='map_img_of_dom_is_rng.htm'>map_img_of_dom_is_rng</a> 18.
+21. 6, 13 ⊢ img f A = rng (restr f A), <a href='eq_trans.htm'>eq_trans</a> 19 20.
+22. 6, 13 ⊢ rng (restr f A) = B, <a href='eq_trans_ll.htm'>eq_trans_ll</a> 21 15.
+23. 6, 13 ⊢ sur (restr f A) A B, <a href='rng_restr_is_sur.htm'>rng_restr_is_sur</a> 18 22.
+24. 6, 13 ⊢ rng (restr f A) ⊆ B, <a href='incl_from_eq.htm'>incl_from_eq</a> 22.
+25. 6, 13 ⊢ inj (restr f A) A B, <a href='rng_restr_is_inj.htm'>rng_restr_is_inj</a> 17 24.
+26. 6, 13 ⊢ bij (restr f A) A B, <a href='bij_from_inj_sur.htm'>bij_from_inj_sur</a> 25 23.
+27. ⊢ Y \ B ⊆ Y, <a href='diff_incl.htm'>diff_incl</a>.
+28. 7 ⊢ inj (restr g (Y \ B)) (Y \ B) X, <a href='restr_is_inj.htm'>restr_is_inj</a> 7 27.
+29. 7 ⊢ map (restr g (Y \ B)) (Y \ B) X, <a href='inj_is_map.htm'>inj_is_map</a> 28.
+30. ⊢ img g (Y \ B) = img (restr g (Y \ B)) (Y \ B), <a href='restr_img_self.htm'>restr_img_self</a>.
+31. 13 ⊢ img (restr g (Y \ B)) (Y \ B) = X \ A, <a href='eq_trans_ll.htm'>eq_trans_ll</a> 30 16.
+32. 7 ⊢ img (restr g (Y \ B)) (Y \ B) = rng (restr g (Y \ B)),
+  <a href='map_img_of_dom_is_rng.htm'>map_img_of_dom_is_rng</a> 29.
+33. 7, 13 ⊢ rng (restr g (Y \ B)) = X \ A, <a href='eq_trans_ll.htm'>eq_trans_ll</a> 32 31.
+34. 7, 13 ⊢ rng (restr g (Y \ B)) ⊆ X \ A, <a href='incl_from_eq.htm'>incl_from_eq</a> 33.
+35. 7, 13 ⊢ inj (restr g (Y \ B)) (Y \ B) (X \ A),
+  <a href='rng_restr_is_inj.htm'>rng_restr_is_inj</a> 28 34.
+36. 7, 13 ⊢ sur (restr g (Y \ B)) (Y \ B) (X \ A),
+  <a href='rng_restr_is_sur.htm'>rng_restr_is_sur</a> 29 33.
+37. 7, 13 ⊢ bij (restr g (Y \ B)) (Y \ B) (X \ A),
+  <a href='bij_from_inj_sur.htm'>bij_from_inj_sur</a> 35 36.
+38. 7, 13 ⊢ bij (inv (restr g (Y \ B))) (X \ A) (Y \ B),
+  <a href='inv_of_bij_is_bij.htm'>inv_of_bij_is_bij</a> 37.
+39. ⊢ A ∩ (X \ A) = ∅, <a href='intersection_rel_compl.htm'>intersection_rel_compl</a>.
+40. ⊢ B ∩ (Y \ B) = ∅, <a href='intersection_rel_compl.htm'>intersection_rel_compl</a>.
+41. 6, 7, 13 ⊢ bij (restr f A ∪ inv (restr g (Y \ B)))
+  (A ∪ (X \ A)) (B ∪ (Y \ B)), <a href='bij_union.htm'>bij_union</a> 26 38 39 40.
+
+42. ⊢ img f A ⊆ rng f, <a href='img_incl_in_rng.htm'>img_incl_in_rng</a>.
+43. 6 ⊢ rng f ⊆ Y, <a href='map_rng.htm'>map_rng</a> 8.
+44. 6 ⊢ img f A ⊆ Y, <a href='incl_trans.htm'>incl_trans</a> 42 43.
+45. 6, 13 ⊢ B ⊆ Y, <a href='eq_subst.htm'>eq_subst</a> 15 44, P t ↔ t ⊆ Y.
+46. 13 ⊢ (X \ A) ∪ A = X, <a href='diff_union_subclass.htm'>diff_union_subclass</a> 14.
+47. 6, 13 ⊢ (Y \ B) ∪ B = Y, <a href='diff_union_subclass.htm'>diff_union_subclass</a> 45.
+48. ⊢ A ∪ (X \ A) = (X \ A) ∪ A, <a href='union_comm.htm'>union_comm</a>.
+49. ⊢ B ∪ (Y \ B) = (Y \ B) ∪ B, <a href='union_comm.htm'>union_comm</a>.
+50. 13 ⊢ A ∪ (X \ A) = X, <a href='eq_trans.htm'>eq_trans</a> 48 46.
+51. 6, 13 ⊢ B ∪ (Y \ B) = Y, <a href='eq_trans.htm'>eq_trans</a> 49 47.
+52. 6, 7, 13 ⊢
+  bij (restr f A ∪ inv (restr g (Y \ B))) X (B ∪ (Y \ B)),
+  <a href='eq_subst.htm'>eq_subst</a> 50 41,
+  P t ↔ bij (restr f A ∪ inv (restr g (Y \ B))) t (B ∪ (Y \ B)).
+53. 6, 7, 13 ⊢
+  bij (restr f A ∪ inv (restr g (Y \ B))) X Y, <a href='eq_subst.htm'>eq_subst</a> 51 52,
+  P t ↔ bij (restr f A ∪ inv (restr g (Y \ B))) X t.
+
+54. 6, 7, 13 ⊢ ∃h. bij h X Y, <a href='ex_intro.htm'>ex_intro</a> 53.
+55. 6, 7, 13 ⊢ num_eq X Y, <a href='num_eq_intro.htm'>num_eq_intro</a> 54.
+56. 6, 7, 12 ⊢ num_eq X Y, <a href='ex_elim.htm'>ex_elim</a> 12 55.
+57. 1, 6, 7 ⊢ num_eq X Y, <a href='ex_elim.htm'>ex_elim</a> 11 56.
+58. 1, 3, 6 ⊢ num_eq X Y, <a href='ex_elim.htm'>ex_elim</a> 5 57.
+59. 1, 2, 3 ⊢ num_eq X Y, <a href='ex_elim.htm'>ex_elim</a> 4 58.
+Cantor_Bernstein_theorem. ⊢ set X → num_le X Y →
+  num_le Y X → num_eq X Y, <a href='subj_intro_iii.htm'>subj_intro_iii</a> 59.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on nine axioms:<br><a href='comp.htm'>comp</a>, <a href='efq.htm'>efq</a>, <a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='ext.htm'>ext</a>, <a href='lem.htm'>lem</a>, <a href='pairing.htm'>pairing</a>, <a href='subset.htm'>subset</a>, <a href='union.htm'>union</a>.</p>
+</body>
+</html>

@@ -41,8 +41,8 @@ well, since f[A]&nbsp;⊆&nbsp;rng(f|<sub>A</sub>). q.e.d.</p>
 10. 2, 3 ⊢ set (dom (restr f A)), <a href='eq_subst_rev.htm'>eq_subst_rev</a> 9 3, P t ↔ set t.
 11. 1, 2, 3 ⊢ set (rng (restr f A)), <a href='substitution.htm'>substitution</a> 4 10.
 12. ⊢ img (restr f A) A ⊆ rng (restr f A), <a href='img_incl_in_rng.htm'>img_incl_in_rng</a>.
-13. ⊢ img f A ⊆ img (restr f A) A, <a href='restr_img_self.htm'>restr_img_self</a>.
-14. ⊢ img f A ⊆ rng (restr f A), <a href='incl_trans.htm'>incl_trans</a> 13 12.
+13. ⊢ img f A = img (restr f A) A, <a href='restr_img_self.htm'>restr_img_self</a>.
+14. ⊢ img f A ⊆ rng (restr f A), <a href='eq_incl_trans.htm'>eq_incl_trans</a> 13 12.
 15. 1, 2, 3 ⊢ set (img f A), <a href='subset.htm'>subset</a> 14 11.
 replacement. ⊢ function f → A ⊆ dom f → set A → set (img f A),
   <a href='subj_intro_iii.htm'>subj_intro_iii</a> 15.

@@ -28,10 +28,17 @@ Map X Y = {f | map f X Y}</div></div>
   {t | ∃x. x ∈ A ∧ t = (x, {∅})}</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_eq_intro.htm'>num_eq_intro</a><br>
 (∃f. bij f X Y) → num_eq X Y</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_le_intro.htm'>num_le_intro</a><br>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_le_fold.htm'>num_le_fold</a><br>
 (∃f. inj f X Y) → num_le X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_le_intro.htm'>num_le_intro</a><br>
+inj f X Y → num_le X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_le_unfold.htm'>num_le_unfold</a><br>
+num_le X Y → ∃f. inj f X Y</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_lt_intro.htm'>num_lt_intro</a><br>
 num_le X Y → (¬∃f. sur f X Y) → num_lt X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_le_subclass.htm'>num_le_subclass</a><br>
+num_le X Y → A ⊆ X →
+  num_le A Y</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Map_intro.htm'>Map_intro</a><br>
 map f X Y → set X → f ∈ Map X Y</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Map_elim.htm'>Map_elim</a><br>
@@ -52,6 +59,9 @@ set X →
 set X → num_lt X (power X)</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Banach_decomposition_theorem.htm'>Banach_decomposition_theorem</a><br>
 set X → rng g ⊆ X →
-  ∃A. ∃B. img f A = B ∧ X \ A = img g (Y \ B)</div></div>
+  ∃A. ∃B. A ⊆ X ∧ img f A = B ∧ img g (Y \ B) = X \ A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Cantor_Bernstein_theorem.htm'>Cantor_Bernstein_theorem</a><br>
+set X → num_le X Y →
+  num_le Y X → num_eq X Y</div></div>
 </body>
 </html>

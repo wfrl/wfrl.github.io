@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>inv_is_relation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-4.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem inv_is_relation</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> inv_is_relation<br>
+relation (inv R)</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ t ∈ inv R, <a href='hypo.htm'>hypo</a>.
+02. 1 ⊢ t ∈ {t | ∃x. ∃y. t = (y, x) ∧ (x, y) ∈ R},
+  <a href='eq_subst.htm'>eq_subst</a> <a href='inv_eq.htm'>inv_eq</a> 1, P A ↔ t ∈ A.
+03. 1 ⊢ ∃x. ∃y. t = (y, x) ∧ (x, y) ∈ R, <a href='comp_elim.htm'>comp_elim</a> 2.
+04. 4 ⊢ ∃y. t = (y, x) ∧ (x, y) ∈ R, <a href='hypo.htm'>hypo</a>.
+05. 5 ⊢ t = (y, x) ∧ (x, y) ∈ R, <a href='hypo.htm'>hypo</a>.
+06. 5 ⊢ t = (y, x), <a href='conj_eliml.htm'>conj_eliml</a> 5.
+07. 5 ⊢ ∃b. t = (y, b), <a href='ex_intro.htm'>ex_intro</a> 6.
+08. 5 ⊢ ∃a. ∃b. t = (a, b), <a href='ex_intro.htm'>ex_intro</a> 7.
+09. 4 ⊢ ∃a. ∃b. t = (a, b), <a href='ex_elim.htm'>ex_elim</a> 4 8.
+10. 1 ⊢ ∃a. ∃b. t = (a, b), <a href='ex_elim.htm'>ex_elim</a> 3 9.
+11. ⊢ t ∈ inv R → ∃a. ∃b. t = (a, b), <a href='subj_intro.htm'>subj_intro</a> 10.
+12. ⊢ ∀t. t ∈ inv R → ∃a. ∃b. t = (a, b), <a href='uq_intro.htm'>uq_intro</a> 11.
+inv_is_relation. ⊢ relation (inv R), <a href='relation_fold.htm'>relation_fold</a> 12.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on two axioms:<br><a href='comp.htm'>comp</a>, <a href='eq_subst.htm'>eq_subst</a>.</p>
+</body>
+</html>

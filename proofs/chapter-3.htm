@@ -18,8 +18,9 @@
 <li><a href='#3.5'>Operations on systems of sets</a>
 <li><a href='#3.6'>The universal class and Russell's paradox</a>
 <li><a href='#3.7'>Singletons, pair sets and pairs</a>
-<li><a href='#3.8'>Operations on families of sets</a>
-<li><a href='#3.9'>Conditional expressions</a>
+<li><a href='#3.8'>Cartesian product</a>
+<li><a href='#3.9'>Operations on families of sets</a>
+<li><a href='#3.10'>Conditional expressions</a>
 </ol>
 <h2 id='3.1'>Inclusion</h2>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='incl_intro.htm'>incl_intro</a><br>
@@ -36,6 +37,10 @@ A ⊆ B → B ⊆ A → A = B</div></div>
 A = B → A ⊆ B</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='incl_from_eq_rev.htm'>incl_from_eq_rev</a><br>
 A = B → B ⊆ A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='incl_eq_trans.htm'>incl_eq_trans</a><br>
+A ⊆ B → B = C → A ⊆ C</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='eq_incl_trans.htm'>eq_incl_trans</a><br>
+A = B → B ⊆ C → A ⊆ C</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='incl_ext.htm'>incl_ext</a><br>
 (∀X. X ⊆ A ↔ X ⊆ B) → A = B</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='pred_restr.htm'>pred_restr</a><br>
@@ -118,6 +123,9 @@ A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)</div></div>
 (A ∩ B) ∩ C = A ∩ (B ∩ C)</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='intersection_assocr.htm'>intersection_assocr</a><br>
 A ∩ (B ∩ C) = (A ∩ B) ∩ C</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='intersection_incl_in_intersection.htm'>intersection_incl_in_intersection</a><br>
+A1 ⊆ B1 → A2 ⊆ B2 →
+  A1 ∩ A2 ⊆ B1 ∩ B2</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='union_incl_in_union.htm'>union_incl_in_union</a><br>
 A1 ⊆ B1 → A2 ⊆ B2 → A1 ∪ A2 ⊆ B1 ∪ B2</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='union_incl_in.htm'>union_incl_in</a><br>
@@ -280,18 +288,6 @@ set x → set y → scd (x, y) = y</div></div>
 set x ∧ set y → (x, y) = (x', y') → x = x' ∧ y = y'</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='pair_property.htm'>pair_property</a><br>
 set x → set y → (x, y) = (x', y') → x = x' ∧ y = y'</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_intro.htm'>prod_intro</a><br>
-x ∈ X → y ∈ Y → (x, y) ∈ X × Y</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elim.htm'>prod_elim</a><br>
-t ∈ X × Y → ∃x. ∃y. x ∈ X ∧ y ∈ Y ∧ t = (x, y)</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elim_pair.htm'>prod_elim_pair</a><br>
-(x, y) ∈ X × Y → x ∈ X ∧ y ∈ Y</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elim_lemma.htm'>prod_elim_lemma</a><br>
-t ∈ X × Y → fst t ∈ X ∧ scd t ∈ Y</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_eliml.htm'>prod_eliml</a><br>
-t ∈ X × Y → fst t ∈ X</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elimr.htm'>prod_elimr</a><br>
-t ∈ X × Y → scd t ∈ Y</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='empty_set_is_set.htm'>empty_set_is_set</a><br>
 set ∅</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='zero_neq_one.htm'>zero_neq_one</a><br>
@@ -304,14 +300,29 @@ set a → ¬a ∈ X → X ∩ {a} = ∅</div></div>
 set a → x ⊆ {a} → x = ∅ ∨ x = {a}</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='diff_sg_contra.htm'>diff_sg_contra</a><br>
 x ∈ A \ {x} → ⊥</div></div>
-<h2 id='3.8'>Operations on families of sets</h2>
+<h2 id='3.8'>Cartesian product</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_intro.htm'>prod_intro</a><br>
+x ∈ X → y ∈ Y → (x, y) ∈ X × Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elim.htm'>prod_elim</a><br>
+t ∈ X × Y → ∃x. ∃y. x ∈ X ∧ y ∈ Y ∧ t = (x, y)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elim_pair.htm'>prod_elim_pair</a><br>
+(x, y) ∈ X × Y → x ∈ X ∧ y ∈ Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elim_lemma.htm'>prod_elim_lemma</a><br>
+t ∈ X × Y → fst t ∈ X ∧ scd t ∈ Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_eliml.htm'>prod_eliml</a><br>
+t ∈ X × Y → fst t ∈ X</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elimr.htm'>prod_elimr</a><br>
+t ∈ X × Y → scd t ∈ Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_disjointl.htm'>prod_disjointl</a><br>
+X1 ∩ X2 = ∅ → (X1 × Y1) ∩ (X2 × Y2) = ∅</div></div>
+<h2 id='3.9'>Operations on families of sets</h2>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='family_union_intro.htm'>family_union_intro</a><br>
 set (A i) → i ∈ I → x ∈ A i →
   x ∈ ⋃{B | ∃i. i ∈ I ∧ B = A i}</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='family_union_elim.htm'>family_union_elim</a><br>
 x ∈ ⋃{B | ∃i. i ∈ I ∧ B = A i} →
   ∃i. i ∈ I ∧ x ∈ A i ∧ set (A i)</div></div>
-<h2 id='3.9'>Conditional expressions</h2>
+<h2 id='3.10'>Conditional expressions</h2>
 <div class='box'><div class='def'><b class='def'>Definition.</b> <a href='cond_eq.htm'>cond_eq</a><br>
 if A x y = ⋂{u | (A ∧ u = x) ∨ (¬A ∧ u = y)}</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='cond_eql.htm'>cond_eql</a><br>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>restr_is_inj</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-5.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem restr_is_inj</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> restr_is_inj<br>
+inj f X Y → A ⊆ X →
+  inj (restr f A) A Y</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ inj f X Y, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ A ⊆ X, <a href='hypo.htm'>hypo</a>.
+03. 1 ⊢ map f X Y, <a href='inj_is_map.htm'>inj_is_map</a> 1.
+04. 1, 2 ⊢ map (restr f A) A Y, <a href='map_restr.htm'>map_restr</a> 3 2.
+05. 5 ⊢ a ∈ A, <a href='hypo.htm'>hypo</a>.
+06. 6 ⊢ b ∈ A, <a href='hypo.htm'>hypo</a>.
+07. 7 ⊢ app (restr f A) a = app (restr f A) b, <a href='hypo.htm'>hypo</a>.
+08. 1, 2, 5 ⊢ app f a = app (restr f A) a, <a href='app_restr.htm'>app_restr</a> 3 2 5.
+09. 1, 2, 6 ⊢ app f b = app (restr f A) b, <a href='app_restr.htm'>app_restr</a> 3 2 6.
+10. 1, 2, 5, 7 ⊢ app f a = app (restr f A) b, <a href='eq_trans.htm'>eq_trans</a> 8 7.
+11. 1, 2, 5, 6, 7 ⊢ app f a = app f b, <a href='eq_trans_rr.htm'>eq_trans_rr</a> 10 9.
+12. 2, 5 ⊢ a ∈ X, <a href='incl_elim.htm'>incl_elim</a> 2 5.
+13. 2, 6 ⊢ b ∈ X, <a href='incl_elim.htm'>incl_elim</a> 2 6.
+14. 1, 2, 5, 6, 7 ⊢ a = b, <a href='inj_elim.htm'>inj_elim</a> 1 12 13 11.
+15. 1, 2 ⊢ a ∈ A → b ∈ A →
+  app (restr f A) a = app (restr f A) b → a = b,
+  <a href='subj_intro_iii.htm'>subj_intro_iii</a> 14.
+16. 1, 2 ⊢ ∀b. a ∈ A → b ∈ A →
+  app (restr f A) a = app (restr f A) b → a = b,
+  <a href='uq_intro.htm'>uq_intro</a> 15.
+17. 1, 2 ⊢ ∀a. ∀b. a ∈ A → b ∈ A →
+  app (restr f A) a = app (restr f A) b → a = b,
+  <a href='uq_intro.htm'>uq_intro</a> 16.
+18. 1, 2 ⊢ inj (restr f A) A Y, <a href='inj_intro.htm'>inj_intro</a> 4 17.
+restr_is_inj. ⊢ inj f X Y → A ⊆ X →
+  inj (restr f A) A Y, <a href='subj_intro_ii.htm'>subj_intro_ii</a> 18.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on nine axioms:<br><a href='comp.htm'>comp</a>, <a href='efq.htm'>efq</a>, <a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='ext.htm'>ext</a>, <a href='lem.htm'>lem</a>, <a href='pairing.htm'>pairing</a>, <a href='subset.htm'>subset</a>, <a href='union.htm'>union</a>.</p>
+</body>
+</html>

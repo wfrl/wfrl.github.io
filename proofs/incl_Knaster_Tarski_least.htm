@@ -13,6 +13,45 @@
 set a → map f (power a) (power a) →
   (∀x. ∀y. y ⊆ a → x ⊆ y → app f x ⊆ app f y) →
   ∃u. u ⊆ a ∧ app f u = u ∧ (∀x. x ⊆ a → app f x = x → u ⊆ x)</div></div>
+<p>The Knaster-Tarski fixed point theorem with respect to the the power
+set lattice.
+Let a be a set and let P(a) be its power set. Let f:&nbsp;P(a)&nbsp;→ P(a) be
+a monotone function, i.e., for all x,&nbsp;y&nbsp;∈&nbsp;P(a), if x&nbsp;⊆&nbsp;y, then
+f(x)&nbsp;⊆&nbsp;f(y). Then f has a least fixed point u, which is a set u&nbsp;⊆&nbsp;a
+such that f(u)&nbsp;=&nbsp;u and for any other fixed point x (where x&nbsp;⊆&nbsp;a and
+f(x)&nbsp;=&nbsp;x), it holds that u&nbsp;⊆&nbsp;x.<br>
+<br>
+<b>Proof idea</b><br>
+The set M := {x ⊆ a | f(x) ⊆ x}, called the set of pre-fixed
+points of&nbsp;f, serves as a set of candidates, because it is non-empty
+since a&nbsp;∈&nbsp;M. The intersection ⋂M gives us a least candidate, which
+turns out to be an exact fixed point. It then follows almost trivially
+that this is also the least fixed point. In this respect, the proof
+proceeds analogously to that of <a href='incl_Knaster_Tarski_greatest.htm'>incl_Knaster_Tarski_greatest</a>.<br>
+<br>
+<b>Proof sketch</b><br>
+Let M := {x ⊆ a | f(x) ⊆ x}, the set of all pre-fixed points of f
+in P(a). Note that M is not empty, since a ∈ P(a) and the codomain
+of f is P(a), which implies f(a) ⊆ a. Thus, a ∈ M. Now, let w := ⋂M,
+the intersection of all sets in M. We will show that u := w is the
+least fixed point of f. First, we show f(w) ⊆ w. Let x be an arbitrary
+element of M. By the definition of intersection, w ⊆ x. Since f is
+monotone, this implies f(w) ⊆ f(x). Furthermore, by the definition of
+M, we have f(x) ⊆ x. By transitivity of inclusion, we get f(w) ⊆ x.
+Since f(w) ⊆ x holds for all x ∈ M, f(w) is a lower bound for the
+set M. Therefore, f(w) must be a subset of the greatest lower bound of
+M, which is w. Thus, f(w) ⊆ w. Second, we show w ⊆ f(w). From the
+previous step, we have f(w) ⊆ w. Applying the monotone function f to
+both sides of this inclusion gives f(f(w)) ⊆ f(w). This result,
+f(f(w)) ⊆ f(w), means that the set f(w) is itself an element of M.
+Since f(w) ∈ M, and w is the intersection of all elements in M, w must
+be a subset of f(w). Thus, w ⊆ f(w). Combining both inclusions,
+f(w) ⊆ w and w ⊆ f(w), we conclude by the antisymmetry of set inclusion
+that f(w) = w. It remains to show w that is the least fixed point.
+Let x be any fixed point of f, meaning x ⊆ a and f(x) = x. From
+f(x) = x, it follows that f(x) ⊆ x. This satisfies the condition for x
+to be a member of M. Since x ∈ M, and w is the intersection of all sets
+in M, it follows directly that w ⊆ x. q.e.d.</p>
 <pre><b>Proof</b>
 let M = {x | x ⊆ a ∧ app f x ⊆ x}.
 let w = ⋂M.

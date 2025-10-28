@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>rng_restr_is_inj</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-5.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem rng_restr_is_inj</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> rng_restr_is_inj<br>
+inj f X Y → rng f ⊆ B → inj f X B</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ inj f X Y, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ rng f ⊆ B, <a href='hypo.htm'>hypo</a>.
+03. 1 ⊢ map f X Y, <a href='inj_is_map.htm'>inj_is_map</a> 1.
+04. 1, 2 ⊢ map f X B,  <a href='rng_restr_is_map.htm'>rng_restr_is_map</a> 3 2.
+05. 1 ⊢ ∀a. ∀b. a ∈ X → b ∈ X → app f a = app f b → a = b,
+  <a href='lsubj_conj_elimr.htm'>lsubj_conj_elimr</a> <a href='inj_equi.htm'>inj_equi</a> 1.
+06. 1, 2 ⊢ inj f X B, <a href='inj_intro.htm'>inj_intro</a> 4 5.
+rng_restr_is_inj. ⊢ inj f X Y → rng f ⊆ B → inj f X B,
+  <a href='subj_intro_ii.htm'>subj_intro_ii</a> 6.
+</pre>
+</body>
+</html>

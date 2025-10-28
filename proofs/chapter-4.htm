@@ -15,7 +15,8 @@
 <li><a href='#4.2'>Domains and ranges</a>
 <li><a href='#4.3'>Images and inverse images</a>
 <li><a href='#4.4'>Composition of relations</a>
-<li><a href='#4.5'>Special relations</a>
+<li><a href='#4.5'>Inverse relations</a>
+<li><a href='#4.6'>Special relations</a>
 </ol>
 <h2 id='4.1'>Relationhood</h2>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='relation_unfold.htm'>relation_unfold</a><br>
@@ -54,6 +55,9 @@ relation R →
 dom (R ∪ Q) = dom R ∪ dom Q</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_union.htm'>rng_union</a><br>
 rng (R ∪ Q) = rng R ∪ rng Q</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='relation_disjointl.htm'>relation_disjointl</a><br>
+R ⊆ X1 × Y1 → S ⊆ X2 × Y2 →
+  X1 ∩ X2 = ∅ → R ∩ S = ∅</div></div>
 <h2 id='4.3'>Images and inverse images</h2>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='img_intro.htm'>img_intro</a><br>
 x ∈ A → (x, y) ∈ R → y ∈ img R A</div></div>
@@ -102,7 +106,18 @@ rng (S ∘ R) ⊆ rng S</div></div>
 img (S ∘ R) A = img S (img R A)</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_img_composition.htm'>inv_img_composition</a><br>
 inv_img (S ∘ R) B = inv_img R (inv_img S B)</div></div>
-<h2 id='4.5'>Special relations</h2>
+<h2 id='4.5'>Inverse relations</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_is_relation.htm'>inv_is_relation</a><br>
+relation (inv R)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_intro.htm'>inv_intro</a><br>
+(x, y) ∈ R → (y, x) ∈ inv R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_elim.htm'>inv_elim</a><br>
+(y, x) ∈ inv R → (x, y) ∈ R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dom_inv.htm'>dom_inv</a><br>
+dom (inv R) = rng R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_inv.htm'>rng_inv</a><br>
+rng (inv R) = dom R</div></div>
+<h2 id='4.6'>Special relations</h2>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='empty_relation.htm'>empty_relation</a><br>
 relation ∅</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dom_empty_set.htm'>dom_empty_set</a><br>

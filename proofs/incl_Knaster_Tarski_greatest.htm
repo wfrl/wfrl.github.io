@@ -14,6 +14,43 @@ set a →
   map f (power a) (power a) →
   (∀x. ∀y. y ⊆ a → x ⊆ y → app f x ⊆ app f y) →
   ∃u. u ⊆ a ∧ app f u = u ∧ (∀x. x ⊆ a → app f x = x → x ⊆ u)</div></div>
+<p>The Knaster-Tarski fixed point theorem with respect to the the power
+set lattice. Let a be a set, and let f: P(a) → P(a) be a monotone
+function on its power set P(a) ordered by inclusion ⊆. Then f has a
+greatest fixed point w.<br>
+<br>
+<b>Proof idea</b><br>
+The set M := {x ⊆ a | x ⊆ f(x)}, called the set of post-fixed points of
+f, serves as a set of candidates. The union ⋃M gives us a greatest
+candidate, which turns out to be an exact fixed point. It then follows
+almost trivially that this is also the greatest fixed point.
+In this respect, the proof proceeds analogously to that of
+<a href='incl_Knaster_Tarski_least.htm'>incl_Knaster_Tarski_least</a>.<br>
+<br>
+<b>Proof sketch</b><br>
+Let f: P(a) → P(a) be a monotone function, meaning that for any
+x,&nbsp;y ∈ P(a), if x&nbsp;⊆&nbsp;y, then f(x) ⊆ f(y). Construct the candidate
+fixed point. Let M := {x&nbsp;⊆&nbsp;a | x&nbsp;⊆&nbsp;f(x)}, the set of all
+post-fixed points of&nbsp;f. Let w := ⋃M, the union of all sets in M.
+We will show that u := w is the greatest fixed point of f.
+First, we show w ⊆ f(w). Let x be an arbitrary element of M. By the
+definition of M, we have x ⊆ f(x). By the definition of w as the union,
+we also have x ⊆ w. Since f is monotone, x ⊆ w implies f(x) ⊆ f(w).
+Combining these inclusions gives x ⊆ f(x) ⊆ f(w). Since this holds for
+every x ∈ M, f(w) is an upper bound for M. As w is the least upper
+bound (supremum) of M, it follows that w ⊆ f(w). Second, we show
+f(w) ⊆ w. From the previous step, we have w ⊆ f(w). Applying the
+monotone function f to both sides gives f(w) ⊆ f(f(w)). This inequality
+f(w) ⊆ f(f(w)) means that f(w) itself is an element of M. Since w is
+the union of all elements in M, w must contain f(w). Therefore,
+f(w) ⊆ w. By the antisymmetry of inclusion, w ⊆ f(w) and f(w) ⊆ w
+together imply that f(w) = w. Thus, w is a fixed point of f. It
+remains to be shown that w is the greatest fixed point. Let x be any
+fixed point of f, such that f(x) = x. This equality implies x ⊆ f(x),
+which is the defining condition for x to be in M. Since x ∈ M, and w is
+the union of all elements of M, it must be that x ⊆ w. Because any
+fixed point x is a subset of w, w is the greatest fixed point.
+q.e.d.</p>
 <pre><b>Proof</b>
 let M = {x | x ⊆ a ∧ x ⊆ app f x}.
 let w = ⋃M.

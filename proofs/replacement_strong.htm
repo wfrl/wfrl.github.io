@@ -35,8 +35,8 @@ must be a set as well, since f[A]&nbsp;⊆&nbsp;rng(f|<sub>A</sub>). q.e.d.</p>
 07. 2 ⊢ set (dom (restr f A)), <a href='eq_subst_rev.htm'>eq_subst_rev</a> 4 6, P t ↔ set t.
 08. 1, 2 ⊢ set (rng (restr f A)), <a href='substitution.htm'>substitution</a> 3 7.
 09. ⊢ img (restr f A) A ⊆ rng (restr f A), <a href='img_incl_in_rng.htm'>img_incl_in_rng</a>.
-10. ⊢ img f A ⊆ img (restr f A) A, <a href='restr_img_self.htm'>restr_img_self</a>.
-11. ⊢ img f A ⊆ rng (restr f A), <a href='incl_trans.htm'>incl_trans</a> 10 9.
+10. ⊢ img f A = img (restr f A) A, <a href='restr_img_self.htm'>restr_img_self</a>.
+11. ⊢ img f A ⊆ rng (restr f A), <a href='eq_incl_trans.htm'>eq_incl_trans</a> 10 9.
 12. 1, 2 ⊢ set (img f A), <a href='subset.htm'>subset</a> 11 8.
 replacement_strong. ⊢ function f → set A → set (img f A),
   <a href='subj_intro_ii.htm'>subj_intro_ii</a> 12.

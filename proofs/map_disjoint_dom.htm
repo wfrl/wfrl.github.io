@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>map_disjoint_dom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-5.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem map_disjoint_dom</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> map_disjoint_dom<br>
+map f X1 Y1 → map g X2 Y2 →
+  X1 ∩ X2 = ∅ → f ∩ g = ∅</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ map f X1 Y1, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ map g X2 Y2, <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ X1 ∩ X2 = ∅, <a href='hypo.htm'>hypo</a>.
+04. 1 ⊢ f ⊆ X1 × Y1, <a href='map_incl_in_prod.htm'>map_incl_in_prod</a> 1.
+05. 2 ⊢ g ⊆ X2 × Y2, <a href='map_incl_in_prod.htm'>map_incl_in_prod</a> 2.
+06. 1, 2, 3 ⊢ f ∩ g = ∅, <a href='relation_disjointl.htm'>relation_disjointl</a> 4 5 3.
+map_disjoint_dom. ⊢ map f X1 Y1 → map g X2 Y2 →
+  X1 ∩ X2 = ∅ → f ∩ g = ∅, <a href='subj_intro_iii.htm'>subj_intro_iii</a> 6.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on nine axioms:<br><a href='comp.htm'>comp</a>, <a href='efq.htm'>efq</a>, <a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='ext.htm'>ext</a>, <a href='lem.htm'>lem</a>, <a href='pairing.htm'>pairing</a>, <a href='subset.htm'>subset</a>, <a href='union.htm'>union</a>.</p>
+</body>
+</html>

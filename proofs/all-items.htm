@@ -42,15 +42,17 @@
 <li><a href='#3.5'>Operations on systems of sets</a>
 <li><a href='#3.6'>The universal class and Russell's paradox</a>
 <li><a href='#3.7'>Singletons, pair sets and pairs</a>
-<li><a href='#3.8'>Operations on families of sets</a>
-<li><a href='#3.9'>Conditional expressions</a>
+<li><a href='#3.8'>Cartesian product</a>
+<li><a href='#3.9'>Operations on families of sets</a>
+<li><a href='#3.10'>Conditional expressions</a>
 </ol>
 <li><a href='#4'>Relations</a><ol>
 <li><a href='#4.1'>Relationhood</a>
 <li><a href='#4.2'>Domains and ranges</a>
 <li><a href='#4.3'>Images and inverse images</a>
 <li><a href='#4.4'>Composition of relations</a>
-<li><a href='#4.5'>Special relations</a>
+<li><a href='#4.5'>Inverse relations</a>
+<li><a href='#4.6'>Special relations</a>
 </ol>
 <li><a href='#5'>Functions</a><ol>
 <li><a href='#5.1'>Functionhood</a>
@@ -166,7 +168,7 @@ sur f X Y ↔ map f X Y ∧ rng f = Y</div></div>
 <div class='box'><div class='def'><b class='def'>Definition.</b> <a href='bij_equi.htm'>bij_equi</a><br>
 bij f X Y ↔ inj f X Y ∧ sur f X Y</div></div>
 <div class='box'><div class='def'><b class='def'>Definition.</b> <a href='inv_eq.htm'>inv_eq</a><br>
-inv f = {t | ∃x. ∃y. t = (y, x) ∧ (x, y) ∈ f}</div></div>
+inv R = {t | ∃x. ∃y. t = (y, x) ∧ (x, y) ∈ R}</div></div>
 <div class='box'><div class='def'><b class='def'>Definition.</b> <a href='restr_eq.htm'>restr_eq</a><br>
 restr f A = f ∩ (A × UnivCl)</div></div>
 <div class='box'><div class='def'><b class='def'>Definition.</b> <a href='choice_function_equi.htm'>choice_function_equi</a><br>
@@ -264,6 +266,8 @@ function f → set (dom f) → set (rng f)</div></div>
 (¬¬A → A) → (⊥ → A)</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lem_from_dne.htm'>lem_from_dne</a><br>
 A ∨ ¬A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='efq_equi_mtp.htm'>efq_equi_mtp</a><br>
+(A ∧ ¬A → B) ↔ (A ∨ B → ¬A → B)</div></div>
 <h4 id='2.2.2'>Projection lemmata</h4>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='conj_elimll.htm'>conj_elimll</a><br>
 A ∧ B ∧ C → A</div></div>
@@ -453,6 +457,10 @@ A ⊆ B → B ⊆ A → A = B</div></div>
 A = B → A ⊆ B</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='incl_from_eq_rev.htm'>incl_from_eq_rev</a><br>
 A = B → B ⊆ A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='incl_eq_trans.htm'>incl_eq_trans</a><br>
+A ⊆ B → B = C → A ⊆ C</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='eq_incl_trans.htm'>eq_incl_trans</a><br>
+A = B → B ⊆ C → A ⊆ C</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='incl_ext.htm'>incl_ext</a><br>
 (∀X. X ⊆ A ↔ X ⊆ B) → A = B</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='pred_restr.htm'>pred_restr</a><br>
@@ -535,6 +543,9 @@ A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)</div></div>
 (A ∩ B) ∩ C = A ∩ (B ∩ C)</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='intersection_assocr.htm'>intersection_assocr</a><br>
 A ∩ (B ∩ C) = (A ∩ B) ∩ C</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='intersection_incl_in_intersection.htm'>intersection_incl_in_intersection</a><br>
+A1 ⊆ B1 → A2 ⊆ B2 →
+  A1 ∩ A2 ⊆ B1 ∩ B2</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='union_incl_in_union.htm'>union_incl_in_union</a><br>
 A1 ⊆ B1 → A2 ⊆ B2 → A1 ∪ A2 ⊆ B1 ∪ B2</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='union_incl_in.htm'>union_incl_in</a><br>
@@ -697,18 +708,6 @@ set x → set y → scd (x, y) = y</div></div>
 set x ∧ set y → (x, y) = (x', y') → x = x' ∧ y = y'</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='pair_property.htm'>pair_property</a><br>
 set x → set y → (x, y) = (x', y') → x = x' ∧ y = y'</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_intro.htm'>prod_intro</a><br>
-x ∈ X → y ∈ Y → (x, y) ∈ X × Y</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elim.htm'>prod_elim</a><br>
-t ∈ X × Y → ∃x. ∃y. x ∈ X ∧ y ∈ Y ∧ t = (x, y)</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elim_pair.htm'>prod_elim_pair</a><br>
-(x, y) ∈ X × Y → x ∈ X ∧ y ∈ Y</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elim_lemma.htm'>prod_elim_lemma</a><br>
-t ∈ X × Y → fst t ∈ X ∧ scd t ∈ Y</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_eliml.htm'>prod_eliml</a><br>
-t ∈ X × Y → fst t ∈ X</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elimr.htm'>prod_elimr</a><br>
-t ∈ X × Y → scd t ∈ Y</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='empty_set_is_set.htm'>empty_set_is_set</a><br>
 set ∅</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='zero_neq_one.htm'>zero_neq_one</a><br>
@@ -721,14 +720,29 @@ set a → ¬a ∈ X → X ∩ {a} = ∅</div></div>
 set a → x ⊆ {a} → x = ∅ ∨ x = {a}</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='diff_sg_contra.htm'>diff_sg_contra</a><br>
 x ∈ A \ {x} → ⊥</div></div>
-<h3 id='3.8'>Operations on families of sets</h3>
+<h3 id='3.8'>Cartesian product</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_intro.htm'>prod_intro</a><br>
+x ∈ X → y ∈ Y → (x, y) ∈ X × Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elim.htm'>prod_elim</a><br>
+t ∈ X × Y → ∃x. ∃y. x ∈ X ∧ y ∈ Y ∧ t = (x, y)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elim_pair.htm'>prod_elim_pair</a><br>
+(x, y) ∈ X × Y → x ∈ X ∧ y ∈ Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elim_lemma.htm'>prod_elim_lemma</a><br>
+t ∈ X × Y → fst t ∈ X ∧ scd t ∈ Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_eliml.htm'>prod_eliml</a><br>
+t ∈ X × Y → fst t ∈ X</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_elimr.htm'>prod_elimr</a><br>
+t ∈ X × Y → scd t ∈ Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='prod_disjointl.htm'>prod_disjointl</a><br>
+X1 ∩ X2 = ∅ → (X1 × Y1) ∩ (X2 × Y2) = ∅</div></div>
+<h3 id='3.9'>Operations on families of sets</h3>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='family_union_intro.htm'>family_union_intro</a><br>
 set (A i) → i ∈ I → x ∈ A i →
   x ∈ ⋃{B | ∃i. i ∈ I ∧ B = A i}</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='family_union_elim.htm'>family_union_elim</a><br>
 x ∈ ⋃{B | ∃i. i ∈ I ∧ B = A i} →
   ∃i. i ∈ I ∧ x ∈ A i ∧ set (A i)</div></div>
-<h3 id='3.9'>Conditional expressions</h3>
+<h3 id='3.10'>Conditional expressions</h3>
 <div class='box'><div class='def'><b class='def'>Definition.</b> <a href='cond_eq.htm'>cond_eq</a><br>
 if A x y = ⋂{u | (A ∧ u = x) ∨ (¬A ∧ u = y)}</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='cond_eql.htm'>cond_eql</a><br>
@@ -773,6 +787,9 @@ relation R →
 dom (R ∪ Q) = dom R ∪ dom Q</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_union.htm'>rng_union</a><br>
 rng (R ∪ Q) = rng R ∪ rng Q</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='relation_disjointl.htm'>relation_disjointl</a><br>
+R ⊆ X1 × Y1 → S ⊆ X2 × Y2 →
+  X1 ∩ X2 = ∅ → R ∩ S = ∅</div></div>
 <h3 id='4.3'>Images and inverse images</h3>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='img_intro.htm'>img_intro</a><br>
 x ∈ A → (x, y) ∈ R → y ∈ img R A</div></div>
@@ -821,7 +838,18 @@ rng (S ∘ R) ⊆ rng S</div></div>
 img (S ∘ R) A = img S (img R A)</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_img_composition.htm'>inv_img_composition</a><br>
 inv_img (S ∘ R) B = inv_img R (inv_img S B)</div></div>
-<h3 id='4.5'>Special relations</h3>
+<h3 id='4.5'>Inverse relations</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_is_relation.htm'>inv_is_relation</a><br>
+relation (inv R)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_intro.htm'>inv_intro</a><br>
+(x, y) ∈ R → (y, x) ∈ inv R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_elim.htm'>inv_elim</a><br>
+(y, x) ∈ inv R → (x, y) ∈ R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dom_inv.htm'>dom_inv</a><br>
+dom (inv R) = rng R</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_inv.htm'>rng_inv</a><br>
+rng (inv R) = dom R</div></div>
+<h3 id='4.6'>Special relations</h3>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='empty_relation.htm'>empty_relation</a><br>
 relation ∅</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dom_empty_set.htm'>dom_empty_set</a><br>
@@ -866,6 +894,9 @@ function f → dom f = X → map f X UnivCl</div></div>
 map f X Y → dom f = X</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_rng.htm'>map_rng</a><br>
 map f X Y → rng f ⊆ Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_restr_is_map.htm'>rng_restr_is_map</a><br>
+map f X Y → rng f ⊆ B →
+  map f X B</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='function_subclass.htm'>function_subclass</a><br>
 f ⊆ g → function g → function f</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='function_union.htm'>function_union</a><br>
@@ -936,6 +967,12 @@ function f → x ∈ dom f → set (app f x)</div></div>
 map f X Y → x ∈ X → app f x ∈ Y</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_app_is_set.htm'>map_app_is_set</a><br>
 map f X Y → x ∈ X → set (app f x)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_app_unionl.htm'>map_app_unionl</a><br>
+map f X1 Y → map (f ∪ g) (X1 ∪ X2) Z →
+  x ∈ X1 → app (f ∪ g) x = app f x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_app_unionr.htm'>map_app_unionr</a><br>
+map g X2 Y → map (f ∪ g) (X1 ∪ X2) Z →
+  x ∈ X2 → app (f ∪ g) x = app g x</div></div>
 <h3 id='5.3'>Function composition</h3>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='fn_from_term_plain.htm'>fn_from_term_plain</a><br>
 f = {t | ∃x. t = (x, y x)} → function f</div></div>
@@ -986,7 +1023,10 @@ map f X Y → y ∈ rng f →
 function f →
   inv_img f (A ∩ B) = inv_img f A ∩ inv_img f B</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='restr_img_self.htm'>restr_img_self</a><br>
-img f A ⊆ img (restr f A) A</div></div>
+img f A = img (restr f A) A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='map_disjoint_dom.htm'>map_disjoint_dom</a><br>
+map f X1 Y1 → map g X2 Y2 →
+  X1 ∩ X2 = ∅ → f ∩ g = ∅</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='replacement.htm'>replacement</a><br>
 function f → A ⊆ dom f → set A → set (img f A)</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='replacement_strong.htm'>replacement_strong</a><br>
@@ -1085,6 +1125,33 @@ bij f X Y → bij g Y Z →
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inj_from_left_inv.htm'>inj_from_left_inv</a><br>
 map f X Y → (∃g. map g Y X ∧ g ∘ f = id X) →
   inj f X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inj_union.htm'>inj_union</a><br>
+inj f X1 Y1 → inj g X2 Y2 → X1 ∩ X2 = ∅ → Y1 ∩ Y2 = ∅ →
+  inj (f ∪ g) (X1 ∪ X2) (Y1 ∪ Y2)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='sur_union.htm'>sur_union</a><br>
+sur f X1 Y1 → sur g X2 Y2 →
+  X1 ∩ X2 = ∅ → sur (f ∪ g) (X1 ∪ X2) (Y1 ∪ Y2)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='bij_union.htm'>bij_union</a><br>
+bij f X1 Y1 → bij g X2 Y2 → X1 ∩ X2 = ∅ →
+  Y1 ∩ Y2 = ∅ → bij (f ∪ g) (X1 ∪ X2) (Y1 ∪ Y2)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='restr_is_inj.htm'>restr_is_inj</a><br>
+inj f X Y → A ⊆ X →
+  inj (restr f A) A Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_of_bij_is_map.htm'>inv_of_bij_is_map</a><br>
+bij f X Y → map (inv f) Y X</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='bij_app_inv_app.htm'>bij_app_inv_app</a><br>
+bij f X Y → x ∈ X →
+  app (inv f) (app f x) = x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='bij_app_app_inv.htm'>bij_app_app_inv</a><br>
+bij f X Y → y ∈ Y →
+  app f (app (inv f) y) = y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='inv_of_bij_is_bij.htm'>inv_of_bij_is_bij</a><br>
+bij f X Y → bij (inv f) Y X</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_restr_is_sur.htm'>rng_restr_is_sur</a><br>
+map f X Y → rng f = B →
+  sur f X B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rng_restr_is_inj.htm'>rng_restr_is_inj</a><br>
+inj f X Y → rng f ⊆ B → inj f X B</div></div>
 <h3 id='5.9'>Choice functions</h3>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='choice_fn_unfold.htm'>choice_fn_unfold</a><br>
 choice_function f →
@@ -1301,10 +1368,17 @@ Map X Y = {f | map f X Y}</div></div>
   {t | ∃x. x ∈ A ∧ t = (x, {∅})}</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_eq_intro.htm'>num_eq_intro</a><br>
 (∃f. bij f X Y) → num_eq X Y</div></div>
-<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_le_intro.htm'>num_le_intro</a><br>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_le_fold.htm'>num_le_fold</a><br>
 (∃f. inj f X Y) → num_le X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_le_intro.htm'>num_le_intro</a><br>
+inj f X Y → num_le X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_le_unfold.htm'>num_le_unfold</a><br>
+num_le X Y → ∃f. inj f X Y</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_lt_intro.htm'>num_lt_intro</a><br>
 num_le X Y → (¬∃f. sur f X Y) → num_lt X Y</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='num_le_subclass.htm'>num_le_subclass</a><br>
+num_le X Y → A ⊆ X →
+  num_le A Y</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Map_intro.htm'>Map_intro</a><br>
 map f X Y → set X → f ∈ Map X Y</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Map_elim.htm'>Map_elim</a><br>
@@ -1325,7 +1399,10 @@ set X →
 set X → num_lt X (power X)</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Banach_decomposition_theorem.htm'>Banach_decomposition_theorem</a><br>
 set X → rng g ⊆ X →
-  ∃A. ∃B. img f A = B ∧ X \ A = img g (Y \ B)</div></div>
+  ∃A. ∃B. A ⊆ X ∧ img f A = B ∧ img g (Y \ B) = X \ A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Cantor_Bernstein_theorem.htm'>Cantor_Bernstein_theorem</a><br>
+set X → num_le X Y →
+  num_le Y X → num_eq X Y</div></div>
 <h2 id='13'>Ordinal numbers</h2>
 <h3 id='13.1'>Transitive sets</h3>
 <div class='box'><div class='def'><b class='def'>Definition.</b> <a href='transitive_equi.htm'>transitive_equi</a><br>
@@ -1990,9 +2067,9 @@ r ∈ ℝ → L ∈ ℝ → map a ℕ ℝ →
 <pre>
   71 definitions
   37 axioms
- 650 theorems
+ 679 theorems
 ────────────────
- 758 items total
+ 787 items total
 </pre>
 </body>
 </html>

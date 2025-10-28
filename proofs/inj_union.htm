@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>inj_union</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-5.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem inj_union</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> inj_union<br>
+inj f X1 Y1 → inj g X2 Y2 → X1 ∩ X2 = ∅ → Y1 ∩ Y2 = ∅ →
+  inj (f ∪ g) (X1 ∪ X2) (Y1 ∪ Y2)</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ inj f X1 Y1, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ inj g X2 Y2, <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ X1 ∩ X2 = ∅, <a href='hypo.htm'>hypo</a>.
+04. 4 ⊢ Y1 ∩ Y2 = ∅, <a href='hypo.htm'>hypo</a>.
+05. 1 ⊢ map f X1 Y1, <a href='inj_is_map.htm'>inj_is_map</a> 1.
+06. 2 ⊢ map g X2 Y2, <a href='inj_is_map.htm'>inj_is_map</a> 2.
+07. 1, 2, 3 ⊢ map (f ∪ g) (X1 ∪ X2) (Y1 ∪ Y2), <a href='map_union.htm'>map_union</a> 5 6 3.
+08. 8 ⊢ a ∈ X1 ∪ X2, <a href='hypo.htm'>hypo</a>.
+09. 9 ⊢ b ∈ X1 ∪ X2, <a href='hypo.htm'>hypo</a>.
+10. 10 ⊢ app (f ∪ g) a = app (f ∪ g) b, <a href='hypo.htm'>hypo</a>.
+11. 8 ⊢ a ∈ X1 ∨ a ∈ X2, <a href='union_elim.htm'>union_elim</a> 8.
+12. 9 ⊢ b ∈ X1 ∨ b ∈ X2, <a href='union_elim.htm'>union_elim</a> 9.
+13. 13 ⊢ a ∈ X1, <a href='hypo.htm'>hypo</a>.
+14. 14 ⊢ b ∈ X1, <a href='hypo.htm'>hypo</a>.
+15. 1, 2, 3, 13 ⊢ app (f ∪ g) a = app f a, <a href='map_app_unionl.htm'>map_app_unionl</a> 5 7 13.
+16. 1, 2, 3, 14 ⊢ app (f ∪ g) b = app f b, <a href='map_app_unionl.htm'>map_app_unionl</a> 5 7 14.
+17. 1, 2, 3, 10, 13 ⊢ app f a = app (f ∪ g) b, <a href='eq_trans_ll.htm'>eq_trans_ll</a> 15 10.
+18. 1, 2, 3, 10, 13, 14 ⊢ app f a = app f b, <a href='eq_trans.htm'>eq_trans</a> 17 16.
+19. 1, 2, 3, 10, 13, 14 ⊢ a = b, <a href='inj_elim.htm'>inj_elim</a> 1 13 14 18.
+20. 20 ⊢ b ∈ X2, <a href='hypo.htm'>hypo</a>.
+21. 1, 2, 3, 20 ⊢ app (f ∪ g) b = app g b, <a href='map_app_unionr.htm'>map_app_unionr</a> 6 7 20.
+22. 1, 2, 3, 10, 13, 20 ⊢ app f a = app g b, <a href='eq_trans.htm'>eq_trans</a> 17 21.
+23. 1, 13 ⊢ app f a ∈ Y1, <a href='map_app_in_cod.htm'>map_app_in_cod</a> 5 13.
+24. 2, 20 ⊢ app g b ∈ Y2, <a href='map_app_in_cod.htm'>map_app_in_cod</a> 6 20.
+25. 1, 2, 3, 10, 13, 20 ⊢ app f a ∈ Y2,
+  <a href='eq_subst_rev.htm'>eq_subst_rev</a> 22 24, P t ↔ t ∈ Y2.
+26. 1, 2, 3, 4, 10, 13, 20 ⊢ ⊥, <a href='disjoint_property.htm'>disjoint_property</a> 4 23 25.
+27. 1, 2, 3, 4, 10, 13, 20 ⊢ a = b, <a href='efq.htm'>efq</a> 26.
+28. 1, 2, 3, 4, 9, 10, 13 ⊢ a = b, <a href='disj_elim.htm'>disj_elim</a> 12 19 27.
+29. 29 ⊢ a ∈ X2, <a href='hypo.htm'>hypo</a>.
+30. 30 ⊢ b ∈ X1, <a href='hypo.htm'>hypo</a>.
+31. 1, 2, 3, 29 ⊢ app (f ∪ g) a = app g a, <a href='map_app_unionr.htm'>map_app_unionr</a> 6 7 29.
+32. 1, 2, 3, 30 ⊢ app (f ∪ g) b = app f b, <a href='map_app_unionl.htm'>map_app_unionl</a> 5 7 30.
+33. 1, 2, 3, 10, 30 ⊢ app (f ∪ g) a = app f b, <a href='eq_trans.htm'>eq_trans</a> 10 32.
+34. 1, 2, 3, 10, 29, 30 ⊢ app f b = app g a, <a href='eq_trans_ll.htm'>eq_trans_ll</a> 33 31.
+35. 1, 30 ⊢ app f b ∈ Y1, <a href='map_app_in_cod.htm'>map_app_in_cod</a> 5 30.
+36. 2, 29 ⊢ app g a ∈ Y2, <a href='map_app_in_cod.htm'>map_app_in_cod</a> 6 29.
+37. 1, 2, 3, 10, 29, 30 ⊢ app f b ∈ Y2,
+  <a href='eq_subst_rev.htm'>eq_subst_rev</a> 34 36, P t ↔ t ∈ Y2.
+38. 1, 2, 3, 4, 10, 29, 30 ⊢ ⊥, <a href='disjoint_property.htm'>disjoint_property</a> 4 35 37.
+39. 1, 2, 3, 4, 10, 29, 30 ⊢ a = b, <a href='efq.htm'>efq</a> 38.
+40. 40 ⊢ b ∈ X2, <a href='hypo.htm'>hypo</a>.
+41. 1, 2, 3, 40 ⊢ app (f ∪ g) b = app g b, <a href='map_app_unionr.htm'>map_app_unionr</a> 6 7 40.
+42. 1, 2, 3, 10, 29 ⊢ app g a = app (f ∪ g) b, <a href='eq_trans_ll.htm'>eq_trans_ll</a> 31 10.
+43. 1, 2, 3, 10, 29, 40 ⊢ app g a = app g b, <a href='eq_trans.htm'>eq_trans</a> 42 41.
+44. 1, 2, 3, 10, 29, 40 ⊢ a = b, <a href='inj_elim.htm'>inj_elim</a> 2 29 40 43.
+45. 1, 2, 3, 4, 9, 10, 29 ⊢ a = b, <a href='disj_elim.htm'>disj_elim</a> 12 39 44.
+46. 1, 2, 3, 4, 8, 9, 10 ⊢ a = b, <a href='disj_elim.htm'>disj_elim</a> 11 28 45.
+47. 1, 2, 3, 4 ⊢ a ∈ X1 ∪ X2 → b ∈ X1 ∪ X2 →
+  app (f ∪ g) a = app (f ∪ g) b → a = b, <a href='subj_intro_iii.htm'>subj_intro_iii</a> 46.
+48. 1, 2, 3, 4 ⊢ ∀b. a ∈ X1 ∪ X2 → b ∈ X1 ∪ X2 →
+  app (f ∪ g) a = app (f ∪ g) b → a = b, <a href='uq_intro.htm'>uq_intro</a> 47.
+49. 1, 2, 3, 4 ⊢ ∀a. ∀b. a ∈ X1 ∪ X2 → b ∈ X1 ∪ X2 →
+  app (f ∪ g) a = app (f ∪ g) b → a = b, <a href='uq_intro.htm'>uq_intro</a> 48.
+50. 1, 2, 3, 4 ⊢ inj (f ∪ g) (X1 ∪ X2) (Y1 ∪ Y2), <a href='inj_intro.htm'>inj_intro</a> 7 49.
+inj_union. ⊢ inj f X1 Y1 → inj g X2 Y2 → X1 ∩ X2 = ∅ → Y1 ∩ Y2 = ∅ →
+  inj (f ∪ g) (X1 ∪ X2) (Y1 ∪ Y2), <a href='subj_intro_iv.htm'>subj_intro_iv</a> 50.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on seven axioms:<br><a href='comp.htm'>comp</a>, <a href='efq.htm'>efq</a>, <a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='ext.htm'>ext</a>, <a href='lem.htm'>lem</a>, <a href='subset.htm'>subset</a>.</p>
+</body>
+</html>

@@ -10,10 +10,12 @@
 <div class='navi'><a href='chapter-12.htm'>Up</a> | <a href='search.htm'>Search</a></div>
 <h3>Theorem num_le_intro</h3>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> num_le_intro<br>
-(∃f. inj f X Y) → num_le X Y</div></div>
+inj f X Y → num_le X Y</div></div>
 <pre><b>Proof</b>
-num_le_intro. ⊢ (∃f. inj f X Y) → num_le X Y,
-  <a href='bij_elimr.htm'>bij_elimr</a> <a href='num_le_equi.htm'>num_le_equi</a>.
+01. 1 ⊢ inj f X Y, <a href='hypo.htm'>hypo</a>.
+02. 1 ⊢ ∃f. inj f X Y, <a href='ex_intro.htm'>ex_intro</a> 1.
+03. 1 ⊢ num_le X Y, <a href='num_le_fold.htm'>num_le_fold</a> 2.
+num_le_intro. ⊢ inj f X Y → num_le X Y, <a href='subj_intro.htm'>subj_intro</a> 3.
 </pre>
 </body>
 </html>

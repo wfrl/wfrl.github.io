@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>rng_restr_is_map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-5.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem rng_restr_is_map</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> rng_restr_is_map<br>
+map f X Y → rng f ⊆ B →
+  map f X B</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ map f X Y, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ rng f ⊆ B, <a href='hypo.htm'>hypo</a>.
+03. 1 ⊢ function f, <a href='map_is_function.htm'>map_is_function</a> 1.
+04. 1 ⊢ dom f = X, <a href='map_dom.htm'>map_dom</a> 1.
+05. 1, 2 ⊢ map f X B, <a href='map_intro.htm'>map_intro</a> 3 4 2.
+rng_restr_is_map. ⊢ map f X Y → rng f ⊆ B →
+  map f X B, <a href='subj_intro_ii.htm'>subj_intro_ii</a> 5.
+</pre>
+</body>
+</html>
