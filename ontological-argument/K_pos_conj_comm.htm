@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>K_pos_conj_comm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-2.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem K_pos_conj_comm</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> K_pos_conj_comm<br>
+◇(A ∧ B) → ◇(B ∧ A)</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ A ∧ B, <a href='hypo.htm'>hypo</a>.
+02. 1 ⊢ A, <a href='conj_eliml.htm'>conj_eliml</a> 1.
+03. 1 ⊢ B, <a href='conj_elimr.htm'>conj_elimr</a> 1.
+04. 1 ⊢ B ∧ A, <a href='conj_intro.htm'>conj_intro</a> 3 2.
+05. ⊢ A ∧ B → B ∧ A, <a href='subj_intro.htm'>subj_intro</a> 4.
+06. ⊢ ¬(B ∧ A) → ¬(A ∧ B), <a href='contraposition.htm'>contraposition</a> 5.
+07. ⊢ □(¬(B ∧ A) → ¬(A ∧ B)), <a href='nec.htm'>nec</a> 6.
+08. ⊢ □¬(B ∧ A) → □¬(A ∧ B), <a href='K.htm'>K</a> 7.
+09. ⊢ ¬□¬(A ∧ B)→ ¬□¬(B ∧ A), <a href='contraposition.htm'>contraposition</a> 8.
+10. 10 ⊢ ◇(A ∧ B), <a href='hypo.htm'>hypo</a>.
+11. 10 ⊢ ¬□¬(A ∧ B), <a href='pos_unfold.htm'>pos_unfold</a> 10.
+12. 10 ⊢ ¬□¬(B ∧ A), <a href='subj_elim.htm'>subj_elim</a> 9 11.
+13. 10 ⊢ ◇(B ∧ A), <a href='pos_fold.htm'>pos_fold</a> 12.
+K_pos_conj_comm. ⊢ ◇(A ∧ B) → ◇(B ∧ A),
+  <a href='subj_intro.htm'>subj_intro</a> 13.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on two axioms:<br><a href='K.htm'>K</a>, <a href='pos_equi.htm'>pos_equi</a>.</p>
+</body>
+</html>

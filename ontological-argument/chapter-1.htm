@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='../ontological-argument-toc.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h1>Rules and axioms</h1>
+<h2>Table of contents</h2>
+<ol>
+<li><a href='#1.1'>Natural deduction inference rules</a>
+<li><a href='#1.2'>Axioms of classical propositional logic</a>
+<li><a href='#1.3'>Axioms of equality</a>
+<li><a href='#1.4'>Axioms of modal logic KB</a>
+<li><a href='#1.5'>Needed axioms of ZF set theory</a>
+<li><a href='#1.6'>Scott's variant of Gödel's axioms</a>
+</ol>
+<h2 id='1.1'>Natural deduction inference rules</h2>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='hypo.htm'>hypo</a><br>
+(⊤ ∧ A ⊢ A)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='conj_intro.htm'>conj_intro</a><br>
+(H1 ⊢ A) → (H2 ⊢ B) → (H1 ∧ H2 ⊢ A ∧ B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='conj_eliml.htm'>conj_eliml</a><br>
+(H ⊢ A ∧ B) → (H ⊢ A)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='conj_elimr.htm'>conj_elimr</a><br>
+(H ⊢ A ∧ B) → (H ⊢ B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='disj_introl.htm'>disj_introl</a><br>
+(H ⊢ A) → (H ⊢ A ∨ B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='disj_intror.htm'>disj_intror</a><br>
+(H ⊢ B) → (H ⊢ A ∨ B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='disj_elim.htm'>disj_elim</a><br>
+(H1 ⊢ A ∨ B) → (H2 ∧ A ⊢ C) → (H3 ∧ B ⊢ C) →
+  (H1 ∧ H2 ∧ H3 ⊢ C)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='subj_intro.htm'>subj_intro</a><br>
+(H ∧ A ⊢ B) → (H ⊢ A → B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='subj_elim.htm'>subj_elim</a><br>
+(H1 ⊢ A → B) → (H2 ⊢ A) → (H1 ∧ H2 ⊢ B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='neg_intro.htm'>neg_intro</a><br>
+(H ∧ A ⊢ ⊥) → (H ⊢ ¬A)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='neg_elim.htm'>neg_elim</a><br>
+(H1 ⊢ ¬A) → (H2 ⊢ A) → (H1 ∧ H2 ⊢ ⊥)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='bij_intro.htm'>bij_intro</a><br>
+(H1 ⊢ A → B) → (H2 ⊢ B → A) → (H1 ∧ H2 ⊢ A ↔ B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='bij_eliml.htm'>bij_eliml</a><br>
+(H ⊢ A ↔ B) → (H ⊢ A → B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='bij_elimr.htm'>bij_elimr</a><br>
+(H ⊢ A ↔ B) → (H ⊢ B → A)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='uq_intro.htm'>uq_intro</a><br>
+(nf u (H ∧ ∀x. Q x)) → (H ⊢ Q u) → (H ⊢ ∀x. Q x)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='uq_elim.htm'>uq_elim</a><br>
+(H ⊢ ∀x. Q x) → (H ⊢ Q t)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='ex_intro.htm'>ex_intro</a><br>
+(H ⊢ Q t) → (H ⊢ ∃x. Q x)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='ex_elim.htm'>ex_elim</a><br>
+(nf u (H1 ∧ H2 ∧ B ∧ ∃x. Q x)) →
+  (H1 ⊢ ∃x. Q x) → (H2 ∧ Q u ⊢ B) → (H1 ∧ H2 ⊢ B)</div></div>
+<div class='box'><div class='rule'><b class='rule'>Rule.</b> <a href='nec.htm'>nec</a><br>
+(⊢ A) → (⊢ □A)</div></div>
+<h2 id='1.2'>Axioms of classical propositional logic</h2>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='efq.htm'>efq</a><br>
+⊥ → A</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='lem.htm'>lem</a><br>
+A ∨ ¬A</div></div>
+<h2 id='1.3'>Axioms of equality</h2>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='eq_refl.htm'>eq_refl</a><br>
+x = x</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='eq_subst.htm'>eq_subst</a><br>
+x = y → Q x → Q y</div></div>
+<h2 id='1.4'>Axioms of modal logic KB</h2>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='pos_equi.htm'>pos_equi</a><br>
+◇A ↔ ¬□¬A</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='K.htm'>K</a><br>
+□(A → B) → □A → □B</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='B.htm'>B</a><br>
+A → □◇A</div></div>
+<h2 id='1.5'>Needed axioms of ZF set theory</h2>
+<div class='box'><div class='decl'><b class='decl'>Declaration.</b> <a href='element_decl.htm'>element_decl</a><br>
+x ∈ A ↔ _</div></div>
+<div class='box'><div class='decl'><b class='decl'>Declaration.</b> <a href='univ_decl.htm'>univ_decl</a><br>
+Univ = _</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='empty_set_eq.htm'>empty_set_eq</a><br>
+∅ = {x | x ∈ Univ ∧ ⊥}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='compl_eq.htm'>compl_eq</a><br>
+compl A = {x | x ∈ Univ ∧ ¬(x ∈ A)}</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='extensionality.htm'>extensionality</a><br>
+(∀x. x ∈ A ↔ x ∈ B) → A = B</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='separation.htm'>separation</a><br>
+u ∈ {x | x ∈ A ∧ Q x} ↔ u ∈ A ∧ Q u</div></div>
+<h2 id='1.6'>Scott's variant of Gödel's axioms</h2>
+<div class='box'><div class='decl'><b class='decl'>Declaration.</b> <a href='positive_decl.htm'>positive_decl</a><br>
+P = _</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='G_eq.htm'>G_eq</a><br>
+G = {x | x ∈ Univ ∧ ∀A. A ∈ P → x ∈ A}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='ess_equi.htm'>ess_equi</a><br>
+ess E x ↔ x ∈ E ∧ ∀A. x ∈ A → □∀y. y ∈ E → y ∈ A</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='NE_eq.htm'>NE_eq</a><br>
+NE = {x | x ∈ Univ ∧ ∀E. ess E x → □∃y. y ∈ E}</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='axiom_i.htm'>axiom_i</a><br>
+A ∈ P ↔ ¬(compl A ∈ P)</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='axiom_ii.htm'>axiom_ii</a><br>
+A ∈ P → □(∀x. x ∈ A → x ∈ B) → B ∈ P</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='axiom_iii.htm'>axiom_iii</a><br>
+G ∈ P</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='axiom_iv.htm'>axiom_iv</a><br>
+A ∈ P → □(A ∈ P)</div></div>
+<div class='box'><div class='ax'><b class='ax'>Axiom.</b> <a href='axiom_v.htm'>axiom_v</a><br>
+NE ∈ P</div></div>
+</body>
+</html>

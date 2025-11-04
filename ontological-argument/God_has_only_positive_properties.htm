@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>God_has_only_positive_properties</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-4.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem God_has_only_positive_properties</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> God_has_only_positive_properties<br>
+
+  x ∈ G → x ∈ A → A ∈ P</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ x ∈ G, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ x ∈ A, <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ ¬(A ∈ P), <a href='hypo.htm'>hypo</a>.
+04. ⊢ A ∈ P ↔ ¬(compl A ∈ P), <a href='axiom_i.htm'>axiom_i</a>.
+05. ⊢ ¬(A ∈ P) ↔ ¬¬(compl A ∈ P), <a href='equi_cong_neg.htm'>equi_cong_neg</a> 4.
+06. 3 ⊢ ¬¬(compl A ∈ P), <a href='lsubj_elim.htm'>lsubj_elim</a> 5 3.
+07. 3 ⊢ compl A ∈ P, <a href='dne.htm'>dne</a> 6.
+08. 1 ⊢ x ∈ {x | x ∈ Univ ∧ ∀A. A ∈ P → x ∈ A}, <a href='eq_subst.htm'>eq_subst</a> <a href='G_eq.htm'>G_eq</a> 1.
+09. 1 ⊢ x ∈ Univ ∧ ∀A. A ∈ P → x ∈ A, <a href='sep_elim.htm'>sep_elim</a> 8.
+10. 1 ⊢ ∀A. A ∈ P → x ∈ A, <a href='conj_elimr.htm'>conj_elimr</a> 9.
+11. 1 ⊢ compl A ∈ P → x ∈ compl A, <a href='uq_elim.htm'>uq_elim</a> 10.
+12. 1, 3 ⊢ x ∈ compl A, <a href='subj_elim.htm'>subj_elim</a> 11 7.
+13. 1, 3 ⊢ x ∈ Univ ∧ ¬(x ∈ A), <a href='compl_elim.htm'>compl_elim</a> 12.
+14. 1, 3 ⊢ ¬(x ∈ A), <a href='conj_elimr.htm'>conj_elimr</a> 13.
+15. 1, 2, 3 ⊢ ⊥, <a href='neg_elim.htm'>neg_elim</a> 14 2.
+16. 1, 2 ⊢ ¬¬(A ∈ P), <a href='neg_intro.htm'>neg_intro</a> 15.
+17. 1, 2 ⊢ A ∈ P, <a href='dne.htm'>dne</a> 16.
+18. 1 ⊢ x ∈ A → A ∈ P, <a href='subj_intro.htm'>subj_intro</a> 17.
+God_has_only_positive_properties. ⊢
+  x ∈ G → x ∈ A → A ∈ P, <a href='subj_intro.htm'>subj_intro</a> 18.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on five axioms:<br><a href='axiom_i.htm'>axiom_i</a>, <a href='efq.htm'>efq</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='lem.htm'>lem</a>, <a href='separation.htm'>separation</a>.</p>
+</body>
+</html>

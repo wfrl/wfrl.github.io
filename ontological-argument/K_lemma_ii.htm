@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>K_lemma_ii</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-2.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem K_lemma_ii</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> K_lemma_ii<br>
+□(A → B) → ◇A → ◇B</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ □(A → B), <a href='hypo.htm'>hypo</a>.
+02. ⊢ □((A → B) → (¬B → ¬A)), <a href='nec.htm'>nec</a> <a href='contraposition.htm'>contraposition</a>.
+03. ⊢ □(A → B) → □(¬B → ¬A), <a href='K.htm'>K</a> 2.
+04. 1 ⊢ □(¬B → ¬A), <a href='subj_elim.htm'>subj_elim</a> 3 1.
+05. 1 ⊢ □¬B → □¬A, <a href='K.htm'>K</a> 4.
+06. 1 ⊢ ¬□¬A → ¬□¬B, <a href='contraposition.htm'>contraposition</a> 5.
+07. ⊢ ◇A ↔ ¬□¬A, <a href='pos_equi.htm'>pos_equi</a>.
+08. ⊢ ◇B ↔ ¬□¬B, <a href='pos_equi.htm'>pos_equi</a>.
+09. 9 ⊢ ◇A, <a href='hypo.htm'>hypo</a>.
+10. 9 ⊢ ¬□¬A, <a href='lsubj_elim.htm'>lsubj_elim</a> 7 9.
+11. 1, 9 ⊢ ¬□¬B, <a href='subj_elim.htm'>subj_elim</a> 6 10.
+12. 1, 9 ⊢ ◇B, <a href='rsubj_elim.htm'>rsubj_elim</a> 8 11.
+13. 1 ⊢ ◇A → ◇B, <a href='subj_intro.htm'>subj_intro</a> 12.
+K_lemma_ii. ⊢ □(A → B) → ◇A → ◇B,
+  <a href='subj_intro.htm'>subj_intro</a> 13.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on two axioms:<br><a href='K.htm'>K</a>, <a href='pos_equi.htm'>pos_equi</a>.</p>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='all-items.htm'>All items</a> | <a href='../ontological-argument-toc.htm'>Table of contents</a></div>
+<h2>Search</h2>
+<input type='button' value='Search' onclick='search()'><input type='text' id='input' style='width: 20em'><br>
+<br>
+<div id='results'></div>
+<script>const data = ["B", "G_eq", "God_exists", "God_exists_possibly", "God_has_any_positive_property", "God_has_only_positive_properties", "God_is_essentially_God_like", "K", "KB_lemma_i", "KB_lemma_ii", "K_lemma_i", "K_lemma_ii", "K_lemma_iii", "K_lemma_iv", "K_lemma_v", "K_lemma_vi", "K_pos_conj_comm", "Kii", "NE_eq", "axiom_i", "axiom_ii", "axiom_iii", "axiom_iv", "axiom_v", "bij_eliml", "bij_elimr", "bij_intro", "compl_elim", "compl_empty_set", "compl_eq", "compl_intro", "conj_eliml", "conj_elimr", "conj_intro", "contraposition", "disj_elim", "disj_introl", "disj_intror", "dn_intro", "dne", "efq", "element_decl", "empty_contra", "empty_set_eq", "eq_refl", "eq_subst", "eq_subst_rev", "eq_symm", "equi_cong_neg", "ess_equi", "ex_elim", "ex_intro", "extensionality", "hypo", "if_God_exists_then_nec", "lem", "lemma_i", "lemma_ii", "lemma_iii", "lsubj_elim", "nec", "neg_elim", "neg_ex", "neg_intro", "pos_corollary", "pos_equi", "pos_fold", "pos_unfold", "positive_decl", "rsubj_elim", "sep_elim", "sep_intro", "separation", "subj_elim", "subj_intro", "univ_decl", "uq_elim", "uq_intro"];
+const input = document.getElementById('input');
+const results = document.getElementById('results');
+
+function show_entrys(entrys) {
+    results.innerHTML = '';
+    if (entrys.length === 0) {
+        results.innerHTML = '<div>No results</div>';
+        return;
+    }
+    const list = document.createElement('div');
+    var first = true;
+    entrys.forEach(entry => {
+        if (first) {first = false;}
+        else {list.appendChild(document.createElement('br'));}
+        const link = document.createElement('a');
+        link.textContent = entry;
+        link.href = `${encodeURIComponent(entry)}.htm`;
+        list.appendChild(link);
+    });
+    results.appendChild(list);
+}
+
+function search() {
+    const search_term = input.value.trim();
+    if (search_term.length === 0) {
+        results.innerHTML = '';
+        return;
+    }
+    const filtered = data.filter(
+        entry => entry.includes(search_term));
+    show_entrys(filtered);
+}
+
+input.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {search();}
+});
+</script></body>
+</html>

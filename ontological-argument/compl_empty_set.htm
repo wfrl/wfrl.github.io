@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>compl_empty_set</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-3.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem compl_empty_set</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> compl_empty_set<br>
+compl ∅ = Univ</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ x ∈ compl ∅, <a href='hypo.htm'>hypo</a>.
+02. 1 ⊢ x ∈ Univ ∧ ¬(x ∈ ∅), <a href='compl_elim.htm'>compl_elim</a> 1.
+03. 1 ⊢ x ∈ Univ, <a href='conj_eliml.htm'>conj_eliml</a> 2.
+04. ⊢ x ∈ compl ∅ → x ∈ Univ, <a href='subj_intro.htm'>subj_intro</a> 3.
+05. 5 ⊢ x ∈ Univ, <a href='hypo.htm'>hypo</a>.
+06. 6 ⊢ x ∈ ∅, <a href='hypo.htm'>hypo</a>.
+07. 6 ⊢ ⊥, <a href='empty_contra.htm'>empty_contra</a> 6.
+08. ⊢ ¬(x ∈ ∅), <a href='neg_intro.htm'>neg_intro</a> 7.
+09. 5 ⊢ x ∈ compl ∅, <a href='compl_intro.htm'>compl_intro</a> 5 8.
+10. ⊢ x ∈ Univ → x ∈ compl ∅, <a href='subj_intro.htm'>subj_intro</a> 9.
+11. ⊢ x ∈ compl ∅ ↔ x ∈ Univ, <a href='bij_intro.htm'>bij_intro</a> 4 10.
+12. ⊢ ∀x. x ∈ compl ∅ ↔ x ∈ Univ, <a href='uq_intro.htm'>uq_intro</a> 11.
+compl_empty_set. ⊢ compl ∅ = Univ, <a href='extensionality.htm'>extensionality</a> 12.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on four axioms:<br><a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='extensionality.htm'>extensionality</a>, <a href='separation.htm'>separation</a>.</p>
+</body>
+</html>

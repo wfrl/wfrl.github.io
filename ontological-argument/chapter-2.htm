@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="list.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='../ontological-argument-toc.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h1>Logical lemmata</h1>
+<h2>Table of contents</h2>
+<ol>
+<li><a href='#2.1'>Propositional logic</a>
+<li><a href='#2.2'>First order logic</a><ol>
+<li><a href='#2.2.1'>Pure first order logic</a>
+<li><a href='#2.2.2'>First order logic with equality</a>
+</ol>
+<li><a href='#2.3'>Modal logic</a><ol>
+<li><a href='#2.3.1'>General lemmata</a>
+<li><a href='#2.3.2'>Lemmata of modal logic K</a>
+<li><a href='#2.3.3'>Lemmata of modal logic KB</a>
+</ol>
+</ol>
+<h2 id='2.1'>Propositional logic</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lsubj_elim.htm'>lsubj_elim</a><br>
+(A ↔ B) → A → B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rsubj_elim.htm'>rsubj_elim</a><br>
+(A ↔ B) → B → A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dn_intro.htm'>dn_intro</a><br>
+A → ¬¬A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='contraposition.htm'>contraposition</a><br>
+(A → B) → ¬B → ¬A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='equi_cong_neg.htm'>equi_cong_neg</a><br>
+(A ↔ B) → (¬A ↔ ¬B)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='dne.htm'>dne</a><br>
+¬¬A → A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lemma_i.htm'>lemma_i</a><br>
+(A → ¬B) → ¬(A ∧ B)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lemma_ii.htm'>lemma_ii</a><br>
+A ∧ ¬(A ∧ B) → ¬B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lemma_iii.htm'>lemma_iii</a><br>
+¬(A ∧ ¬B) → A → B</div></div>
+<h2 id='2.2'>First order logic</h2>
+<h3 id='2.2.1'>Pure first order logic</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='neg_ex.htm'>neg_ex</a><br>
+(¬∃x. Q x) → (∀x. ¬Q x)</div></div>
+<h3 id='2.2.2'>First order logic with equality</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='eq_symm.htm'>eq_symm</a><br>
+x = y → y = x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='eq_subst_rev.htm'>eq_subst_rev</a><br>
+y = x → Q x → Q y</div></div>
+<h2 id='2.3'>Modal logic</h2>
+<h3 id='2.3.1'>General lemmata</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='pos_unfold.htm'>pos_unfold</a><br>
+◇A → ¬□¬A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='pos_fold.htm'>pos_fold</a><br>
+¬□¬A → ◇A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='pos_corollary.htm'>pos_corollary</a><br>
+¬◇A → □¬A</div></div>
+<h3 id='2.3.2'>Lemmata of modal logic K</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Kii.htm'>Kii</a><br>
+□(A → B → C) → □A → □B → □C</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='K_pos_conj_comm.htm'>K_pos_conj_comm</a><br>
+◇(A ∧ B) → ◇(B ∧ A)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='K_lemma_i.htm'>K_lemma_i</a><br>
+□A → ¬◇¬A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='K_lemma_ii.htm'>K_lemma_ii</a><br>
+□(A → B) → ◇A → ◇B</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='K_lemma_iii.htm'>K_lemma_iii</a><br>
+¬◇¬¬A → ¬◇A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='K_lemma_iv.htm'>K_lemma_iv</a><br>
+□(A → □A) → ¬◇(A ∧ ◇¬A)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='K_lemma_v.htm'>K_lemma_v</a><br>
+□A → □B → □(A ∧ B)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='K_lemma_vi.htm'>K_lemma_vi</a><br>
+□A ∧ ◇B → ◇(A ∧ B)</div></div>
+<h3 id='2.3.3'>Lemmata of modal logic KB</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='KB_lemma_i.htm'>KB_lemma_i</a><br>
+(A → □A) → (¬□A → □◇¬A)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='KB_lemma_ii.htm'>KB_lemma_ii</a><br>
+(A → □A) → □(A → □A) → ◇A → □A</div></div>
+</body>
+</html>

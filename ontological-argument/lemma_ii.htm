@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>lemma_ii</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-2.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem lemma_ii</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> lemma_ii<br>
+A ∧ ¬(A ∧ B) → ¬B</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ A ∧ ¬(A ∧ B), <a href='hypo.htm'>hypo</a>.
+02. 1 ⊢ A, <a href='conj_eliml.htm'>conj_eliml</a> 1.
+03. 1 ⊢ ¬(A ∧ B), <a href='conj_elimr.htm'>conj_elimr</a> 1.
+04. 4 ⊢ B, <a href='hypo.htm'>hypo</a>.
+05. 1, 4 ⊢ A ∧ B, <a href='conj_intro.htm'>conj_intro</a> 2 4.
+06. 1, 4 ⊢ ⊥, <a href='neg_elim.htm'>neg_elim</a> 3 5.
+07. 1 ⊢ ¬B, <a href='neg_intro.htm'>neg_intro</a> 6.
+lemma_ii. ⊢ A ∧ ¬(A ∧ B) → ¬B, <a href='subj_intro.htm'>subj_intro</a> 7.
+</pre>
+</body>
+</html>
