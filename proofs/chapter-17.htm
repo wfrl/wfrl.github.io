@@ -11,15 +11,30 @@
 <h1>Real analysis</h1>
 <h2>Table of contents</h2>
 <ol>
-<li><a href='#17.1'>Archimedean property</a>
-<li><a href='#17.2'>Convergent sequences</a>
+<li><a href='#17.1'>Upper bounds</a>
+<li><a href='#17.2'>Archimedean property</a>
+<li><a href='#17.3'>Convergent sequences</a>
+<li><a href='#17.4'>Continuum induction</a>
 </ol>
-<h2 id='17.1'>Archimedean property</h2>
+<h2 id='17.1'>Upper bounds</h2>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='is_sup_unfold.htm'>is_sup_unfold</a><br>
 is_sup s A → upper_bound s A ∧
   (∀b. b ∈ ℝ → upper_bound b A → s ≤ b)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='upper_bound_fold.htm'>upper_bound_fold</a><br>
+(∀x. x ∈ A → x ≤ b) →
+  upper_bound b A</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='upper_bound_elim.htm'>upper_bound_elim</a><br>
 upper_bound b A → x ∈ A → x ≤ b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='upper_bound_neg.htm'>upper_bound_neg</a><br>
+A ⊆ ℝ → b ∈ ℝ → ¬upper_bound b A →
+  ∃x. x ∈ A ∧ b &lt; x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='no_upper_bound_lt_sup.htm'>no_upper_bound_lt_sup</a><br>
+s ∈ ℝ → x ∈ ℝ → is_sup s A →
+  x &lt; s → ¬upper_bound x A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='upper_bound_weaken.htm'>upper_bound_weaken</a><br>
+a ∈ ℝ → b ∈ ℝ → A ⊆ ℝ → upper_bound a A →
+  a &lt; b → upper_bound b A</div></div>
+<h2 id='17.2'>Archimedean property</h2>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_unbounded.htm'>nat_unbounded</a><br>
 ¬(∃b. b ∈ ℝ ∧ upper_bound b ℕ)</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Archimedean_property.htm'>Archimedean_property</a><br>
@@ -33,7 +48,7 @@ x ∈ ℝ → y ∈ ℝ →
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Archimedean_property_corollary_iii.htm'>Archimedean_property_corollary_iii</a><br>
 a ∈ ℝ → 0 ≤ a →
   (∀n. n ∈ ℕ ∧ 0 &lt; n → a ≤ 1/n) → a = 0</div></div>
-<h2 id='17.2'>Convergent sequences</h2>
+<h2 id='17.3'>Convergent sequences</h2>
 <div class='box'><div class='def'><b class='def'>Definition.</b> <a href='converges_equi.htm'>converges_equi</a><br>
 converges a L ↔ ∀ε. ε ∈ ℝ → 0 &lt; ε →
   ∃n0. n0 ∈ ℕ ∧ ∀n. n ∈ ℕ → n0 ≤ n → abs(app a n - L) &lt; ε</div></div>
@@ -51,5 +66,11 @@ c ∈ ℝ → (∀n. n ∈ ℕ → app a n = c) →
 r ∈ ℝ → L ∈ ℝ → map a ℕ ℝ →
   converges a L → (∀n. n ∈ ℕ → app b n = r⋅(app a n)) →
   converges b (r⋅L)</div></div>
+<h2 id='17.4'>Continuum induction</h2>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='continuum_induction.htm'>continuum_induction</a><br>
+a ∈ ℝ → b ∈ ℝ → a &lt; b → S ⊆ ico a b →
+  (∀x. x ∈ ico a b → ico a x ⊆ S →
+    ∃y. y ∈ ℝ ∧ x &lt; y ∧ ico a y ⊆ S) →
+  S = ico a b</div></div>
 </body>
 </html>

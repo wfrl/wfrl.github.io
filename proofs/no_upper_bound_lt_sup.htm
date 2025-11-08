@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>no_upper_bound_lt_sup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-17.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem no_upper_bound_lt_sup</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> no_upper_bound_lt_sup<br>
+s ∈ ℝ → x ∈ ℝ → is_sup s A →
+  x &lt; s → ¬upper_bound x A</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ s ∈ ℝ, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ x ∈ ℝ, <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ is_sup s A, <a href='hypo.htm'>hypo</a>.
+04. 4 ⊢ x &lt; s, <a href='hypo.htm'>hypo</a>.
+05. 5 ⊢ upper_bound x A, <a href='hypo.htm'>hypo</a>.
+06. 3 ⊢ upper_bound s A ∧
+  (∀b. b ∈ ℝ → upper_bound b A → s ≤ b), <a href='is_sup_unfold.htm'>is_sup_unfold</a> 3.
+07. 3 ⊢ upper_bound s A, <a href='conj_eliml.htm'>conj_eliml</a> 6.
+08. 3 ⊢ ∀b. b ∈ ℝ → upper_bound b A → s ≤ b, <a href='conj_elimr.htm'>conj_elimr</a> 6.
+09. 2, 3 ⊢ upper_bound x A → s ≤ x, <a href='uq_bounded_elim.htm'>uq_bounded_elim</a> 8 2.
+10. 2, 3, 5 ⊢ s ≤ x, <a href='subj_elim.htm'>subj_elim</a> 9 5.
+11. 1, 2, 3, 4, 5 ⊢ s &lt; s, <a href='rle_lt_trans.htm'>rle_lt_trans</a> 1 2 1 10 4.
+12. 1, 2, 3, 4, 5 ⊢ ¬(s = s), <a href='neq_from_lt.htm'>neq_from_lt</a> 11.
+13. ⊢ s = s, <a href='eq_refl.htm'>eq_refl</a>.
+14. 1, 2, 3, 4, 5 ⊢ ⊥, <a href='neg_elim.htm'>neg_elim</a> 12 13.
+15. 1, 2, 3, 4 ⊢ ¬upper_bound x A, <a href='neg_intro.htm'>neg_intro</a> 14.
+no_upper_bound_lt_sup. ⊢ s ∈ ℝ → x ∈ ℝ → is_sup s A →
+  x &lt; s → ¬upper_bound x A, <a href='subj_intro_iv.htm'>subj_intro_iv</a> 15.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on four axioms:<br><a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='rle_antisym.htm'>rle_antisym</a>, <a href='rle_trans.htm'>rle_trans</a>.</p>
+</body>
+</html>

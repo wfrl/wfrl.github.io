@@ -88,6 +88,7 @@
 <li><a href='#14.3'>Useful lemmata</a>
 <li><a href='#14.4'>Basic inequalities</a>
 <li><a href='#14.5'>Absolute value</a>
+<li><a href='#14.6'>Intervals</a>
 </ol>
 <li><a href='#15'>The natural numbers</a><ol>
 <li><a href='#15.1'>Basic results</a>
@@ -100,8 +101,10 @@
 <li><a href='#16.3'>Elementary number theory</a>
 </ol>
 <li><a href='#17'>Real analysis</a><ol>
-<li><a href='#17.1'>Archimedean property</a>
-<li><a href='#17.2'>Convergent sequences</a>
+<li><a href='#17.1'>Upper bounds</a>
+<li><a href='#17.2'>Archimedean property</a>
+<li><a href='#17.3'>Convergent sequences</a>
+<li><a href='#17.4'>Continuum induction</a>
 </ol>
 </ol>
 <h2 id='1'>Morse-Kelley set theory</h2>
@@ -1742,6 +1745,8 @@ a ∈ ℝ → 0 &lt; a → 0 &lt; 1/a</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rinv_positive.htm'>rinv_positive</a><br>
 a ∈ ℝ →
   0 &lt; a → 0 &lt; /a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lt_self_contra.htm'>lt_self_contra</a><br>
+a &lt; a → ⊥</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_le_contra.htm'>rlt_le_contra</a><br>
 a ∈ ℝ → a &lt; 0 → 0 ≤ a → ⊥</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_succ.htm'>rlt_succ</a><br>
@@ -1800,6 +1805,30 @@ x ∈ ℝ → y ∈ ℝ →
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rabs_dist_mul.htm'>rabs_dist_mul</a><br>
 x ∈ ℝ → y ∈ ℝ →
   abs (x⋅y) = (abs x)⋅(abs y)</div></div>
+<h3 id='14.6'>Intervals</h3>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='ioo_eq.htm'>ioo_eq</a><br>
+ioo a b = {x | x ∈ ℝ ∧ a &lt; x ∧ x &lt; b}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='ico_eq.htm'>ico_eq</a><br>
+ico a b = {x | x ∈ ℝ ∧ a ≤ x ∧ x &lt; b}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='ioc_eq.htm'>ioc_eq</a><br>
+ioc a b = {x | x ∈ ℝ ∧ a &lt; x ∧ x ≤ b}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='icc_eq.htm'>icc_eq</a><br>
+icc a b = {x | x ∈ ℝ ∧ a ≤ x ∧ x ≤ b}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ico_intro.htm'>ico_intro</a><br>
+x ∈ ℝ → a ≤ x → x &lt; b → x ∈ ico a b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ico_elim.htm'>ico_elim</a><br>
+x ∈ ico a b → x ∈ ℝ ∧ a ≤ x ∧ x &lt; b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='icc_intro.htm'>icc_intro</a><br>
+x ∈ ℝ → a ≤ x → x ≤ b → x ∈ icc a b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='icc_incl_in_real.htm'>icc_incl_in_real</a><br>
+icc a b ⊆ ℝ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ioo_incl_in_icc.htm'>ioo_incl_in_icc</a><br>
+ioo a b ⊆ icc a b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ico_empty.htm'>ico_empty</a><br>
+a ∈ ℝ → ico a a = ∅</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rle_from_ico_incl.htm'>rle_from_ico_incl</a><br>
+x ∈ ℝ → y ∈ ℝ → a ≤ y →
+  ico a x ⊆ ico a y → x ≤ y</div></div>
 <h2 id='15'>The natural numbers</h2>
 <h3 id='15.1'>Basic results</h3>
 <div class='box'><div class='def'><b class='def'>Definition.</b> <a href='nat_eq.htm'>nat_eq</a><br>
@@ -2026,12 +2055,25 @@ a ∈ ℤ → b ∈ ℤ → m ∈ ℤ →
 a ∈ ℤ → b ∈ ℤ → c ∈ ℤ → m ∈ ℤ →
   cong a b m → cong b c m → cong a c m</div></div>
 <h2 id='17'>Real analysis</h2>
-<h3 id='17.1'>Archimedean property</h3>
+<h3 id='17.1'>Upper bounds</h3>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='is_sup_unfold.htm'>is_sup_unfold</a><br>
 is_sup s A → upper_bound s A ∧
   (∀b. b ∈ ℝ → upper_bound b A → s ≤ b)</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='upper_bound_fold.htm'>upper_bound_fold</a><br>
+(∀x. x ∈ A → x ≤ b) →
+  upper_bound b A</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='upper_bound_elim.htm'>upper_bound_elim</a><br>
 upper_bound b A → x ∈ A → x ≤ b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='upper_bound_neg.htm'>upper_bound_neg</a><br>
+A ⊆ ℝ → b ∈ ℝ → ¬upper_bound b A →
+  ∃x. x ∈ A ∧ b &lt; x</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='no_upper_bound_lt_sup.htm'>no_upper_bound_lt_sup</a><br>
+s ∈ ℝ → x ∈ ℝ → is_sup s A →
+  x &lt; s → ¬upper_bound x A</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='upper_bound_weaken.htm'>upper_bound_weaken</a><br>
+a ∈ ℝ → b ∈ ℝ → A ⊆ ℝ → upper_bound a A →
+  a &lt; b → upper_bound b A</div></div>
+<h3 id='17.2'>Archimedean property</h3>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='nat_unbounded.htm'>nat_unbounded</a><br>
 ¬(∃b. b ∈ ℝ ∧ upper_bound b ℕ)</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Archimedean_property.htm'>Archimedean_property</a><br>
@@ -2045,7 +2087,7 @@ x ∈ ℝ → y ∈ ℝ →
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='Archimedean_property_corollary_iii.htm'>Archimedean_property_corollary_iii</a><br>
 a ∈ ℝ → 0 ≤ a →
   (∀n. n ∈ ℕ ∧ 0 &lt; n → a ≤ 1/n) → a = 0</div></div>
-<h3 id='17.2'>Convergent sequences</h3>
+<h3 id='17.3'>Convergent sequences</h3>
 <div class='box'><div class='def'><b class='def'>Definition.</b> <a href='converges_equi.htm'>converges_equi</a><br>
 converges a L ↔ ∀ε. ε ∈ ℝ → 0 &lt; ε →
   ∃n0. n0 ∈ ℕ ∧ ∀n. n ∈ ℕ → n0 ≤ n → abs(app a n - L) &lt; ε</div></div>
@@ -2063,13 +2105,19 @@ c ∈ ℝ → (∀n. n ∈ ℕ → app a n = c) →
 r ∈ ℝ → L ∈ ℝ → map a ℕ ℝ →
   converges a L → (∀n. n ∈ ℕ → app b n = r⋅(app a n)) →
   converges b (r⋅L)</div></div>
+<h3 id='17.4'>Continuum induction</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='continuum_induction.htm'>continuum_induction</a><br>
+a ∈ ℝ → b ∈ ℝ → a &lt; b → S ⊆ ico a b →
+  (∀x. x ∈ ico a b → ico a x ⊆ S →
+    ∃y. y ∈ ℝ ∧ x &lt; y ∧ ico a y ⊆ S) →
+  S = ico a b</div></div>
 <p><b>Statistics</b>
 <pre>
-  71 definitions
+  75 definitions
   37 axioms
- 679 theorems
+ 692 theorems
 ────────────────
- 787 items total
+ 804 items total
 </pre>
 </body>
 </html>

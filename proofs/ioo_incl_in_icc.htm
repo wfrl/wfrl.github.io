@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ioo_incl_in_icc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-14.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem ioo_incl_in_icc</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> ioo_incl_in_icc<br>
+ioo a b ⊆ icc a b</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ x ∈ ioo a b, <a href='hypo.htm'>hypo</a>.
+02. 1 ⊢ x ∈ {x | x ∈ ℝ ∧ a &lt; x ∧ x &lt; b},
+  <a href='eq_subst.htm'>eq_subst</a> <a href='ioo_eq.htm'>ioo_eq</a> 1, P t ↔ x ∈ t.
+03. 1 ⊢ x ∈ ℝ ∧ a &lt; x ∧ x &lt; b, <a href='comp_elim.htm'>comp_elim</a> 2.
+04. 1 ⊢ x ∈ ℝ, <a href='conj_elimll.htm'>conj_elimll</a> 3.
+05. 1 ⊢ a &lt; x, <a href='conj_elimlr.htm'>conj_elimlr</a> 3.
+06. 1 ⊢ x &lt; b, <a href='conj_elimr.htm'>conj_elimr</a> 3.
+07. 1 ⊢ a ≤ x, <a href='le_from_lt.htm'>le_from_lt</a> 5.
+08. 1 ⊢ x ≤ b, <a href='le_from_lt.htm'>le_from_lt</a> 6.
+09. 1 ⊢ x ∈ ℝ ∧ a ≤ x, <a href='conj_intro.htm'>conj_intro</a> 4 7.
+10. 1 ⊢ x ∈ ℝ ∧ a ≤ x ∧ x ≤ b, <a href='conj_intro.htm'>conj_intro</a> 9 8.
+11. 1 ⊢ set x, <a href='set_intro.htm'>set_intro</a> 4.
+12. 1 ⊢ x ∈ {x | x ∈ ℝ ∧ a ≤ x ∧ x ≤ b}, <a href='comp_intro.htm'>comp_intro</a> 11 10.
+13. 1 ⊢ x ∈ icc a b, <a href='eq_subst_rev.htm'>eq_subst_rev</a> <a href='icc_eq.htm'>icc_eq</a> 12, P t ↔ x ∈ t.
+14. ⊢ x ∈ ioo a b → x ∈ icc a b, <a href='subj_intro.htm'>subj_intro</a> 13.
+15. ⊢ ∀x. x ∈ ioo a b → x ∈ icc a b, <a href='uq_intro.htm'>uq_intro</a> 14.
+ioo_incl_in_icc. ⊢ ioo a b ⊆ icc a b, <a href='incl_intro.htm'>incl_intro</a> 15.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on three axioms:<br><a href='comp.htm'>comp</a>, <a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>.</p>
+</body>
+</html>

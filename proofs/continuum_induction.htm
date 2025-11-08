@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>continuum_induction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-17.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem continuum_induction</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> continuum_induction<br>
+a ∈ ℝ → b ∈ ℝ → a &lt; b → S ⊆ ico a b →
+  (∀x. x ∈ ico a b → ico a x ⊆ S →
+    ∃y. y ∈ ℝ ∧ x &lt; y ∧ ico a y ⊆ S) →
+  S = ico a b</div></div>
+<p>Induction principle for the continuum of real numbers.<br>
+<br>
+Let a &lt; b and S ⊆ [a, b). If<br>
+&nbsp;&nbsp;∀x ∈ [a, b). [a, x) ⊆ S → ∃y &gt; x. [a, y) ⊆ S<br>
+then S = [a, b). The base case is contained via x&nbsp;:=&nbsp;a, since
+[a,&nbsp;a)&nbsp;=&nbsp;∅.<br>
+<br>
+<b>Proof sketch</b><br>
+Let A := {x ∈ [a, b] | [a, x) ⊆ S}.<br>
+<br>
+1. <i>Show that A is non-empty and bounded above.</i> Non-empty: Since
+a ∈ [a,&nbsp;b) and [a,&nbsp;a) = ∅ ⊆ S, our assumption for x = a implies there
+is a y &gt; a with [a,&nbsp;y) ⊆ S. Since S ⊆ [a,&nbsp;b), we have [a,&nbsp;y) ⊆ [a,&nbsp;b),
+which means y ≤ b. Thus, y ∈ [a, b], and by definition y ∈ A.
+Therefore, A ≠ ∅. Bounded above: By definition, if x ∈ A, then
+x ∈ [a,&nbsp;b], so x ≤ b. Thus, b is an <a href='upper_bound_equi.htm'>upper bound</a>
+for A.<br>
+<br>
+2. <i>Define c as the supremum of A.</i> Since A is a non-empty,
+bounded-above subset of ℝ, by the <a href='lub_property.htm'>least-upper-bound
+property</a>, it has a <a href='is_sup_equi.htm'>supremum</a>. Let c := sup&nbsp;A.<br>
+<br>
+3. <i>Show that [a, c) ⊆ S.</i> Let p ∈ [a,&nbsp;c). Then a ≤ p &lt; c. Since
+c = sup&nbsp;A, p is not an upper bound for A. Thus, there exists an x ∈ A
+with p &lt; x. By definition of A, we have [a,&nbsp;x) ⊆ S. Since a ≤ p &lt; x,
+it follows that p ∈ [a,&nbsp;x), and therefore p ∈ S. This proves
+[a,&nbsp;c) ⊆ S.<br>
+<br>
+4. <i>Show that c = b.</i> Since b is an upper bound for A and c is the
+least upper bound, we have c ≤ b. Assume for contradiction that c &lt; b.
+Since a ∈ A, we have a ≤ c, which means c ∈ [a,&nbsp;b). From step 3, we
+know [a,&nbsp;c) ⊆ S. By our main assumption (with x = c), there must exist
+a y ∈ ℝ such that c &lt; y and [a,&nbsp;y) ⊆ S. From [a,&nbsp;y) ⊆ S ⊆ [a,&nbsp;b), we
+deduce y ≤ b. Thus, y ∈ [a,&nbsp;b] and [a,&nbsp;y) ⊆ S, which means y ∈ A.
+But y ∈ A implies y ≤ c (since c = sup A). This contradicts c &lt; y.
+The assumption c &lt; b must be false. Hence, c ≥ b. Combining c ≤ b and
+c ≥ b, we conclude c = b.<br>
+<br>
+5. <i>Conclusion.</i> Substituting c = b into the result from step 3,
+we get [a,&nbsp;b) ⊆ S. With the given hypothesis S ⊆ [a,&nbsp; b), we have
+S = [a,&nbsp;b). q.e.d.</p>
+<pre><b>Proof</b>
+let A = {x | x ∈ icc a b ∧ ico a x ⊆ S}.
+01. 1 ⊢ a ∈ ℝ, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ b ∈ ℝ, <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ a &lt; b, <a href='hypo.htm'>hypo</a>.
+04. 4 ⊢ S ⊆ ico a b, <a href='hypo.htm'>hypo</a>.
+05. 5 ⊢ ∀x. x ∈ ico a b → ico a x ⊆ S →
+  ∃y. y ∈ ℝ ∧ x &lt; y ∧ ico a y ⊆ S, <a href='hypo.htm'>hypo</a>.
+06. 1 ⊢ a ≤ a, <a href='rle_refl.htm'>rle_refl</a> 1.
+07. 3 ⊢ a ≤ b, <a href='le_from_lt.htm'>le_from_lt</a> 3.
+08. 1 ⊢ ico a a = ∅, <a href='ico_empty.htm'>ico_empty</a> 1.
+09. 1, 3 ⊢ a ∈ ico a b, <a href='ico_intro.htm'>ico_intro</a> 1 6 3.
+10. ⊢ ∅ ⊆ S, <a href='empty_set_is_least.htm'>empty_set_is_least</a>.
+11. 1 ⊢ ico a a ⊆ S, <a href='eq_incl_trans.htm'>eq_incl_trans</a> 8 10.
+
+12. 1, 3, 5 ⊢ ico a a ⊆ S → ∃y. y ∈ ℝ ∧ a &lt; y ∧ ico a y ⊆ S,
+  <a href='uq_bounded_elim.htm'>uq_bounded_elim</a> 5 9.
+13. 1, 3, 5 ⊢ ∃y. y ∈ ℝ ∧ a &lt; y ∧ ico a y ⊆ S,
+  <a href='subj_elim.htm'>subj_elim</a> 12 11.
+14. 14 ⊢ y ∈ ℝ ∧ a &lt; y ∧ ico a y ⊆ S, <a href='hypo.htm'>hypo</a>.
+15. 14 ⊢ y ∈ ℝ, <a href='conj_elimll.htm'>conj_elimll</a> 14.
+16. 14 ⊢ a &lt; y, <a href='conj_elimlr.htm'>conj_elimlr</a> 14.
+17. 14 ⊢ ico a y ⊆ S, <a href='conj_elimr.htm'>conj_elimr</a> 14.
+18. 4, 14 ⊢ ico a y ⊆ ico a b, <a href='incl_trans.htm'>incl_trans</a> 17 4.
+19. 2, 3, 4, 14 ⊢ y ≤ b, <a href='rle_from_ico_incl.htm'>rle_from_ico_incl</a> 15 2 7 18.
+20. 14 ⊢ a ≤ y, <a href='le_from_lt.htm'>le_from_lt</a> 16.
+21. 2, 3, 4, 14 ⊢ y ∈ icc a b, <a href='icc_intro.htm'>icc_intro</a> 15 20 19.
+22. 2, 3, 4, 14 ⊢ y ∈ icc a b ∧ ico a y ⊆ S, <a href='conj_intro.htm'>conj_intro</a> 21 17.
+23. 14 ⊢ set y, <a href='set_intro.htm'>set_intro</a> 15.
+24. 2, 3, 4, 14 ⊢ y ∈ A, <a href='comp_intro.htm'>comp_intro</a> 23 22.
+25. 2, 3, 4, 14 ⊢ ¬(A = ∅), <a href='non_empty_from_witness.htm'>non_empty_from_witness</a> 24.
+26. 1, 2, 3, 4, 5 ⊢ ¬(A = ∅), <a href='ex_elim.htm'>ex_elim</a> 13 25.
+
+27. 27 ⊢ x ∈ A, <a href='hypo.htm'>hypo</a>.
+28. 27 ⊢ x ∈ icc a b ∧ ico a x ⊆ S, <a href='comp_elim.htm'>comp_elim</a> 27.
+29. 27 ⊢ x ∈ icc a b, <a href='conj_eliml.htm'>conj_eliml</a> 28.
+30. 27 ⊢ x ∈ {x | x ∈ ℝ ∧ a ≤ x ∧ x ≤ b},
+  <a href='eq_subst.htm'>eq_subst</a> <a href='icc_eq.htm'>icc_eq</a> 29, P t ↔ x ∈ t.
+31. 27 ⊢ x ∈ ℝ ∧ a ≤ x ∧ x ≤ b, <a href='comp_elim.htm'>comp_elim</a> 30.
+32. 27 ⊢ x ≤ b, <a href='conj_elimr.htm'>conj_elimr</a> 31.
+33. ⊢ x ∈ A → x ≤ b, <a href='subj_intro.htm'>subj_intro</a> 32.
+34. ⊢ ∀x. x ∈ A → x ≤ b, <a href='uq_intro.htm'>uq_intro</a> 33.
+35. ⊢ upper_bound b A, <a href='upper_bound_fold.htm'>upper_bound_fold</a> 34.
+36. 2 ⊢ b ∈ ℝ ∧ upper_bound b A, <a href='conj_intro.htm'>conj_intro</a> 2 35.
+37. 2 ⊢ ∃y. y ∈ ℝ ∧ upper_bound y A, <a href='ex_intro.htm'>ex_intro</a> 36.
+
+38. ⊢ A ⊆ icc a b, <a href='sep_is_subclass.htm'>sep_is_subclass</a>.
+39. ⊢ A ⊆ ℝ, <a href='incl_trans.htm'>incl_trans</a> 38 <a href='icc_incl_in_real.htm'>icc_incl_in_real</a>.
+40. 1, 2, 3, 4, 5 ⊢ ∃c. c ∈ ℝ ∧ is_sup c A, <a href='lub_property.htm'>lub_property</a> 39 26 37.
+41. 41 ⊢ c ∈ ℝ ∧ is_sup c A, <a href='hypo.htm'>hypo</a>.
+
+42. 42 ⊢ p ∈ ico a c, <a href='hypo.htm'>hypo</a>.
+43. 42 ⊢ p ∈ ℝ ∧ a ≤ p ∧ p &lt; c, <a href='ico_elim.htm'>ico_elim</a> 42.
+44. 42 ⊢ p ∈ ℝ, <a href='conj_elimll.htm'>conj_elimll</a> 43.
+45. 42 ⊢ a ≤ p, <a href='conj_elimlr.htm'>conj_elimlr</a> 43.
+46. 42 ⊢ p &lt; c, <a href='conj_elimr.htm'>conj_elimr</a> 43.
+47. 41 ⊢ c ∈ ℝ, <a href='conj_eliml.htm'>conj_eliml</a> 41.
+48. 41 ⊢ is_sup c A, <a href='conj_elimr.htm'>conj_elimr</a> 41.
+49. 41, 42 ⊢ ¬upper_bound p A, <a href='no_upper_bound_lt_sup.htm'>no_upper_bound_lt_sup</a> 47 44 48 46.
+50. 41, 42 ⊢ ∃x. x ∈ A ∧ p &lt; x, <a href='upper_bound_neg.htm'>upper_bound_neg</a> 39 44 49.
+51. 51 ⊢ x ∈ A ∧ p &lt; x, <a href='hypo.htm'>hypo</a>.
+52. 51 ⊢ x ∈ A, <a href='conj_eliml.htm'>conj_eliml</a> 51.
+53. 51 ⊢ p &lt; x, <a href='conj_elimr.htm'>conj_elimr</a> 51.
+54. 51 ⊢ x ∈ icc a b ∧ ico a x ⊆ S, <a href='comp_elim.htm'>comp_elim</a> 52.
+55. 51 ⊢ ico a x ⊆ S, <a href='conj_elimr.htm'>conj_elimr</a> 54.
+56. 42, 51 ⊢ p ∈ ico a x, <a href='ico_intro.htm'>ico_intro</a> 44 45 53.
+57. 42, 51 ⊢ p ∈ S, <a href='incl_elim.htm'>incl_elim</a> 55 56.
+58. 41, 42 ⊢ p ∈ S, <a href='ex_elim.htm'>ex_elim</a> 50 57.
+59. 41 ⊢ p ∈ ico a c → p ∈ S, <a href='subj_intro.htm'>subj_intro</a> 58.
+60. 41 ⊢ ∀p. p ∈ ico a c → p ∈ S, <a href='uq_intro.htm'>uq_intro</a> 59.
+61. 41 ⊢ ico a c ⊆ S, <a href='incl_intro.htm'>incl_intro</a> 60.
+
+62. 41 ⊢ upper_bound c A ∧
+  (∀y. y ∈ ℝ → upper_bound y A → c ≤ y), <a href='is_sup_unfold.htm'>is_sup_unfold</a> 48.
+63. 41 ⊢ upper_bound c A, <a href='conj_eliml.htm'>conj_eliml</a> 62.
+64. 1, 3 ⊢ a ∈ icc a b, <a href='icc_intro.htm'>icc_intro</a> 1 6 7.
+65. 1, 3 ⊢ a ∈ icc a b ∧ ico a a ⊆ S, <a href='conj_intro.htm'>conj_intro</a> 64 11.
+66. 1, 3 ⊢ set a, <a href='set_intro.htm'>set_intro</a> 64.
+67. 1, 3 ⊢ a ∈ A, <a href='comp_intro.htm'>comp_intro</a> 66 65,
+  P x ↔ x ∈ icc a b ∧ ico a x ⊆ S.
+68. 1, 3, 41 ⊢ a ≤ c, <a href='upper_bound_elim.htm'>upper_bound_elim</a> 63 67.
+69. 69 ⊢ c &lt; b, <a href='hypo.htm'>hypo</a>.
+70. 1, 3, 41, 69 ⊢ c ∈ ico a b, <a href='ico_intro.htm'>ico_intro</a> 47 68 69.
+71. 1, 3, 5, 41, 69 ⊢ ico a c ⊆ S →
+  ∃y. y ∈ ℝ ∧ c &lt; y ∧ ico a y ⊆ S, <a href='uq_bounded_elim.htm'>uq_bounded_elim</a> 5 70.
+72. 1, 3, 5, 41, 69 ⊢ ∃y. y ∈ ℝ ∧ c &lt; y ∧ ico a y ⊆ S,
+  <a href='subj_elim.htm'>subj_elim</a> 71 61.
+73. 73 ⊢ y ∈ ℝ ∧ c &lt; y ∧ ico a y ⊆ S, <a href='hypo.htm'>hypo</a>.
+74. 73 ⊢ y ∈ ℝ, <a href='conj_elimll.htm'>conj_elimll</a> 73.
+75. 73 ⊢ c &lt; y, <a href='conj_elimlr.htm'>conj_elimlr</a> 73.
+76. 73 ⊢ ico a y ⊆ S, <a href='conj_elimr.htm'>conj_elimr</a> 73.
+77. 4, 73 ⊢ ico a y ⊆ ico a b, <a href='incl_trans.htm'>incl_trans</a> 76 4.
+78. 2, 3, 4, 73 ⊢ y ≤ b, <a href='rle_from_ico_incl.htm'>rle_from_ico_incl</a> 74 2 7 77.
+79. 1, 3, 41, 73 ⊢ a &lt; y, <a href='rle_lt_trans.htm'>rle_lt_trans</a> 1 47 74 68 75.
+80. 1, 3, 41, 73 ⊢ a ≤ y, <a href='le_from_lt.htm'>le_from_lt</a> 79.
+81. 1, 2, 3, 4, 41, 73 ⊢ y ∈ icc a b, <a href='icc_intro.htm'>icc_intro</a> 74 80 78.
+82. 1, 2, 3, 4, 41, 73 ⊢ y ∈ icc a b ∧ ico a y ⊆ S,
+  <a href='conj_intro.htm'>conj_intro</a> 81 76.
+83. 73 ⊢ set y, <a href='set_intro.htm'>set_intro</a> 74.
+84. 1, 2, 3, 4, 41, 73 ⊢ y ∈ A, <a href='comp_intro.htm'>comp_intro</a> 83 82.
+85. 1, 2, 3, 4, 41, 73 ⊢ y ≤ c, <a href='upper_bound_elim.htm'>upper_bound_elim</a> 63 84.
+86. 1, 2, 3, 4, 41, 73 ⊢ y &lt; y, <a href='rle_lt_trans.htm'>rle_lt_trans</a> 74 47 74 85 75.
+87. 1, 2, 3, 4, 41, 73 ⊢ ⊥, <a href='lt_self_contra.htm'>lt_self_contra</a> 86.
+88. 1, 2, 3, 4, 5, 41, 69 ⊢ ⊥, <a href='ex_elim.htm'>ex_elim</a> 72 87.
+89. 1, 2, 3, 4, 5, 41 ⊢ ¬(c &lt; b), <a href='neg_intro.htm'>neg_intro</a> 88.
+90. 1, 2, 3, 4, 5, 41 ⊢ b ≤ c, <a href='rlt_neg.htm'>rlt_neg</a> 47 2 89.
+91. 4, 41 ⊢ ico a c ⊆ ico a b, <a href='incl_trans.htm'>incl_trans</a> 61 4.
+92. 2, 3, 4, 41 ⊢ c ≤ b, <a href='rle_from_ico_incl.htm'>rle_from_ico_incl</a> 47 2 7 91.
+93. 1, 2, 3, 4, 5, 41 ⊢ c = b, <a href='rle_antisym.htm'>rle_antisym</a> 47 2 92 90.
+94. 1, 2, 3, 4, 5, 41 ⊢ ico a b ⊆ S,
+  <a href='eq_subst.htm'>eq_subst</a> 93 61, P t ↔ ico a t ⊆ S.
+95. 1, 2, 3, 4, 5, 41 ⊢ S = ico a b, <a href='incl_antisym.htm'>incl_antisym</a> 4 94.
+96. 1, 2, 3, 4, 5 ⊢ S = ico a b, <a href='ex_elim.htm'>ex_elim</a> 40 95.
+97. 1, 2, 3, 4 ⊢ (∀x. x ∈ ico a b → ico a x ⊆ S →
+  ∃y. y ∈ ℝ ∧ x &lt; y ∧ ico a y ⊆ S) → S = ico a b,
+  <a href='subj_intro.htm'>subj_intro</a> 96.
+continuum_induction. ⊢ a ∈ ℝ → b ∈ ℝ → a &lt; b → S ⊆ ico a b →
+  (∀x. x ∈ ico a b → ico a x ⊆ S →
+    ∃y. y ∈ ℝ ∧ x &lt; y ∧ ico a y ⊆ S) →
+  S = ico a b, <a href='subj_intro_iv.htm'>subj_intro_iv</a> 97.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on 11 axioms:<br><a href='comp.htm'>comp</a>, <a href='efq.htm'>efq</a>, <a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='ext.htm'>ext</a>, <a href='lem.htm'>lem</a>, <a href='lub_property.htm'>lub_property</a>, <a href='rle_antisym.htm'>rle_antisym</a>, <a href='rle_refl.htm'>rle_refl</a>, <a href='rle_total.htm'>rle_total</a>, <a href='rle_trans.htm'>rle_trans</a>.</p>
+</body>
+</html>

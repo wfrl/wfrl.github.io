@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>upper_bound_weaken</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+</head>
+<body>
+<div class='navi'><a href='chapter-17.htm'>Up</a> | <a href='search.htm'>Search</a></div>
+<h3>Theorem upper_bound_weaken</h3>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> upper_bound_weaken<br>
+a ∈ ℝ → b ∈ ℝ → A ⊆ ℝ → upper_bound a A →
+  a &lt; b → upper_bound b A</div></div>
+<pre><b>Proof</b>
+01. 1 ⊢ a ∈ ℝ, <a href='hypo.htm'>hypo</a>.
+02. 2 ⊢ b ∈ ℝ, <a href='hypo.htm'>hypo</a>.
+03. 3 ⊢ A ⊆ ℝ, <a href='hypo.htm'>hypo</a>.
+04. 4 ⊢ upper_bound a A, <a href='hypo.htm'>hypo</a>.
+05. 5 ⊢ a &lt; b, <a href='hypo.htm'>hypo</a>.
+06. 6 ⊢ x ∈ A, <a href='hypo.htm'>hypo</a>.
+07. 4, 6 ⊢ x ≤ a, <a href='upper_bound_elim.htm'>upper_bound_elim</a> 4 6.
+08. 3, 6 ⊢ x ∈ ℝ, <a href='incl_elim.htm'>incl_elim</a> 3 6.
+09. 1, 2, 3, 4, 5, 6 ⊢ x &lt; b, <a href='rle_lt_trans.htm'>rle_lt_trans</a> 8 1 2 7 5.
+10. 1, 2, 3, 4, 5, 6 ⊢ x ≤ b, <a href='le_from_lt.htm'>le_from_lt</a> 9.
+11. 1, 2, 3, 4, 5 ⊢ x ∈ A → x ≤ b, <a href='subj_intro.htm'>subj_intro</a> 10.
+12. 1, 2, 3, 4, 5 ⊢ ∀x. x ∈ A → x ≤ b, <a href='uq_intro.htm'>uq_intro</a> 11.
+13. 1, 2, 3, 4, 5 ⊢ upper_bound b A, <a href='upper_bound_fold.htm'>upper_bound_fold</a> 12.
+14. 1, 2, 3, 4 ⊢ a &lt; b → upper_bound b A, <a href='subj_intro.htm'>subj_intro</a> 13.
+upper_bound_weaken. ⊢ a ∈ ℝ → b ∈ ℝ → A ⊆ ℝ → upper_bound a A →
+  a &lt; b → upper_bound b A, <a href='subj_intro_iv.htm'>subj_intro_iv</a> 14.
+</pre>
+<p><b>Dependencies</b><br>The given proof depends on four axioms:<br><a href='eq_refl.htm'>eq_refl</a>, <a href='eq_subst.htm'>eq_subst</a>, <a href='rle_antisym.htm'>rle_antisym</a>, <a href='rle_trans.htm'>rle_trans</a>.</p>
+</body>
+</html>

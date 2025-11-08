@@ -16,6 +16,7 @@
 <li><a href='#14.3'>Useful lemmata</a>
 <li><a href='#14.4'>Basic inequalities</a>
 <li><a href='#14.5'>Absolute value</a>
+<li><a href='#14.6'>Intervals</a>
 </ol>
 <h2 id='14.1'>Axiomatic definition</h2>
 <div class='box'><div class='decl'><b class='decl'>Declaration.</b> <a href='real_decl.htm'>real_decl</a><br>
@@ -321,6 +322,8 @@ a ∈ ℝ → 0 &lt; a → 0 &lt; 1/a</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rinv_positive.htm'>rinv_positive</a><br>
 a ∈ ℝ →
   0 &lt; a → 0 &lt; /a</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='lt_self_contra.htm'>lt_self_contra</a><br>
+a &lt; a → ⊥</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_le_contra.htm'>rlt_le_contra</a><br>
 a ∈ ℝ → a &lt; 0 → 0 ≤ a → ⊥</div></div>
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rlt_succ.htm'>rlt_succ</a><br>
@@ -379,5 +382,29 @@ x ∈ ℝ → y ∈ ℝ →
 <div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rabs_dist_mul.htm'>rabs_dist_mul</a><br>
 x ∈ ℝ → y ∈ ℝ →
   abs (x⋅y) = (abs x)⋅(abs y)</div></div>
+<h2 id='14.6'>Intervals</h2>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='ioo_eq.htm'>ioo_eq</a><br>
+ioo a b = {x | x ∈ ℝ ∧ a &lt; x ∧ x &lt; b}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='ico_eq.htm'>ico_eq</a><br>
+ico a b = {x | x ∈ ℝ ∧ a ≤ x ∧ x &lt; b}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='ioc_eq.htm'>ioc_eq</a><br>
+ioc a b = {x | x ∈ ℝ ∧ a &lt; x ∧ x ≤ b}</div></div>
+<div class='box'><div class='def'><b class='def'>Definition.</b> <a href='icc_eq.htm'>icc_eq</a><br>
+icc a b = {x | x ∈ ℝ ∧ a ≤ x ∧ x ≤ b}</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ico_intro.htm'>ico_intro</a><br>
+x ∈ ℝ → a ≤ x → x &lt; b → x ∈ ico a b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ico_elim.htm'>ico_elim</a><br>
+x ∈ ico a b → x ∈ ℝ ∧ a ≤ x ∧ x &lt; b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='icc_intro.htm'>icc_intro</a><br>
+x ∈ ℝ → a ≤ x → x ≤ b → x ∈ icc a b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='icc_incl_in_real.htm'>icc_incl_in_real</a><br>
+icc a b ⊆ ℝ</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ioo_incl_in_icc.htm'>ioo_incl_in_icc</a><br>
+ioo a b ⊆ icc a b</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='ico_empty.htm'>ico_empty</a><br>
+a ∈ ℝ → ico a a = ∅</div></div>
+<div class='box'><div class='thm'><b class='thm'>Theorem.</b> <a href='rle_from_ico_incl.htm'>rle_from_ico_incl</a><br>
+x ∈ ℝ → y ∈ ℝ → a ≤ y →
+  ico a x ⊆ ico a y → x ≤ y</div></div>
 </body>
 </html>
